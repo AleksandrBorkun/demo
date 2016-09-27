@@ -5,6 +5,7 @@ import java.util.Map;
 
 import epam.howork.task3.command.Command;
 import epam.howork.task3.command.impl.AddNewNote;
+import epam.howork.task3.command.impl.CreateNewNoteBook;
 import epam.howork.task3.command.impl.FindNotes;
 
 public class CommandHelper {
@@ -15,7 +16,7 @@ public class CommandHelper {
 		
 		commands.put("ADD_NEW_NOTE", new AddNewNote());
 		commands.put("FIND_NOTES", new FindNotes());
-
+		commands.put("CREATY_NEW_FILE", new CreateNewNoteBook());
 	}
 
 	public Command getCommand(String commandName) {

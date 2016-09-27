@@ -11,10 +11,15 @@ public class View {
 		
 		Controller controller = new Controller();
 		
-		
+		String s = "CREATE_NEW_FILE";
+				 
 		AddNoteRequest request = new AddNoteRequest();
+		if(s=="1")
 		request.setCommandName("ADD_NEW_NOTE");
+		if(s=="2")
 		request.setNote("my message");
+		if(s.equals("CREATE_NEW_FILE"))
+		request.setCommandName("CREATE_NEW_FILE");
 		
 		Response response = controller.doRequest(request);
 		

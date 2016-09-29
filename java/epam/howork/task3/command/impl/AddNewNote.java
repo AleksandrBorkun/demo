@@ -25,9 +25,7 @@ public class AddNewNote implements Command {
 		}else{
 			throw new CommandException("Wrong request");
 		}
-		
-		
-		
+					
 		req.setNote(in.nextLine());
 		String note = req.getNote();
 		
@@ -35,9 +33,6 @@ public class AddNewNote implements Command {
 		NoteBook noteBook = NoteBookProvider.getInstance().getNoteBook();
 		noteBook.add(newNote);
 		
-		
-	
-
 		response.setErrorStatus(false);
 		response.setResultMessage("All OK!");
 		

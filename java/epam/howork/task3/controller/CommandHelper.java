@@ -8,7 +8,7 @@ import epam.howork.task3.command.impl.AddNewNote;
 import epam.howork.task3.command.impl.CreateNewNoteBook;
 import epam.howork.task3.command.impl.FindNotes;
 import epam.howork.task3.command.impl.LoadNoteBookFile;
-import epam.howork.task3.command.impl.Save_Adds_To_NoteBook;
+import epam.howork.task3.command.impl.SaveAddsToNoteBook;
 
 public class CommandHelper {
 
@@ -20,7 +20,8 @@ public class CommandHelper {
 		commands.put("FIND_NOTES", new FindNotes());
 		commands.put("CREATE_NEW_FILE", new CreateNewNoteBook());
 		commands.put("LOAD_FILE", new LoadNoteBookFile());
-		commands.put("SAVE", new Save_Adds_To_NoteBook());
+		commands.put("SAVE", new SaveAddsToNoteBook());
+		
 		
 	}
 

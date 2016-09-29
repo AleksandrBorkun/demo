@@ -13,27 +13,29 @@ public class View {
 		Controller controller = new Controller();
 		
 		
-				 
 		AddNoteRequest request = new AddNoteRequest();
 
 		
-
+request.setCommandName("FIND_NOTES");
 		//request.setNote("my message");
 
 		//request.setCommandName("CREATE_NEW_FILE");
 		
-		request.setCommandName("LOAD_FILE");
+		//request.setCommandName("LOAD_FILE");
+
+		
+		//request.setCommandName("ADD_NEW_NOTE");
 		
 		Response response = controller.doRequest(request);
 		
-		if(response.isLoadStatus() == true)
-			System.out.println("File load completed");
-		else
-			System.out.println("File not found");
+	//	if(response.isLoadStatus() == true)
+		//	System.out.println("File load completed");
+		//else
+			//System.out.println("File not found");
+		
 		
 		
 		//request.setCommandName("SAVE");
-		//request.setCommandName("ADD_NEW_NOTE");
 		//Response response2 = controller.doRequest(request);
 		
 		

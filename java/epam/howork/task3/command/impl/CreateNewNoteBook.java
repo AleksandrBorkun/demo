@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 
+import epam.howork.task3.bean.FileNameResponse;
 import epam.howork.task3.bean.Request;
 import epam.howork.task3.bean.Response;
 import epam.howork.task3.command.Command;
@@ -19,11 +20,12 @@ public class CreateNewNoteBook implements Command {
 		Scanner in = new Scanner(System.in);
 
 		System.out.println("Enter new file name: ");
-		String fileName = in.nextLine() + ".txt";
-
+		
 		Date date = new Date();
-
-		File newFile = new File(fileName);
+		FileNameResponse fileName = new FileNameResponse();
+		fileName.setFileName(in.nextLine() + ".txt");
+		File newFile = new File(fileName.getFileName());
+		
 		try {
 			FileWriter addText = new FileWriter(newFile);
 			addText.write("You just generating a new file with name: <" + fileName + "> at: " + date);
@@ -36,8 +38,7 @@ public class CreateNewNoteBook implements Command {
 
 		}
 
-		response.setLoadStatus(true);
-		response.setResultLoadMessage(fileName);
+		fileName.setFileNameStatus(true);
 		response.setErrorStatus(false);
 		response.setResultMessage("File was created!");
 

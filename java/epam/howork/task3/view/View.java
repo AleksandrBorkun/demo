@@ -1,5 +1,6 @@
 package epam.howork.task3.view;
 
+
 import epam.howork.task3.bean.AddNoteRequest;
 import epam.howork.task3.bean.Request;
 import epam.howork.task3.bean.Response;
@@ -15,13 +16,13 @@ public class View {
 				 
 		AddNoteRequest request = new AddNoteRequest();
 
-		request.setCommandName("ADD_NEW_NOTE");
+		
 
 		//request.setNote("my message");
 
 		//request.setCommandName("CREATE_NEW_FILE");
 		
-		//request.setCommandName("LOAD_FILE");
+		request.setCommandName("LOAD_FILE");
 		
 		Response response = controller.doRequest(request);
 		
@@ -30,11 +31,19 @@ public class View {
 		else
 			System.out.println("File not found");
 		
+		
+		//request.setCommandName("SAVE");
+		//request.setCommandName("ADD_NEW_NOTE");
+		//Response response2 = controller.doRequest(request);
+		
+		
+		
 		if(response.isErrorStatus() ==  true){
 			System.out.println(response.getErrorMessage());
 		}else{
 			System.out.println(response.getResultMessage());
 		}
+		
 		
 		
 	}

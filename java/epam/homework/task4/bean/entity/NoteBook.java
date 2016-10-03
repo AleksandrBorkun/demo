@@ -1,9 +1,10 @@
 package epam.homework.task4.bean.entity;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
-public class NoteBook {
+public class NoteBook implements Serializable{
 
 //	Note newNote;
 	List<Note> notes = null;
@@ -23,5 +24,31 @@ public class NoteBook {
 	
 	public List<Note> getNotes() {
 		return notes;
+	}
+
+	public void clearNoteBook() {
+		notes.clear();
+		
+		
+	}
+
+	public List<Note> FindNotesByContent(String strToFind) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Note> FindNotesByDate(String dateToFind) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void showNotes() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addNote(Note currentNote) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -17,33 +17,33 @@ public class View {
 
 	private static boolean exit = true;
 	static Scanner in = new Scanner(System.in);
-	private static String help = "Take a list of command:\n0 - EXIT\n10 - HELP\n1 - CREATE NEW NOTEBOOK\n2 - ADD NEW NOTE\n3 - LOAD FILE\n4 - FIND NOTES BY CONTENT\n5 - SAVE\n6 - FIND NOTES BY DATE\n7 - SHOW NOTES TO THE SREEN";
+	private static String help = "Take a list of command:\n0 - EXIT\n\'help\' - HELP\n1 - CREATE NEW NOTEBOOK\n2 - ADD NEW NOTE\n3 - LOAD FILE\n4 - FIND NOTES BY CONTENT\n5 - SAVE\n6 - FIND NOTES BY DATE\n7 - SHOW NOTES TO THE SREEN";
 
 	public static void main(String[] args) {
 		Controller controller = new Controller();
 		CreateNewNoteBookRequest createNoteBook = new CreateNewNoteBookRequest();
 		LoadFileRequest loadFile = new LoadFileRequest();
 
-		System.out.println("WELCOME TO NOTEBOOK SYSTEM! MAKE YOUR COMMAND OR PRINT \'10\' TO CALL HELP AND FIND IT");
+		System.out.println("WELCOME TO NOTEBOOK SYSTEM! MAKE YOUR COMMAND OR PRINT \'help\' TO CALL HELP AND FIND IT");
 		while (exit) {
 			System.out.println("Enter the command");
-			String choose = in.nextLine();
-			int choise = Integer.parseInt(choose);
+			String choise = in.nextLine();
+			//int choise = Integer.parseInt(choose);
 
 			// CLOSE PROGRAM
-			if (choose.equals("0")) {
+			if (choise.equals("0")) {
 				System.out.println("SYSTEM IS CLOSING...\nBEST REGARDS!");
 				break;
 			}
 			switch (choise) {
 
 			// CALL HELP
-			case 10:
+			case "help":
 				System.out.println(help);
 				break;
 
 			// CREATE NEW NOTEBOOK
-			case 1:
+			case "1":
 
 				System.out.println("Create new NOTEBOOK.\nEnter the name of your file.");
 				String newFileName;
@@ -59,7 +59,7 @@ public class View {
 				}
 				break;
 			// ADD NOTE
-			case 2:
+			case "2":
 				AddNoteRequest addNoteRequest = new AddNoteRequest();
 				addNoteRequest.setCommandName("ADD_NEW_NOTE");
 				System.out.println("Write you note here: ");
@@ -75,7 +75,7 @@ public class View {
 				break;
 
 			// LOAD FILE
-			case 3:
+			case "3":
 
 				System.out.println("Please wrire the name of file would you like to load, and go on to work with it: ");
 				loadFile.setCommandName("LOAD_FILE");
@@ -91,7 +91,7 @@ public class View {
 				break;
 
 			// FIND NOTES BY CONTENT
-			case 4:
+			case "4":
 				FindNotesRequest find = new FindNotesRequest();
 				find.setCommandName("FIND_NOTES");
 				System.out.println("To Find Notes By Content, pls write your key word for search: ");
@@ -106,7 +106,7 @@ public class View {
 				break;
 
 			// SAVE ALL TO NOTEBOOK
-			case 5:
+			case "5":
 				SaveNotesRequest save = new SaveNotesRequest();
 				System.out.println("Now Progam will save all your notes in NoteBook what you load, or created.");
 				save.setCommandName("SAVE");
@@ -118,7 +118,7 @@ public class View {
 				}
 				break;
 			// FIND NOTES BY DATE
-			case 6:
+			case "6":
 
 				FindNotesByDateRequest findByDateRequest = new FindNotesByDateRequest();
 				findByDateRequest.setCommandName("FIND_NOTES_BY_DATE");
@@ -135,7 +135,7 @@ public class View {
 				}
 				break;
 			// SHOW NOTES TO THE SREEN
-			case 7:
+			case "7":
 				Request request = new Request();
 				request.setCommandName("SHOW_NOTES_TO_SCREEN");
 				Response showResponse = controller.doRequest(request);
@@ -145,6 +145,9 @@ public class View {
 					System.out.println(showResponse.getResultMessage());
 				}
 
+				default:
+					System.out.println("You write an unknown command. Pls try again or call \'help\' to find your command..");
+					
 				break;
 			}
 

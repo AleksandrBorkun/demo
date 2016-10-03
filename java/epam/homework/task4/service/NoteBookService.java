@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import epam.homework.task4.service.exception.ServiceException;
-import epam.homework.task4.entity.Note;
+import epam.homework.task4.bean.entity.Note;;
 
 public interface NoteBookService {
 

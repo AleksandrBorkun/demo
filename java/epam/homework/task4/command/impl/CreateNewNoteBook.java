@@ -10,6 +10,9 @@ import epam.homework.task4.bean.Response;
 import epam.homework.task4.command.Command;
 import epam.homework.task4.command.exception.CommandException;
 import epam.homework.task4.date.FullDate;
+import epam.homework.task4.service.NoteBookService;
+import epam.homework.task4.service.ServiceFactory;
+import epam.homework.task4.service.exception.ServiceException;
 
 public class CreateNewNoteBook implements Command {
 
@@ -25,7 +28,18 @@ public class CreateNewNoteBook implements Command {
 			throw new CommandException("Wrong request");
 		}
 
-		File newFile = new File(req.getCreate());
+		ServiceFactory service = ServiceFactory.getInstance();
+		NoteBookService nbService = service.getNoteBookService();
+		nbService.clearNoteBook();
+		try {
+			nbService.addNote("NoteBook is created");
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	/*	File newFile = new File(req.getCreate());
 
 		try {
 			FileWriter addText = new FileWriter(newFile);
@@ -38,7 +52,7 @@ public class CreateNewNoteBook implements Command {
 			response.setErrorMessage("I think that something wrong with file name.\n"
 					+ "Please try to create new file again with another name.");
 
-		}
+		} 				*/
 
 		response.setErrorStatus(false);
 		response.setResultMessage("File was created!");

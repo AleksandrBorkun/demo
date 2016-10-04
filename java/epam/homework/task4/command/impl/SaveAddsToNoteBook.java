@@ -14,6 +14,9 @@ import epam.homework.task4.bean.SaveNotesRequest;
 import epam.homework.task4.bean.entity.Note;
 import epam.homework.task4.command.Command;
 import epam.homework.task4.command.exception.CommandException;
+import epam.homework.task4.service.NoteBookService;
+import epam.homework.task4.service.ServiceFactory;
+import epam.homework.task4.service.exception.ServiceException;
 import epam.homework.task4.source.NoteBookProvider;
 
 public class SaveAddsToNoteBook implements Command {
@@ -27,8 +30,22 @@ public class SaveAddsToNoteBook implements Command {
 		} else {
 			throw new CommandException("Wrong request");
 		}
+	
+		String filePath = req.getFileName();
+		ServiceFactory service = ServiceFactory.getInstance();
+		NoteBookService nbService = service.getNoteBookService();
+		try {
+			nbService.writeNotesToFile(filePath);
+			response.setErrorStatus(false);
+			response.setResultMessage("Notes is saved to file: \'" + filePath + "\'");
+			
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// Check connection to file
-		if (CurrentFileRequest.getCurrentFileName() != null) {
+	/*	if (CurrentFileRequest.getCurrentFileName() != null) {
 			req.setFileName(CurrentFileRequest.getCurrentFileName());
 		} else {
 			response.setErrorStatus(true);
@@ -54,7 +71,7 @@ public class SaveAddsToNoteBook implements Command {
 				e.printStackTrace();
 			}
 
-		}
+		}		*/
 
 		return response;
 	}

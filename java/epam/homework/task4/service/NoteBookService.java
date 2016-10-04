@@ -8,7 +8,7 @@ import epam.homework.task4.bean.entity.Note;;
 
 public interface NoteBookService {
 
-	void addNote(String note, Date date) throws ServiceException;
+	void addNote(String note) throws ServiceException;
 
 	void clearNoteBook();
 
@@ -16,7 +16,7 @@ public interface NoteBookService {
 
 	List<Note> findNotesByDate(String dateToFind) throws ServiceException;
 
-	void showAllNotes();
+//	void showAllNotes();
 
 	void writeNotesFromFile(String fileLocation) throws ServiceException;
 

@@ -11,6 +11,9 @@ import epam.homework.task4.bean.Request;
 import epam.homework.task4.bean.Response;
 import epam.homework.task4.command.Command;
 import epam.homework.task4.command.exception.CommandException;
+import epam.homework.task4.service.NoteBookService;
+import epam.homework.task4.service.ServiceFactory;
+import epam.homework.task4.service.exception.ServiceException;
 
 public class LoadNoteBookFile implements Command {
 
@@ -32,28 +35,36 @@ public class LoadNoteBookFile implements Command {
 		int count = 0;
 		for (String searchName : find) {
 			if (searchName.equals(fileName)) {
-				File f = new File(searchName);
-				BufferedReader bf;
+				ServiceFactory service = ServiceFactory.getInstance();
+				NoteBookService nbService = service.getNoteBookService();
 				try {
-					bf = new BufferedReader(new FileReader(f));
-					String line;
-					while ((line = bf.readLine()) != null)
-						System.out.println(line);
-					bf.close();
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
+					nbService.writeNotesFromFile(fileName);
+				} catch (ServiceException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
 				response.setErrorStatus(false);
 				response.setResultMessage(fileName + " is load success!");
 				count++;
 				break;
 
+				/*
+				 * }
+				 * 
+				 * File f = new File(searchName); BufferedReader bf; try { bf =
+				 * new BufferedReader(new FileReader(f)); String line; while
+				 * ((line = bf.readLine()) != null) System.out.println(line);
+				 * bf.close(); } catch (FileNotFoundException e) {
+				 * e.printStackTrace(); } catch (IOException e) {
+				 * e.printStackTrace(); }
+				 * 
+				 * 
+				 * 
+				 * 
+				 * }
+				 */
 			}
 		}
-
 		if (count == 0) {
 			response.setErrorStatus(true);
 			response.setErrorMessage(fileName + " does not found!!!");

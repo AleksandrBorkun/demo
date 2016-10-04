@@ -11,8 +11,12 @@ import epam.homework.task4.bean.CurrentFileRequest;
 import epam.homework.task4.bean.FindNotesRequest;
 import epam.homework.task4.bean.Request;
 import epam.homework.task4.bean.Response;
+import epam.homework.task4.bean.entity.Note;
 import epam.homework.task4.command.Command;
 import epam.homework.task4.command.exception.CommandException;
+import epam.homework.task4.service.NoteBookService;
+import epam.homework.task4.service.ServiceFactory;
+import epam.homework.task4.service.exception.ServiceException;
 
 public class FindNotes implements Command {
 
@@ -26,8 +30,21 @@ public class FindNotes implements Command {
 			throw new CommandException("Wrong request");
 		}
 
+		String keyWord = req.getKeyWords();
+		ServiceFactory service = ServiceFactory.getInstance();
+		NoteBookService nbService = service.getNoteBookService();
+		
+		try {
+			for(Note found:nbService.findNotesByContent(keyWord)){
+				System.out.println(found.getNote());
+			}
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// Check connection to file
-		if (CurrentFileRequest.getCurrentFileName() != null) {
+/*		if (CurrentFileRequest.getCurrentFileName() != null) {
 			req.setFileName(CurrentFileRequest.getCurrentFileName());
 		} else {
 			response.setErrorStatus(true);
@@ -38,7 +55,7 @@ public class FindNotes implements Command {
 		String line;
 		int lineNumber = 0;
 		String fileName = req.getFileName();
-		String keyWord = req.getKeyWords();
+		
 		File file = new File(fileName);
 		BufferedReader br;
 		try {
@@ -52,9 +69,7 @@ public class FindNotes implements Command {
 			br.close();
 			if (lineNumber == 0)
 				System.out.println("По заданному поиску ничего не найденно. Возможно следует сохранить проект и повторить поиск.\nВы искали: " + keyWord);
-			response.setErrorStatus(false);
-			response.setResultMessage("Поиск завершен успешно");
-
+			
 		} catch (FileNotFoundException e1) {
 			response.setErrorStatus(true);
 			response.setErrorMessage("файл с таким именем: " + fileName + ". Попробуйте еще.");
@@ -63,8 +78,10 @@ public class FindNotes implements Command {
 			response.setErrorStatus(true);
 			response.setErrorMessage("чтото пошло не так... имя файла " + fileName + ". Попробуйте еще.");
 
-		}
+		}     */
 
+		response.setErrorStatus(false);
+		response.setResultMessage("\nПоиск завершен успешно\n");
 		return response;
 	}
 

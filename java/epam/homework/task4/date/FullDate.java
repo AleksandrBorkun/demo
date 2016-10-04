@@ -1,9 +1,10 @@
 package epam.homework.task4.date;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class FullDate {
+public class FullDate implements Serializable{
 
 	private SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 	private SimpleDateFormat time = new SimpleDateFormat("hh-mm-ss");

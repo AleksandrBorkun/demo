@@ -1,13 +1,14 @@
 package epam.homework.task4.bean.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class NoteBook implements Serializable{
+public class NoteBook implements Serializable {
 
-//	Note newNote;
-	List<Note> notes = null;
+	Note newNote;
+	List<Note> notes;
 
 	public NoteBook() {
 		notes = new LinkedList<Note>();
@@ -17,38 +18,49 @@ public class NoteBook implements Serializable{
 		this.notes.add(newNote);
 	}
 
-	//
-//	public static void setNotes(List<Note> notes) {
-//		NoteBook.notes = notes;
-//	}
-	
+	public void setNotes(List<Note> notes) {
+		this.notes = notes;
+	}
+
 	public List<Note> getNotes() {
 		return notes;
 	}
 
 	public void clearNoteBook() {
-		notes.clear();
-		
-		
+		this.notes.clear();
+
 	}
 
-	public List<Note> FindNotesByContent(String strToFind) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Note> FindNotesByContent(String keyWords) {
+		List<Note> wishContent = new ArrayList<>();
+		for(Note find:notes){
+			if(find.getNote().contains(keyWords))
+				wishContent.add(find);
+		}
+		
+
+		return wishContent;
 	}
 
 	public List<Note> FindNotesByDate(String dateToFind) {
-		// TODO Auto-generated method stub
-		return null;
+
+		List<Note> searchDate = new ArrayList<Note>();
+
+		for (Note wishDate : this.getNotes()) {
+			if (wishDate.getNote().contains(dateToFind)) {
+				searchDate.add(wishDate);
+			}
+		}
+		return searchDate;
 	}
 
 	public void showNotes() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Here is all your notes");
+
 	}
 
 	public void addNote(Note currentNote) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

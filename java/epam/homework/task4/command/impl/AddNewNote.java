@@ -1,5 +1,7 @@
 package epam.homework.task4.command.impl;
 
+import java.util.Date;
+
 import epam.homework.task4.bean.AddNoteRequest;
 import epam.homework.task4.bean.CurrentFileRequest;
 import epam.homework.task4.bean.Request;
@@ -8,6 +10,9 @@ import epam.homework.task4.bean.entity.Note;
 import epam.homework.task4.bean.entity.NoteBook;
 import epam.homework.task4.command.Command;
 import epam.homework.task4.command.exception.CommandException;
+import epam.homework.task4.service.NoteBookService;
+import epam.homework.task4.service.ServiceFactory;
+import epam.homework.task4.service.exception.ServiceException;
 import epam.homework.task4.source.NoteBookProvider;
 
 public class AddNewNote implements Command {
@@ -22,8 +27,26 @@ public class AddNewNote implements Command {
 		} else {
 			throw new CommandException("Wrong request");
 		}
+		
+		String note = req.getNote();
+
+		ServiceFactory service = ServiceFactory.getInstance();
+		NoteBookService nbService = service.getNoteBookService();
+		
+		try {
+			nbService.addNote(note);
+		} catch (ServiceException e) {
+			throw new CommandException();
+		}		
+		
+		
+
+		response.setErrorStatus(false);
+		response.setResultMessage("All OK!");
+
+		
 		// Check connection to file
-		if (CurrentFileRequest.getCurrentFileName() != null) {
+/**		if (CurrentFileRequest.getCurrentFileName() != null) {
 			req.setFileName(CurrentFileRequest.getCurrentFileName());
 		} else {
 			response.setErrorStatus(true);
@@ -38,7 +61,7 @@ public class AddNewNote implements Command {
 		noteBook.add(newNote);
 
 		response.setErrorStatus(false);
-		response.setResultMessage("All OK!");
+		response.setResultMessage("All OK!");**/
 
 		return response;
 	}

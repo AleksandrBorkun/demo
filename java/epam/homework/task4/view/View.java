@@ -46,15 +46,11 @@ public class View {
 			case "1":
 
 				System.out.println("Create new NOTEBOOK.\nEnter the name of your file.");
-				String newFileName;
-				newFileName = in.nextLine() + ".txt";
 				createNoteBook.setCommandName("CREATE_NEW_FILE");
-				createNoteBook.setCreate(newFileName);
 				Response createNoteBookResponse = controller.doRequest(createNoteBook);
 				if (createNoteBookResponse.isErrorStatus() == true) {
 					System.out.println(createNoteBookResponse.getErrorMessage());
 				} else {
-					CurrentFileRequest.setCurrentFileName(newFileName);
 					System.out.println(createNoteBookResponse.getResultMessage());
 				}
 				break;
@@ -108,7 +104,9 @@ public class View {
 			// SAVE ALL TO NOTEBOOK
 			case "5":
 				SaveNotesRequest save = new SaveNotesRequest();
-				System.out.println("Now Progam will save all your notes in NoteBook what you load, or created.");
+				System.out.println("Now Progam will save all your notes in file. Pls write the name of it: \n");
+				String saveFileName = in.nextLine();
+				save.setFileName(saveFileName);
 				save.setCommandName("SAVE");
 				Response saveResponse = controller.doRequest(save);
 				if (saveResponse.isErrorStatus() == true) {

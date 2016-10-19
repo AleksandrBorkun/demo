@@ -22,7 +22,7 @@ public class StAXMenuParser {
 
 		try {
 
-			InputStream input = new FileInputStream("../by.epam.lab.task8/res/menu_task8.xml");
+			InputStream input = new FileInputStream("../by.epam.lab.task8/res/menu-schema.xml");
 			XMLStreamReader reader = inputFactory.createXMLStreamReader(input);
 			List<Dish> menu = process(reader);
 			;
@@ -55,8 +55,8 @@ public class StAXMenuParser {
 
 				case DISH:
 					dish = new Dish();
-					Integer id = Integer.parseInt(reader.getAttributeValue(null, "id"));
-					dish.setId(id);
+	//				Integer id = Integer.parseInt(reader.getAttributeValue(null, "id"));
+	//				dish.setId(id);
 					break;
 				}
 				break;

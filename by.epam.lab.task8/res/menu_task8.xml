@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.example.org/menu_task8"
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.example.org/menu_schema_task8"
 	xsi:schemaLocation="http://www.example.org/menu_schema_task8 menu_schema_task8.xsd">
 
 	<coldSnack>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:menu xmlns:tns="http://www.example.org/menu-schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/menu-schema menu-schema.xsd ">
+  
+  <tns:menuSection dischTypeName="coldSnack">
+    <tns:dish>
+    
+      <tns:picture>http://tempuri.org</tns:picture>
+      <tns:title>tns:title</tns:title>
+      <tns:description>tns:description</tns:description>
+      <tns:portion>tns:portion</tns:portion>
+      <tns:price>0</tns:price>
+    </tns:dish>
+    
+  </tns:menuSection>
+  
+  <tns:menuSection dischTypeName="coldSnack">
+    <tns:dish>
+    
+      <tns:picture>http://tempuri.org</tns:picture>
+      <tns:title>Тарталетки с красной икрой</tns:title>
+      <tns:description>Тарталетки с красной икрой</tns:description>
+      <tns:portion>12</tns:portion>
+      <tns:price>0</tns:price>
+    </tns:dish>
+    
+  </tns:menuSection>
+  
+  <tns:menuSection dischTypeName="coldSnack">
+    <tns:dish>
+    
+      <tns:picture>http://tempuri.org</tns:picture>
+      <tns:title>Тарталетки с красной икрой</tns:title>
+      <tns:description>Тарталетки с красной икрой</tns:description>
+      <tns:portion>4</tns:portion>
+      <tns:price>0</tns:price>
+    </tns:dish>
+    
+  </tns:menuSection>
+  
+</tns:menu>

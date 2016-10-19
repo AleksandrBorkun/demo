@@ -2,7 +2,7 @@ package by.epam.lab.task8.transfer;
 
 public enum MenuTagName {
 
-	DISH, TITLE, PRICE, DESCRIPTION, PORTION, PICTURE, COLDSNACK, MENU;
+	DISH, TITLE, PRICE, DESCRIPTION, PORTION, PICTURE, COLDSNACK, MENU, MENUSECTION;
 
 	public static MenuTagName getElementTagName(String element) {
 
@@ -22,7 +22,9 @@ public enum MenuTagName {
 		case "menu":
 			return MENU;
 		case "picture":
-		return PICTURE;
+			return PICTURE;
+		case "menuSection":
+			return MENUSECTION;
 			default:
 				throw new EnumConstantNotPresentException(MenuTagName.class, element);
 		}

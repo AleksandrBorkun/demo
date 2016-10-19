@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.example.org/menu"
+	xsi:schemaLocation="http://www.example.org/menu-schema menu-schema.xsd">
+
+	<menuSection dischTypeName="coldSnack">
+		<dish>
+			<picture>\menu\image1.jfif</picture>
+			<title>Ассорти рыбное</title>
+			<description>Слабосолёная форель, сёмга</description>
+			<portion>100/20/15</portion>
+			<price></price>
+		</dish>
+		<dish>
+			<picture>reqCircle.jpg</picture>
+			<title>Тарталетки с красной икрой</title>
+			<description>Тарталетки с красной икрой</description>
+			<portion>60/50</portion>
+			<price></price>
+		</dish>
+		<dish>
+			<picture>zakuska.jpg</picture>
+			<title>Закуска по-русски</title>
+			<description>Кусочки атлантической сельди с отварным картофелем,
+				луком, лимоном и зеленью
+			</description>
+			<portion>70/50/2/10</portion>
+			<price></price>
+		</dish>
+		<dish>
+			<picture>chickenRoll.jpg</picture>
+			<title>Куринный рулет</title>
+			<description>Куринный рулет собственного производства</description>
+			<portion>105/5</portion>
+			<price></price>
+		</dish>
+		<dish>
+			<picture>cowMeat.jpg</picture>
+			<title>Бастурма</title>
+			<description>Вяленая вырезка из говяжьего мяса</description>
+			<portion>50/5</portion>
+			<price></price>
+
+		</dish>
+		<dish>
+			<picture>kabachok.jpg</picture>
+			<title>Ассорти баклажаны</title>
+			<description>Жаренные баклажаны с помидорами</description>
+			<portion>100/5</portion>
+			<price>1</price>
+		</dish>
+		<dish>
+			<picture>kabachok.jpg</picture>
+			<title>Ассорти баклажаны</title>
+			<description>Жаренные баклажаны с чесноком</description>
+			<portion>100/5</portion>
+			<price>2</price>
+		</dish>
+		<dish>
+			<picture>kabachok.jpg</picture>
+			<title>Ассорти баклажаны</title>
+			<description>Жаренные баклажаны с орехами</description>
+			<portion>100/5</portion>
+			<price>3</price>
+		</dish>
+	</menuSection>
+
+	<menuSection dischTypeName="hotSnack">
+		<dish>
+			<picture>mashroom.jpg</picture>
+			<title>Лобио с шампиньонами</title>
+			<description>Фасоль с шампиньонами и грецким орехом</description>
+			<portion>150/5</portion>
+			<price>105</price>
+		</dish>
+		<dish>
+			<picture>mashroomWithCheese.jpg</picture>
+			<title>Жульен</title>
+			<description>Жульен с курицей</description>
+			<portion>120/1</portion>
+			<price>145</price>
+		</dish>
+		<dish>
+			<picture>mashroomWithCheese.jpg</picture>
+			<title>Жульен</title>
+			<description>Жульен с грибами</description>
+			<portion>120/1</portion>
+			<price>155</price>
+
+		</dish>
+		<dish>
+			<picture>shrimp.jpg</picture>
+			<title>Креветки</title>
+			<description>Креветки отварные</description>
+			<portion>120/30</portion>
+			<price>135</price>
+		</dish>
+		<dish>
+			<picture>shrimp.jpg</picture>
+			<title>Креветки</title>
+			<description>Креветки жаренные</description>
+			<portion>120/30</portion>
+			<price>155</price>
+		</dish>
+	</menuSection>
+	<menuSection dischTypeName="breakfast">
+		<dish>
+			<picture>eggs.jpg</picture>
+			<title>Глазунья</title>
+			<description>2 яйца (на выбор: ветчина, сыр, помидор)</description>
+			<portion>150</portion>
+			<price></price>
+		</dish>
+	</menuSection>
+</menu>

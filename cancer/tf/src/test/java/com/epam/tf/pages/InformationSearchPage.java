@@ -1,5 +1,7 @@
 package com.epam.tf.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +11,9 @@ public class InformationSearchPage extends AbstractPage {
 		super(driver);
 	}
 
+	@FindBy(xpath = "//tr[@class='patientItem']")
+	private List<WebElement> resultList;
+		
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement submitButton;
 
@@ -61,4 +66,7 @@ public class InformationSearchPage extends AbstractPage {
 		submitButton.click();
 	}
 
+	public List<WebElement> getResultList(){
+		return resultList;
+	}
 }

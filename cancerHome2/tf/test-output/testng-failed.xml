@@ -5,6 +5,7 @@
     <classes>
       <class name="com.epam.tf.tests.InformationSearchByDiagnos">
         <methods>
+          <include name="tearDown"/>
           <include name="startTest"/>
           <include name="setUp"/>
           <include name="initData"/>

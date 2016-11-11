@@ -1,151 +1,333 @@
-2016-11-10 10:23:52,572 ERROR  [main] src\test\resources\test_data_library.xlsx (Не удается найти указанный файл)
-2016-11-10 10:24:50,198 INFO  [main] chrome driver created
-2016-11-10 10:24:51,488 INFO  [main] opening login page
-2016-11-10 10:24:57,666 INFO  [main] try to login in
-2016-11-10 10:25:00,575 INFO  [main] insert search request into search field
-2016-11-10 10:25:00,765 INFO  [main] click Search button
-2016-11-10 10:25:00,929 INFO  [main] try to get result - SurName
-2016-11-10 10:25:03,386 INFO  [main] driver has been closed
-2016-11-10 11:49:02,017 INFO  [main] chrome driver created
-2016-11-10 11:49:03,323 INFO  [main] opening login page
-2016-11-10 11:49:09,755 INFO  [main] try to login in
-2016-11-10 11:49:12,821 INFO  [main] go to Information Search Page
-2016-11-10 11:49:15,277 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-10 11:49:17,836 INFO  [main] driver has been closed
-2016-11-10 11:52:34,557 INFO  [main] chrome driver created
-2016-11-10 11:52:36,965 INFO  [main] opening login page
-2016-11-10 11:52:41,936 INFO  [main] try to login in
-2016-11-10 11:52:46,443 INFO  [main] go to Information Search Page
-2016-11-10 11:52:49,530 INFO  [main] driver has been closed
-2016-11-10 11:53:22,009 INFO  [main] chrome driver created
-2016-11-10 11:53:23,254 INFO  [main] opening login page
-2016-11-10 11:53:26,043 INFO  [main] try to login in
-2016-11-10 11:53:29,441 INFO  [main] go to Information Search Page
-2016-11-10 11:53:33,039 INFO  [main] driver has been closed
-2016-11-10 11:57:43,329 INFO  [main] chrome driver created
-2016-11-10 11:57:44,581 INFO  [main] opening login page
-2016-11-10 11:58:03,008 INFO  [main] try to login in
-2016-11-10 11:58:06,898 INFO  [main] go to Information Search Page
-2016-11-10 11:58:08,449 INFO  [main] driver has been closed
-2016-11-10 12:00:29,706 INFO  [main] chrome driver created
-2016-11-10 12:00:30,960 INFO  [main] opening login page
-2016-11-10 12:00:34,725 INFO  [main] try to login in
-2016-11-10 12:00:37,790 INFO  [main] go to Information Search Page
-2016-11-10 12:00:38,373 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-10 12:00:40,186 INFO  [main] driver has been closed
-2016-11-10 12:12:15,237 INFO  [main] chrome driver created
-2016-11-10 12:12:16,479 INFO  [main] opening login page
-2016-11-10 12:12:21,087 INFO  [main] try to login in
-2016-11-10 12:12:25,114 INFO  [main] go to Information Search Page
-2016-11-10 12:12:26,001 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-10 12:12:28,429 INFO  [main] driver has been closed
-2016-11-10 12:22:57,641 INFO  [main] chrome driver created
-2016-11-10 12:22:58,877 INFO  [main] opening login page
-2016-11-10 12:23:03,083 INFO  [main] try to login in
-2016-11-10 12:23:06,739 INFO  [main] go to Information Search Page
-2016-11-10 12:23:08,751 INFO  [main] driver has been closed
-2016-11-10 12:24:11,488 INFO  [main] chrome driver created
-2016-11-10 12:24:12,723 INFO  [main] opening login page
-2016-11-10 12:24:17,719 INFO  [main] try to login in
-2016-11-10 12:24:20,812 INFO  [main] go to Information Search Page
-2016-11-10 12:24:21,380 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-10 12:24:23,163 INFO  [main] driver has been closed
-2016-11-10 12:35:10,852 INFO  [main] chrome driver created
-2016-11-10 12:35:12,105 INFO  [main] opening login page
-2016-11-10 12:35:15,118 INFO  [main] try to login in
-2016-11-10 12:35:19,007 INFO  [main] go to Information Search Page
-2016-11-10 12:35:19,250 INFO  [main] trying to fill Diagnos
-2016-11-10 12:35:19,741 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-10 12:35:21,847 INFO  [main] driver has been closed
-2016-11-10 12:39:49,170 INFO  [main] chrome driver created
-2016-11-10 12:39:50,693 INFO  [main] opening login page
-2016-11-10 12:39:57,076 INFO  [main] try to login in
-2016-11-10 12:40:00,098 INFO  [main] go to Information Search Page
-2016-11-10 12:40:00,317 INFO  [main] trying to fill Diagnos
-2016-11-10 12:40:03,579 INFO  [main] driver has been closed
-2016-11-10 12:46:10,024 INFO  [main] chrome driver created
-2016-11-10 12:46:11,327 INFO  [main] opening login page
-2016-11-10 12:46:14,635 INFO  [main] try to login in
-2016-11-10 12:46:17,418 INFO  [main] go to Information Search Page
-2016-11-10 12:46:17,616 INFO  [main] trying to fill Diagnos
-2016-11-10 12:46:18,432 INFO  [main] trying to fill Diagnos Attribute
-2016-11-10 12:46:19,052 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-10 12:46:21,483 INFO  [main] driver has been closed
-2016-11-10 12:47:00,758 INFO  [main] chrome driver created
-2016-11-10 12:47:02,116 INFO  [main] opening login page
-2016-11-10 12:47:06,890 INFO  [main] try to login in
-2016-11-10 12:47:09,980 INFO  [main] go to Information Search Page
-2016-11-10 12:47:10,224 INFO  [main] trying to fill Diagnos
-2016-11-10 12:47:10,897 INFO  [main] trying to fill Diagnos Attribute
-2016-11-10 12:47:11,470 INFO  [main] trying to fill requisite
-2016-11-10 12:47:12,019 INFO  [main] trying to fill requisite attr
-2016-11-10 12:47:12,642 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-10 12:47:14,031 INFO  [main] driver has been closed
-2016-11-10 12:47:57,537 INFO  [main] chrome driver created
-2016-11-10 12:47:58,799 INFO  [main] opening login page
-2016-11-10 12:48:02,463 INFO  [main] try to login in
-2016-11-10 12:48:04,981 INFO  [main] go to Information Search Page
-2016-11-10 12:48:05,248 INFO  [main] trying to fill Diagnos
-2016-11-10 12:48:05,924 INFO  [main] trying to fill Diagnos Attribute
-2016-11-10 12:48:06,561 INFO  [main] trying to fill requisite
-2016-11-10 12:48:07,133 INFO  [main] trying to fill requisite attr
-2016-11-10 12:48:07,652 INFO  [main] trying to fill date field
-2016-11-10 12:48:08,161 INFO  [main] trying to click sumbit button
-2016-11-10 12:48:09,728 INFO  [main] driver has been closed
-2016-11-11 00:24:03,086 INFO  [main] chrome driver created
-2016-11-11 00:24:04,342 INFO  [main] opening login page
-2016-11-11 00:24:08,697 INFO  [main] try to login in
-2016-11-11 00:24:11,366 INFO  [main] go to Information Search Page
-2016-11-11 00:24:11,568 INFO  [main] trying to fill Diagnos
-2016-11-11 00:24:29,146 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-11 00:24:31,601 INFO  [main] driver has been closed
-2016-11-11 00:25:58,851 INFO  [main] chrome driver created
-2016-11-11 00:26:00,142 INFO  [main] opening login page
-2016-11-11 00:26:03,810 INFO  [main] try to login in
-2016-11-11 00:26:06,748 INFO  [main] go to Information Search Page
-2016-11-11 00:26:06,940 INFO  [main] trying to fill Diagnos
-2016-11-11 00:26:22,862 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-11 00:26:24,619 INFO  [main] driver has been closed
-2016-11-11 00:28:27,065 INFO  [main] chrome driver created
-2016-11-11 00:28:28,432 INFO  [main] opening login page
-2016-11-11 00:28:31,889 INFO  [main] try to login in
-2016-11-11 00:28:32,531 INFO  [main] go to Information Search Page
-2016-11-11 00:28:35,207 INFO  [main] trying to fill Diagnos
-2016-11-11 00:28:35,966 INFO  [main] trying to fill Diagnos Attribute
-2016-11-11 00:28:36,495 INFO  [main] trying to fill requisite
-2016-11-11 00:28:37,556 INFO  [main] trying to fill requisite attr
-2016-11-11 00:28:38,051 INFO  [main] trying to fill date field
-2016-11-11 00:28:53,650 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-11 00:28:55,248 INFO  [main] driver has been closed
-2016-11-11 00:32:29,885 INFO  [main] chrome driver created
-2016-11-11 00:32:31,136 INFO  [main] opening login page
-2016-11-11 00:32:35,164 INFO  [main] try to login in
-2016-11-11 00:32:37,861 INFO  [main] go to Information Search Page
-2016-11-11 00:32:38,098 INFO  [main] trying to fill Diagnos
-2016-11-11 00:32:38,830 INFO  [main] trying to fill Diagnos Attribute
-2016-11-11 00:32:39,426 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-11 00:32:41,044 INFO  [main] driver has been closed
-2016-11-11 00:47:14,966 INFO  [main] chrome driver created
-2016-11-11 00:47:16,394 INFO  [main] opening login page
-2016-11-11 00:47:20,175 INFO  [main] try to login in
-2016-11-11 00:47:22,875 INFO  [main] go to Information Search Page
-2016-11-11 00:47:23,132 INFO  [main] trying to fill Diagnos
-2016-11-11 00:47:23,901 INFO  [main] trying to fill Diagnos Attribute
-2016-11-11 00:47:24,513 INFO  [main] trying to fill requisite
-2016-11-11 00:47:31,199 INFO  [main] trying to fill requisite attr
-2016-11-11 00:47:31,934 INFO  [main] trying to fill date field
-2016-11-11 00:47:32,527 INFO  [main] trying to click sumbit button
-2016-11-11 00:47:34,343 INFO  [main] driver has been closed
-2016-11-11 00:48:10,952 INFO  [main] chrome driver created
-2016-11-11 00:48:12,182 INFO  [main] opening login page
-2016-11-11 00:48:14,766 INFO  [main] try to login in
-2016-11-11 00:48:15,556 INFO  [main] go to Information Search Page
-2016-11-11 00:48:17,587 INFO  [main] trying to fill Diagnos
-2016-11-11 00:48:18,266 INFO  [main] trying to fill Diagnos Attribute
-2016-11-11 00:48:18,855 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
-2016-11-11 00:48:20,605 INFO  [main] driver has been closed
-2016-11-11 00:48:59,549 INFO  [main] chrome driver created
-2016-11-11 00:49:00,911 INFO  [main] opening login page
-2016-11-11 00:49:42,305 INFO  [main] chrome driver created
-2016-11-11 00:49:43,538 INFO  [main] opening login page
-2016-11-11 00:49:48,067 INFO  [main] try to login in
+2016-11-09 13:57:07,103 ERROR  [main] src\test\resources\test_data_library.xlsx (The system cannot find the file specified)
+2016-11-09 14:01:11,155 INFO  [main] chrome driver created
+2016-11-09 14:01:12,772 INFO  [main] opening login page
+2016-11-09 14:01:16,063 INFO  [main] try to login in
+2016-11-09 14:06:27,334 INFO  [main] chrome driver created
+2016-11-09 14:06:28,810 INFO  [main] opening login page
+2016-11-09 14:06:31,607 INFO  [main] try to login in
+2016-11-09 14:06:33,472 INFO  [main] go to New Patient Page
+2016-11-09 14:06:49,196 ERROR  [main] oneCanAddNewPatient screenshot saved: ./target/screenshots/0.png
+2016-11-09 14:06:50,637 INFO  [main] driver has been closed
+2016-11-09 14:15:28,107 INFO  [main] chrome driver created
+2016-11-09 14:15:29,610 INFO  [main] opening login page
+2016-11-09 14:15:35,340 INFO  [main] try to login in
+2016-11-09 14:20:51,468 INFO  [main] chrome driver created
+2016-11-09 14:20:53,121 INFO  [main] opening login page
+2016-11-09 14:20:56,286 INFO  [main] try to login in
+2016-11-09 14:21:01,476 INFO  [main] go to New Patient Page
+2016-11-09 14:21:02,764 INFO  [main] filling passport info
+2016-11-09 14:21:04,348 INFO  [main] 
+2016-11-09 14:21:04,813 INFO  [main] 
+2016-11-09 14:22:00,662 INFO  [main] driver has been closed
+2016-11-10 16:09:05,042 INFO  [main] chrome driver created
+2016-11-10 16:09:06,821 INFO  [main] opening login page
+2016-11-10 16:09:09,349 INFO  [main] try to login in
+2016-11-10 16:09:11,214 INFO  [main] go to Information Search Page
+2016-11-10 16:09:11,350 INFO  [main] trying to fill Diagnos
+2016-11-10 16:09:11,879 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:09:12,143 INFO  [main] trying to fill requisite
+2016-11-10 16:09:12,445 INFO  [main] trying to fill requisite attr
+2016-11-10 16:09:12,737 INFO  [main] trying to fill date field
+2016-11-10 16:09:12,935 INFO  [main] trying to click sumbit button
+2016-11-10 16:09:14,458 INFO  [main] driver has been closed
+2016-11-10 16:11:03,678 INFO  [main] chrome driver created
+2016-11-10 16:11:05,168 INFO  [main] opening login page
+2016-11-10 16:11:07,373 INFO  [main] try to login in
+2016-11-10 16:11:08,838 INFO  [main] go to Information Search Page
+2016-11-10 16:11:08,969 INFO  [main] trying to fill Diagnos
+2016-11-10 16:11:09,479 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:11:09,717 INFO  [main] trying to fill requisite
+2016-11-10 16:11:10,018 INFO  [main] trying to fill requisite attr
+2016-11-10 16:11:10,324 INFO  [main] trying to fill date field
+2016-11-10 16:11:35,255 INFO  [main] chrome driver created
+2016-11-10 16:11:36,723 INFO  [main] opening login page
+2016-11-10 16:11:38,467 INFO  [main] try to login in
+2016-11-10 16:11:40,055 INFO  [main] go to Information Search Page
+2016-11-10 16:11:40,227 INFO  [main] trying to fill Diagnos
+2016-11-10 16:11:40,747 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:11:41,042 INFO  [main] trying to fill requisite
+2016-11-10 16:11:41,321 INFO  [main] trying to fill requisite attr
+2016-11-10 16:11:41,625 INFO  [main] trying to fill date field
+2016-11-10 16:11:57,054 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-10 16:11:58,188 INFO  [main] driver has been closed
+2016-11-10 16:12:47,894 INFO  [main] chrome driver created
+2016-11-10 16:12:49,360 INFO  [main] opening login page
+2016-11-10 16:12:50,904 INFO  [main] try to login in
+2016-11-10 16:12:52,353 INFO  [main] go to Information Search Page
+2016-11-10 16:12:52,505 INFO  [main] trying to fill Diagnos
+2016-11-10 16:12:52,976 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:12:53,226 INFO  [main] trying to fill requisite
+2016-11-10 16:12:53,516 INFO  [main] trying to fill requisite attr
+2016-11-10 16:12:53,773 INFO  [main] trying to fill date field
+2016-11-10 16:13:09,081 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-10 16:13:09,979 INFO  [main] driver has been closed
+2016-11-10 16:14:24,541 INFO  [main] chrome driver created
+2016-11-10 16:14:26,011 INFO  [main] opening login page
+2016-11-10 16:14:27,435 INFO  [main] try to login in
+2016-11-10 16:14:28,976 INFO  [main] go to Information Search Page
+2016-11-10 16:14:29,102 INFO  [main] trying to fill Diagnos
+2016-11-10 16:14:29,608 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:14:29,845 INFO  [main] trying to fill requisite
+2016-11-10 16:14:30,129 INFO  [main] trying to fill requisite attr
+2016-11-10 16:14:30,335 INFO  [main] trying to fill date field
+2016-11-10 16:14:45,652 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-10 16:14:46,600 INFO  [main] driver has been closed
+2016-11-10 16:15:39,394 INFO  [main] chrome driver created
+2016-11-10 16:15:40,853 INFO  [main] opening login page
+2016-11-10 16:15:42,483 INFO  [main] try to login in
+2016-11-10 16:15:44,012 INFO  [main] go to Information Search Page
+2016-11-10 16:15:44,170 INFO  [main] trying to fill Diagnos
+2016-11-10 16:15:44,693 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:15:44,968 INFO  [main] trying to fill requisite
+2016-11-10 16:15:45,243 INFO  [main] trying to fill requisite attr
+2016-11-10 16:15:45,443 INFO  [main] trying to fill date field
+2016-11-10 16:16:00,759 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-10 16:16:01,706 INFO  [main] driver has been closed
+2016-11-10 16:17:19,605 INFO  [main] chrome driver created
+2016-11-10 16:17:21,085 INFO  [main] opening login page
+2016-11-10 16:17:22,487 INFO  [main] try to login in
+2016-11-10 16:17:24,129 INFO  [main] go to Information Search Page
+2016-11-10 16:17:24,270 INFO  [main] trying to fill Diagnos
+2016-11-10 16:17:24,776 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:17:25,022 INFO  [main] trying to fill requisite
+2016-11-10 16:17:25,305 INFO  [main] trying to fill requisite attr
+2016-11-10 16:17:25,520 INFO  [main] trying to fill date field
+2016-11-10 16:17:38,037 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-10 16:17:38,986 INFO  [main] driver has been closed
+2016-11-10 16:19:13,725 INFO  [main] chrome driver created
+2016-11-10 16:19:15,177 INFO  [main] opening login page
+2016-11-10 16:19:16,925 INFO  [main] try to login in
+2016-11-10 16:19:18,377 INFO  [main] go to Information Search Page
+2016-11-10 16:19:18,515 INFO  [main] trying to fill Diagnos
+2016-11-10 16:19:19,101 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:19:19,370 INFO  [main] trying to fill requisite
+2016-11-10 16:19:19,638 INFO  [main] trying to fill requisite attr
+2016-11-10 16:19:19,838 INFO  [main] trying to fill date field
+2016-11-10 16:19:31,999 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-10 16:19:32,901 INFO  [main] driver has been closed
+2016-11-10 16:21:18,857 INFO  [main] chrome driver created
+2016-11-10 16:21:20,313 INFO  [main] opening login page
+2016-11-10 16:21:21,877 INFO  [main] try to login in
+2016-11-10 16:21:23,683 INFO  [main] go to Information Search Page
+2016-11-10 16:21:23,808 INFO  [main] trying to fill Diagnos
+2016-11-10 16:21:24,367 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:21:24,640 INFO  [main] trying to fill requisite
+2016-11-10 16:21:24,976 INFO  [main] trying to fill requisite attr
+2016-11-10 16:21:25,210 INFO  [main] trying to fill date field
+2016-11-10 16:23:26,187 INFO  [main] chrome driver created
+2016-11-10 16:23:27,656 INFO  [main] opening login page
+2016-11-10 16:23:29,551 INFO  [main] try to login in
+2016-11-10 16:23:31,236 INFO  [main] go to Information Search Page
+2016-11-10 16:23:31,411 INFO  [main] trying to fill Diagnos
+2016-11-10 16:23:31,970 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:23:32,239 INFO  [main] trying to fill requisite
+2016-11-10 16:23:32,554 INFO  [main] trying to fill requisite attr
+2016-11-10 16:23:32,786 INFO  [main] trying to fill date field
+2016-11-10 16:23:33,026 INFO  [main] trying to click sumbit button
+2016-11-10 16:23:34,082 INFO  [main] driver has been closed
+2016-11-10 16:24:09,466 INFO  [main] chrome driver created
+2016-11-10 16:24:10,939 INFO  [main] opening login page
+2016-11-10 16:24:12,556 INFO  [main] try to login in
+2016-11-10 16:24:14,302 INFO  [main] go to Information Search Page
+2016-11-10 16:24:14,423 INFO  [main] trying to fill Diagnos
+2016-11-10 16:24:15,005 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:24:15,393 INFO  [main] trying to fill requisite
+2016-11-10 16:24:15,709 INFO  [main] trying to fill requisite attr
+2016-11-10 16:24:15,966 INFO  [main] trying to fill date field
+2016-11-10 16:24:16,203 INFO  [main] trying to click sumbit button
+2016-11-10 16:24:17,332 INFO  [main] driver has been closed
+2016-11-10 16:25:15,417 INFO  [main] chrome driver created
+2016-11-10 16:25:16,878 INFO  [main] opening login page
+2016-11-10 16:25:18,416 INFO  [main] try to login in
+2016-11-10 16:25:19,860 INFO  [main] go to Information Search Page
+2016-11-10 16:25:20,004 INFO  [main] trying to fill Diagnos
+2016-11-10 16:25:20,519 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:25:20,769 INFO  [main] trying to fill requisite
+2016-11-10 16:25:21,083 INFO  [main] trying to fill requisite attr
+2016-11-10 16:25:21,321 INFO  [main] trying to fill date field
+2016-11-10 16:29:40,509 INFO  [main] chrome driver created
+2016-11-10 16:29:41,982 INFO  [main] opening login page
+2016-11-10 16:29:43,706 INFO  [main] try to login in
+2016-11-10 16:29:45,374 INFO  [main] go to Information Search Page
+2016-11-10 16:29:45,511 INFO  [main] trying to fill Diagnos
+2016-11-10 16:29:46,030 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:29:46,292 INFO  [main] trying to fill requisite
+2016-11-10 16:29:46,610 INFO  [main] trying to fill requisite attr
+2016-11-10 16:29:46,843 INFO  [main] trying to fill date field
+2016-11-10 16:30:52,869 INFO  [main] chrome driver created
+2016-11-10 16:30:54,337 INFO  [main] opening login page
+2016-11-10 16:30:56,016 INFO  [main] try to login in
+2016-11-10 16:30:57,849 INFO  [main] go to Information Search Page
+2016-11-10 16:30:58,004 INFO  [main] trying to fill Diagnos
+2016-11-10 16:30:58,587 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:30:58,857 INFO  [main] trying to fill requisite
+2016-11-10 16:30:59,181 INFO  [main] trying to fill requisite attr
+2016-11-10 16:30:59,431 INFO  [main] trying to fill date field
+2016-11-10 16:31:14,755 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-10 16:31:16,830 INFO  [main] driver has been closed
+2016-11-10 16:35:38,686 INFO  [main] chrome driver created
+2016-11-10 16:35:40,136 INFO  [main] opening login page
+2016-11-10 16:35:41,815 INFO  [main] try to login in
+2016-11-10 16:35:43,481 INFO  [main] go to Information Search Page
+2016-11-10 16:35:43,620 INFO  [main] trying to fill Diagnos
+2016-11-10 16:35:44,118 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:35:44,365 INFO  [main] trying to fill requisite
+2016-11-10 16:35:44,929 INFO  [main] trying to fill requisite attr
+2016-11-10 16:35:45,140 INFO  [main] trying to fill date field
+2016-11-10 16:35:45,648 INFO  [main] trying to click sumbit button
+2016-11-10 16:35:46,657 INFO  [main] driver has been closed
+2016-11-10 16:36:57,062 INFO  [main] chrome driver created
+2016-11-10 16:36:58,534 INFO  [main] opening login page
+2016-11-10 16:37:00,191 INFO  [main] try to login in
+2016-11-10 16:37:01,805 INFO  [main] go to Information Search Page
+2016-11-10 16:37:01,937 INFO  [main] trying to fill Diagnos
+2016-11-10 16:37:02,394 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:37:02,660 INFO  [main] trying to fill requisite
+2016-11-10 16:37:02,945 INFO  [main] trying to fill requisite attr
+2016-11-10 16:37:03,170 INFO  [main] trying to fill date field
+2016-11-10 16:37:18,524 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-10 16:37:19,550 INFO  [main] driver has been closed
+2016-11-10 16:39:49,572 INFO  [main] chrome driver created
+2016-11-10 16:39:51,030 INFO  [main] opening login page
+2016-11-10 16:39:52,498 INFO  [main] try to login in
+2016-11-10 16:39:53,979 INFO  [main] go to Information Search Page
+2016-11-10 16:39:54,096 INFO  [main] trying to fill Diagnos
+2016-11-10 16:39:54,561 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:39:54,850 INFO  [main] trying to fill requisite
+2016-11-10 16:39:55,179 INFO  [main] trying to fill requisite attr
+2016-11-10 16:39:55,488 INFO  [main] trying to fill date field
+2016-11-10 16:39:55,709 INFO  [main] trying to click sumbit button
+2016-11-10 16:39:55,810 INFO  [main] return serach result
+2016-11-10 16:39:56,736 INFO  [main] driver has been closed
+2016-11-10 16:41:09,442 INFO  [main] chrome driver created
+2016-11-10 16:41:10,908 INFO  [main] opening login page
+2016-11-10 16:41:12,906 INFO  [main] try to login in
+2016-11-10 16:41:14,495 INFO  [main] go to Information Search Page
+2016-11-10 16:41:14,632 INFO  [main] trying to fill Diagnos
+2016-11-10 16:41:15,143 INFO  [main] trying to fill Diagnos Attribute
+2016-11-10 16:41:15,367 INFO  [main] trying to fill requisite
+2016-11-10 16:41:15,671 INFO  [main] trying to fill requisite attr
+2016-11-10 16:41:15,882 INFO  [main] trying to fill date field
+2016-11-10 16:41:16,105 INFO  [main] trying to click sumbit button
+2016-11-10 16:41:16,203 INFO  [main] return serach result
+2016-11-10 16:41:17,944 INFO  [main] driver has been closed
+2016-11-11 14:07:31,152 INFO  [main] chrome driver created
+2016-11-11 14:07:33,246 INFO  [main] opening login page
+2016-11-11 14:07:36,170 INFO  [main] try to login in
+2016-11-11 14:07:38,058 INFO  [main] go to Information Search Page
+2016-11-11 14:07:38,170 INFO  [main] trying to fill Diagnos
+2016-11-11 14:07:38,856 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:07:39,525 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-11 14:07:40,771 INFO  [main] driver has been closed
+2016-11-11 14:07:49,529 INFO  [main] chrome driver created
+2016-11-11 14:07:51,003 INFO  [main] opening login page
+2016-11-11 14:07:52,570 INFO  [main] try to login in
+2016-11-11 14:07:53,972 INFO  [main] go to Information Search Page
+2016-11-11 14:07:54,105 INFO  [main] trying to fill Diagnos
+2016-11-11 14:07:54,797 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:07:55,242 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-11 14:07:56,330 INFO  [main] driver has been closed
+2016-11-11 14:08:11,062 INFO  [main] chrome driver created
+2016-11-11 14:08:12,547 INFO  [main] opening login page
+2016-11-11 14:08:14,161 INFO  [main] try to login in
+2016-11-11 14:08:15,829 INFO  [main] go to Information Search Page
+2016-11-11 14:08:15,981 INFO  [main] trying to fill Diagnos
+2016-11-11 14:08:16,681 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:08:17,125 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-11 14:08:18,088 INFO  [main] driver has been closed
+2016-11-11 14:18:17,505 INFO  [main] chrome driver created
+2016-11-11 14:18:18,991 INFO  [main] opening login page
+2016-11-11 14:18:21,438 INFO  [main] try to login in
+2016-11-11 14:18:22,952 INFO  [main] go to Information Search Page
+2016-11-11 14:18:23,101 INFO  [main] trying to fill Diagnos
+2016-11-11 14:18:23,711 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:18:39,236 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-11 14:18:40,206 INFO  [main] driver has been closed
+2016-11-11 14:19:07,434 INFO  [main] chrome driver created
+2016-11-11 14:19:08,897 INFO  [main] opening login page
+2016-11-11 14:19:10,451 INFO  [main] try to login in
+2016-11-11 14:19:12,042 INFO  [main] go to Information Search Page
+2016-11-11 14:19:12,216 INFO  [main] trying to fill Diagnos
+2016-11-11 14:19:12,816 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:19:23,170 INFO  [main] trying to fill requisite
+2016-11-11 14:19:24,886 INFO  [main] trying to fill requisite attr
+2016-11-11 14:19:26,030 INFO  [main] trying to fill date field
+2016-11-11 14:19:26,420 INFO  [main] trying to click sumbit button
+2016-11-11 14:19:26,587 INFO  [main] return serach result
+2016-11-11 14:19:27,531 INFO  [main] driver has been closed
+2016-11-11 14:20:10,887 INFO  [main] chrome driver created
+2016-11-11 14:20:12,348 INFO  [main] opening login page
+2016-11-11 14:20:14,222 INFO  [main] try to login in
+2016-11-11 14:20:15,792 INFO  [main] go to Information Search Page
+2016-11-11 14:20:15,909 INFO  [main] trying to fill Diagnos
+2016-11-11 14:20:16,603 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:20:17,063 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-11 14:20:17,988 INFO  [main] driver has been closed
+2016-11-11 14:23:19,003 INFO  [main] chrome driver created
+2016-11-11 14:23:20,466 INFO  [main] opening login page
+2016-11-11 14:23:22,222 INFO  [main] try to login in
+2016-11-11 14:23:23,789 INFO  [main] go to Information Search Page
+2016-11-11 14:23:23,943 INFO  [main] trying to fill Diagnos
+2016-11-11 14:23:24,652 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:23:26,411 INFO  [main] trying to fill requisite
+2016-11-11 14:23:27,913 INFO  [main] trying to fill requisite attr
+2016-11-11 14:23:28,765 INFO  [main] trying to fill date field
+2016-11-11 14:23:29,138 INFO  [main] trying to click sumbit button
+2016-11-11 14:23:29,278 INFO  [main] return serach result
+2016-11-11 14:23:30,250 INFO  [main] driver has been closed
+2016-11-11 14:25:43,856 INFO  [main] chrome driver created
+2016-11-11 14:25:45,318 INFO  [main] opening login page
+2016-11-11 14:25:47,632 INFO  [main] try to login in
+2016-11-11 14:25:49,202 INFO  [main] go to Information Search Page
+2016-11-11 14:25:49,364 INFO  [main] trying to fill Diagnos
+2016-11-11 14:25:50,029 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:25:59,092 ERROR  [main] startTest screenshot saved: ./target/screenshots/0.png
+2016-11-11 14:26:00,099 INFO  [main] driver has been closed
+2016-11-11 14:26:34,189 INFO  [main] chrome driver created
+2016-11-11 14:26:35,761 INFO  [main] opening login page
+2016-11-11 14:26:37,485 INFO  [main] try to login in
+2016-11-11 14:26:39,160 INFO  [main] go to Information Search Page
+2016-11-11 14:26:39,283 INFO  [main] trying to fill Diagnos
+2016-11-11 14:26:40,050 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:26:41,288 INFO  [main] trying to fill requisite
+2016-11-11 14:26:42,159 INFO  [main] trying to fill requisite attr
+2016-11-11 14:26:43,061 INFO  [main] trying to fill date field
+2016-11-11 14:26:43,409 INFO  [main] trying to click sumbit button
+2016-11-11 14:26:43,563 INFO  [main] return serach result
+2016-11-11 14:26:44,434 INFO  [main] driver has been closed
+2016-11-11 14:30:49,970 INFO  [main] chrome driver created
+2016-11-11 14:30:51,454 INFO  [main] opening login page
+2016-11-11 14:30:53,382 INFO  [main] try to login in
+2016-11-11 14:30:54,909 INFO  [main] go to Information Search Page
+2016-11-11 14:30:55,029 INFO  [main] trying to fill Diagnos
+2016-11-11 14:30:55,721 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:30:56,213 INFO  [main] trying to fill requisite
+2016-11-11 14:31:00,061 INFO  [main] trying to fill requisite attr
+2016-11-11 14:31:00,948 INFO  [main] trying to fill date field
+2016-11-11 14:31:01,310 INFO  [main] trying to click sumbit button
+2016-11-11 14:31:01,485 INFO  [main] return serach result
+2016-11-11 14:31:02,554 INFO  [main] driver has been closed
+2016-11-11 14:35:06,894 INFO  [main] chrome driver created
+2016-11-11 14:35:08,382 INFO  [main] opening login page
+2016-11-11 14:35:10,305 INFO  [main] try to login in
+2016-11-11 14:35:11,789 INFO  [main] go to Information Search Page
+2016-11-11 14:35:11,915 INFO  [main] trying to fill Diagnos
+2016-11-11 14:35:12,547 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:35:12,969 INFO  [main] trying to fill requisite
+2016-11-11 14:35:14,940 INFO  [main] trying to fill requisite attr
+2016-11-11 14:35:15,859 INFO  [main] trying to fill date field
+2016-11-11 14:35:16,241 INFO  [main] trying to click sumbit button
+2016-11-11 14:35:16,369 INFO  [main] return serach result
+2016-11-11 14:35:17,298 INFO  [main] driver has been closed
+2016-11-11 14:36:38,249 INFO  [main] chrome driver created
+2016-11-11 14:36:39,742 INFO  [main] opening login page
+2016-11-11 14:36:41,365 INFO  [main] try to login in
+2016-11-11 14:36:42,922 INFO  [main] go to Information Search Page
+2016-11-11 14:36:43,078 INFO  [main] trying to fill Diagnos
+2016-11-11 14:36:43,686 INFO  [main] trying to fill Diagnos Attribute
+2016-11-11 14:36:44,121 INFO  [main] trying to fill requisite
+2016-11-11 14:36:47,113 INFO  [main] trying to fill requisite attr
+2016-11-11 14:36:48,340 INFO  [main] trying to fill date field
+2016-11-11 14:36:48,677 INFO  [main] trying to click sumbit button
+2016-11-11 14:36:48,805 INFO  [main] return serach result
+2016-11-11 14:36:49,698 INFO  [main] driver has been closed

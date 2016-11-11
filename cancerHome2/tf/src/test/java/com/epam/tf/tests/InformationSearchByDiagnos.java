@@ -1,5 +1,6 @@
 package com.epam.tf.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -10,9 +11,10 @@ public class InformationSearchByDiagnos extends BaseTest{
 
 	@Test
 	public void startTest(){
-		mainPageSteps.goToInformationSerchPage().fillFragmentField().fillFragmentAttributeField().fillRequisiteField().fillRequisiteAttributeField().fillDateField().clickSumbitButton();
-		
-		
+		Assert.assertFalse(mainPageSteps.goToInformationSerchPage().fillFragmentField().fillFragmentAttributeField()
+				.fillRequisiteField().fillRequisiteAttributeField().fillDateField().clickSumbitButton()
+				.getSearchResult() == null);
+	
 		
 	}
 }

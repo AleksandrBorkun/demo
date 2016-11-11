@@ -19,6 +19,26 @@ public class MainPage extends AbstractPage {
 	private WebElement resultSurName;
 	@FindBy(id = "819033581")
 	private WebElement informationSearchButton;
+	@FindBy(xpath = "//span[@class='nodeHeader']")
+	private WebElement regulatedSearch;
+
+	@FindBy(xpath = "//span[text() = 'Анализ поздней диагностики']")
+	private WebElement lastAnalysisDiagnose;
+
+	@FindBy(xpath = "//*[text()='Больные IV стадии']")
+	private WebElement patientsOfForthStage;
+
+	public void clickPatientsOfForthStage() {
+		patientsOfForthStage.click();
+	}
+
+	public void clickLastAnalysisDiagnose() {
+		lastAnalysisDiagnose.click();
+	}
+
+	public void getRegulatedSearch() {
+		regulatedSearch.click();
+	}
 
 	public void goToInformationSearchPage() {
 		informationSearchButton.click();

@@ -1,15 +1,18 @@
 package com.epam.tf.steps;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.epam.tf.pages.InformationSearchPage;
 
 public class InformationSearchByDiagnosSteps extends AbstractSteps{
 
-	private final String fragment = "Диагноз";
-	private final String fragmentAttribute = "Все записи";
-	private final String requisite = "Дата установления диагноза";
-	private final String requisiteAttribute = "меньше";
+//	private final String fragment = "Диагноз";
+//	private final String fragmentAttribute = "Все записи";
+//	private final String requisite = "Дата установления диагноза";
+//	private final String requisiteAttribute = "меньше";
 	private final String date = "10112016";
 
 	public InformationSearchByDiagnosSteps(WebDriver driver) {
@@ -21,14 +24,14 @@ public class InformationSearchByDiagnosSteps extends AbstractSteps{
 	public InformationSearchByDiagnosSteps fillFragmentField(){
 		log.info("trying to fill Diagnos");
 		infoSerchPage = new InformationSearchPage(driver);
-		infoSerchPage.fillFragmentField(fragment);
+		infoSerchPage.fillFragmentField();
 	return this;
 		
 	}
 	
 	public InformationSearchByDiagnosSteps fillFragmentAttributeField(){
 		log.info("trying to fill Diagnos Attribute");
-		infoSerchPage.fillFragmentAttributeField(fragmentAttribute);
+		infoSerchPage.fillFragmentAttributeField();
 	return this;
 		
 	}
@@ -36,7 +39,7 @@ public class InformationSearchByDiagnosSteps extends AbstractSteps{
 	
 	public InformationSearchByDiagnosSteps fillRequisiteField(){
 		log.info("trying to fill requisite");
-		infoSerchPage.fillRequisiteField(requisite);
+		infoSerchPage.fillRequisiteField();
 	return this;
 		
 	}
@@ -44,7 +47,7 @@ public class InformationSearchByDiagnosSteps extends AbstractSteps{
 	
 	public InformationSearchByDiagnosSteps fillRequisiteAttributeField(){
 		log.info("trying to fill requisite attr");
-		infoSerchPage.fillRequisiteAttributeField(requisite);
+		infoSerchPage.fillRequisiteAttributeField();
 	return this;
 		
 	}
@@ -61,5 +64,11 @@ public class InformationSearchByDiagnosSteps extends AbstractSteps{
 		infoSerchPage.clickSumbit();
 	return this;
 	}
+	
+	public List<WebElement> getSearchResult() {
+		log.info("return serach result");
+		return infoSerchPage.getResultList();
+	}
+
 
 }

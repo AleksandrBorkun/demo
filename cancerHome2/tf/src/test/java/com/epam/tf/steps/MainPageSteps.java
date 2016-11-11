@@ -1,6 +1,8 @@
 package com.epam.tf.steps;
 
 import com.epam.tf.pages.MainPage;
+import com.epam.tf.tests.SearchPatientForthStage;
+
 import org.openqa.selenium.WebDriver;
 
 public class MainPageSteps extends AbstractSteps{
@@ -15,6 +17,13 @@ public class MainPageSteps extends AbstractSteps{
     	mainPage = new MainPage(driver);
     	mainPage.goToInformationSearchPage();
     	return new InformationSearchByDiagnosSteps(driver);
+    }
+    
+    public SearchPatientForthStageSteps goToSearchPatientForthStage(){
+    	log.info("go to search patient forth stage");
+    	mainPage = new MainPage(driver);
+    	mainPage.getRegulatedSearch();
+    	return new SearchPatientForthStageSteps(driver);
     }
 
     public NewPatientPageSteps goToNewPatientForm() {

@@ -1,52 +1,51 @@
 package com.epam.tf.steps;
 
 import com.epam.tf.pages.MainPage;
-import com.epam.tf.tests.SearchPatientForthStage;
-
 import org.openqa.selenium.WebDriver;
 
-public class MainPageSteps extends AbstractSteps{
-    public MainPageSteps(WebDriver driver) {
-        super(driver);
-        this.mainPage = new MainPage(driver);
-    }
-    private MainPage mainPage;
+public class MainPageSteps extends AbstractSteps {
+	public MainPageSteps(WebDriver driver) {
+		super(driver);
+		this.mainPage = new MainPage(driver);
+	}
 
-    public InformationSearchByDiagnosSteps goToInformationSerchPage(){
-    	log.info("go to Information Search Page");
-    	mainPage = new MainPage(driver);
-    	mainPage.goToInformationSearchPage();
-    	return new InformationSearchByDiagnosSteps(driver);
-    }
-    
-    public SearchPatientForthStageSteps goToSearchPatientForthStage(){
-    	log.info("go to search patient forth stage");
-    	mainPage = new MainPage(driver);
-    	mainPage.getRegulatedSearch();
-    	return new SearchPatientForthStageSteps(driver);
-    }
+	private MainPage mainPage;
 
-    public NewPatientPageSteps goToNewPatientForm() {
-        log.info("go to New Patient Page");
-        mainPage = new MainPage(driver);
-        mainPage.goToNewPatientForm();
-        return new NewPatientPageSteps(driver);
-    }
+	public InformationSearchByDiagnosSteps goToInformationSerchPage() {
+		log.info("go to Information Search Page");
+		mainPage = new MainPage(driver);
+		mainPage.goToInformationSearchPage();
+		return new InformationSearchByDiagnosSteps(driver);
+	}
 
-    public MainPageSteps insertSurNameIntoSearchField(String searchRequestSurName) {
-        log.info("insert search request into search field");
-        mainPage.insertSurNameIntoSearchField(searchRequestSurName);
-        return this;
-    }
+	public SearchPatientForthStageSteps goToSearchPatientForthStage() {
+		log.info("go to search patient forth stage");
+		mainPage = new MainPage(driver);
+		mainPage.getRegulatedSearchPatientsOfForthStage();
+		return new SearchPatientForthStageSteps(driver);
+	}
 
-    public MainPageSteps applySearchRequest() {
-        log.info("click Search button");
-        mainPage.clickSubmitSearchButton();
-        return this;
-    }
+	public NewPatientPageSteps goToNewPatientForm() {
+		log.info("go to New Patient Page");
+		mainPage = new MainPage(driver);
+		mainPage.goToNewPatientForm();
+		return new NewPatientPageSteps(driver);
+	}
 
-    public String getSearchResultBySurName() {
-        log.info("try to get result - SurName");
-        return mainPage.getSearchResultBySurName();
-    }
+	public MainPageSteps insertSurNameIntoSearchField(String searchRequestSurName) {
+		log.info("insert search request into search field");
+		mainPage.insertSurNameIntoSearchField(searchRequestSurName);
+		return this;
+	}
+
+	public MainPageSteps applySearchRequest() {
+		log.info("click Search button");
+		mainPage.clickSubmitSearchButton();
+		return this;
+	}
+
+	public String getSearchResultBySurName() {
+		log.info("try to get result - SurName");
+		return mainPage.getSearchResultBySurName();
+	}
 }

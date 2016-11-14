@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15701" started-at="2016-11-11T11:36:33Z" finished-at="2016-11-11T11:36:49Z">
+  <suite name="Default suite" duration-ms="21139" started-at="2016-11-14T12:58:37Z" finished-at="2016-11-14T12:58:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15701" started-at="2016-11-11T11:36:33Z" finished-at="2016-11-11T11:36:49Z">
-      <class name="com.epam.tf.tests.InformationSearchByDiagnos">
-        <test-method status="PASS" signature="initData()[pri:0, instance:com.epam.tf.tests.InformationSearchByDiagnos@6093dd95]" name="initData" is-config="true" duration-ms="944" started-at="2016-11-11T14:36:34Z" finished-at="2016-11-11T14:36:34Z">
+    <test name="Default test" duration-ms="21139" started-at="2016-11-14T12:58:37Z" finished-at="2016-11-14T12:58:58Z">
+      <class name="com.epam.tf.tests.SearchPatientForthStage">
+        <test-method status="PASS" signature="initData()[pri:0, instance:com.epam.tf.tests.SearchPatientForthStage@6093dd95]" name="initData" is-config="true" duration-ms="984" started-at="2016-11-14T15:58:37Z" finished-at="2016-11-14T15:58:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initData -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.tf.tests.InformationSearchByDiagnos@6093dd95]" name="setUp" is-config="true" duration-ms="7946" started-at="2016-11-11T14:36:34Z" finished-at="2016-11-11T14:36:42Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.tf.tests.SearchPatientForthStage@6093dd95]" name="setUp" is-config="true" duration-ms="7837" started-at="2016-11-14T15:58:38Z" finished-at="2016-11-14T15:58:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="startTest()[pri:0, instance:com.epam.tf.tests.InformationSearchByDiagnos@6093dd95]" name="startTest" duration-ms="5898" started-at="2016-11-11T14:36:42Z" finished-at="2016-11-11T14:36:48Z">
+        <test-method status="PASS" signature="searchPatientForthStageTest()[pri:0, instance:com.epam.tf.tests.SearchPatientForthStage@6093dd95]" name="searchPatientForthStageTest" duration-ms="11435" started-at="2016-11-14T15:58:46Z" finished-at="2016-11-14T15:58:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.epam.tf.tests.InformationSearchByDiagnos@6093dd95]" name="tearDown" is-config="true" duration-ms="889" started-at="2016-11-11T14:36:48Z" finished-at="2016-11-11T14:36:49Z">
+        </test-method> <!-- searchPatientForthStageTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.epam.tf.tests.SearchPatientForthStage@6093dd95]" name="tearDown" is-config="true" duration-ms="854" started-at="2016-11-14T15:58:58Z" finished-at="2016-11-14T15:58:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.epam.tf.tests.InformationSearchByDiagnos -->
+      </class> <!-- com.epam.tf.tests.SearchPatientForthStage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

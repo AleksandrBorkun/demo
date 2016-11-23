@@ -3,17 +3,12 @@ package com.epam.tf.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import com.epam.tf.utils.ExplicitWait;
-
 public class SearchPatientsOfForthStagePage extends AbstractPage {
 
 	public SearchPatientsOfForthStagePage(WebDriver driver) {
 		super(driver);
 	}
-
-	private ExplicitWait explWait = new ExplicitWait(driver, 10);
-
+	
 	@FindBy(xpath = "//span[@class='glyphicon glyphicon-calendar btn']")
 	private WebElement calendarButton;
 
@@ -44,43 +39,36 @@ public class SearchPatientsOfForthStagePage extends AbstractPage {
 	@FindBy(xpath = "//div[@class = 'form-group float-buttons-panel']/button[1]")
 	private WebElement saveButton;
 
+	@FindBy(xpath = ".//*[@id='partial']/a")
+	private WebElement addButton;
+
 	public void fillTheFieldAndMakeSearch() {
+		
 		calendarButton.click();
 
-		explWait.waitForElementVisible(monthButton);
+		wait.waitForElementIsClickable(monthButton);
 		monthButton.click();
 
-		explWait.waitForElementVisible(aprilMonth);
+		wait.waitForElementIsClickable(aprilMonth);
 		aprilMonth.click();
 
-		explWait.waitForElementIsClickable(yearButton);
+		wait.waitForElementIsClickable(yearButton);
 		yearButton.click();
 
-		explWait.waitForElementVisible(twoThousandYear);
+		wait.waitForElementIsClickable(twoThousandYear);
 		twoThousandYear.click();
 
-		explWait.waitForElementIsClickable(selectButton);
+		wait.waitForElementIsClickable(selectButton);
 		selectButton.click();
 
-		explWait.waitForElementIsClickable(searchButton);
+		wait.waitForElementIsClickable(searchButton);
 		searchButton.click();
 
 	}
 
 	public void clickEditPatientButton() {
-		explWait.waitForElementIsClickable(editPatientButton);
+		wait.waitForElementIsClickable(editPatientButton);
 		editPatientButton.click();
-		explWait.waitForElementIsClickable(editFormButton);
-		editFormButton.click();
-		explWait.waitForElementIsClickable(saveButton);
-		saveButton.click();
 
 	}
-
-	public void clickSaveButton() {
-		explWait.waitForElementIsClickable(saveButton);
-		saveButton.click();
-
-	}
-
 }

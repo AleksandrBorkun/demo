@@ -25,9 +25,9 @@ public class Diagnosis extends BaseData{
     private String morphologyText;
     private String morphologicalStudyRate;
     private String dateOfExamination;
-    private int t;
-    private int n;
-    private int m;
+    private String t;
+    private String n;
+    private String m;
 
     /*
     Fields in russian:
@@ -247,27 +247,27 @@ public class Diagnosis extends BaseData{
         this.dateOfExamination = dateOfExamination;
     }
 
-    public int getT() {
+    public String getT() {
         return t;
     }
 
-    public void setT(int t) {
+    public void setT(String t) {
         this.t = t;
     }
 
-    public int getN() {
+    public String getN() {
         return n;
     }
 
-    public void setN(int n) {
+    public void setN(String n) {
         this.n = n;
     }
 
-    public int getM() {
+    public String getM() {
         return m;
     }
 
-    public void setM(int m) {
+    public void setM(String m) {
         this.m = m;
     }
 

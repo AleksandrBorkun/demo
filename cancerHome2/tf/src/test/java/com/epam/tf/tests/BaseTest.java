@@ -5,18 +5,22 @@ import com.epam.tf.driver.FactoryDriver;
 import com.epam.tf.property.PropertyProvider;
 import com.epam.tf.steps.LoginPageSteps;
 import com.epam.tf.steps.MainPageSteps;
+import com.epam.tf.utils.ScreenshotExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Listeners(ScreenshotExecutor.class)
 public abstract class BaseTest {
     protected MainPageSteps mainPageSteps;
     protected WebDriver driver;
     protected LoginPageSteps loginPageSteps;
-    protected final String PATIENT_CARD_NUMBER = "202401";
+    protected final String PATIENT_CARD_NUMBER = "12222-77";
     protected Object[] userData;
     protected PassportData passportData;
     protected DispensaryData dispensaryData;

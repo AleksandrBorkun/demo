@@ -40,6 +40,9 @@ public class ExcelReader {
 
     public static Object[] getUserData(String patientCardNumber){
         readInfo();
+        if(userDataMap.get(patientCardNumber)==null){
+            throw new NullPointerException("There is no patient with such card number");
+        }
         return userDataMap.get(patientCardNumber);
     }
 

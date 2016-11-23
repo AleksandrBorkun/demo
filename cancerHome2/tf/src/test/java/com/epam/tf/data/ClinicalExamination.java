@@ -12,7 +12,7 @@ public class ClinicalExamination extends BaseData{
 
     /*
     Fields in russian:
-    
+
     Дата последнего контакта
     Отметка о контакте
     Форма контроля

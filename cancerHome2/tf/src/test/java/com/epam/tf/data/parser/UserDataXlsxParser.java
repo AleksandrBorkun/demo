@@ -1,6 +1,5 @@
 package com.epam.tf.data.parser;
 
-
 import com.epam.tf.data.*;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -20,8 +19,6 @@ public class UserDataXlsxParser {
     private static List<Diagnosis> diagnosisList = new ArrayList<Diagnosis>();
     private static List<ClinicalGroups> clinicalGroupsList = new ArrayList<ClinicalGroups>();
     private static List<ClinicalExamination> clinicalExaminationList = new ArrayList<ClinicalExamination>();
-
-
 
     public static void parseXlsx(String path) {
         InputStream inputStream;
@@ -240,13 +237,13 @@ public class UserDataXlsxParser {
                         diagnosis.setRefinementPhaseEnding(cell.getStringCellValue());
                         break;
                     case 19:
-                        diagnosis.setT((int)(cell.getNumericCellValue()));
+                        diagnosis.setT(cell.getStringCellValue());
                         break;
                     case 20:
-                        diagnosis.setN((int)(cell.getNumericCellValue()));
+                        diagnosis.setN(cell.getStringCellValue());
                         break;
                     case 21:
-                        diagnosis.setM((int)(cell.getNumericCellValue()));
+                        diagnosis.setM(cell.getStringCellValue());
                         break;
                     case 22:
                         diagnosis.setMultiplicity(cell.getStringCellValue());

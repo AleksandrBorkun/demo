@@ -12,12 +12,12 @@ public class ShouldCheckRemovingOfThePrimaryDiagnose extends BaseTest {
 
 
     @Test
-    public void deletePrimaryDiagnoseTest() throws InterruptedException {
+    public void deletePrimaryDiagnoseTest()  {
 
      String result = mainPageSteps.insertSurNameIntoSearchField(SEARCH_REQUEST_SURNAME)
              .applySearchRequest()
              .editPatient()
-             .deleteDiagnose()
+             .deletePrimaryDiagnose()
              .confirmDeleteDiagnose()
              .getDeletePrimaryDiagnoseErrorMessage();
 

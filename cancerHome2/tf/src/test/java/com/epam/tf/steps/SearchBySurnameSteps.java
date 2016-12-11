@@ -1,8 +1,8 @@
 package com.epam.tf.steps;
 
+import com.epam.tf.pages.PatientDiagnosisFormPage;
 import org.openqa.selenium.WebDriver;
 
-import com.epam.tf.pages.PatientDiagnosFormPage;
 import com.epam.tf.pages.SearchBySurnamePage;
 
 public class SearchBySurnameSteps extends AbstractSteps{
@@ -12,12 +12,12 @@ public class SearchBySurnameSteps extends AbstractSteps{
 	}
 
 	SearchBySurnamePage surnameSearchPage = new SearchBySurnamePage(driver);
-	PatientDiagnosFormPage patientDiagnosFormPage = new PatientDiagnosFormPage(driver);
+	PatientDiagnosisFormPage patientDiagnosFormPage = new PatientDiagnosisFormPage(driver);
 	
-	public SearchBySurnameSteps goToPatientDiagnosFormPage(){
-		log.info("try to open patient diagnos edit form");
+	public SearchBySurnameSteps goToPatientDiagnosisFormPage(){
+		log.info("try to open patient diagnosis edit form");
 		surnameSearchPage.clickMainPageEditButton();
-		surnameSearchPage.clickEditButton();
+		surnameSearchPage.clickEditPatientButton();
 	return this;
 	}
 	
@@ -31,10 +31,6 @@ public class SearchBySurnameSteps extends AbstractSteps{
 		log.info("try to find add button");
 		return patientDiagnosFormPage.isAddButtonIsPresent();
 		
-	}
-	
-	public boolean isPatientCardPresent(){
-		return surnameSearchPage.isPatientCardPresent();
 	}
 	
 }

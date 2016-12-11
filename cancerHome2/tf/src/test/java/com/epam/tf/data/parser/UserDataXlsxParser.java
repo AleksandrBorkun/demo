@@ -180,7 +180,7 @@ public class UserDataXlsxParser {
             int cellCounter = 1;
             Iterator<Cell> cellIterator = row.cellIterator();
             while (cellIterator.hasNext()) {
-                Cell cell = cellIterator.next();
+                Cell  cell = cellIterator.next();
                 switch (cellCounter){
                     case 1:
                         diagnosis.setPatientCardNumber(cell.getStringCellValue());

@@ -2,7 +2,7 @@ package com.epam.tf.steps;
 
 import org.openqa.selenium.WebDriver;
 
-import com.epam.tf.pages.PatientDiagnosFormPage;
+import com.epam.tf.pages.PatientDiagnosisFormPage;
 import com.epam.tf.pages.SearchPatientsOfForthStagePage;
 
 public class SearchPatientForthStageSteps extends AbstractSteps {
@@ -12,7 +12,7 @@ public class SearchPatientForthStageSteps extends AbstractSteps {
 
 	}
 
-	private PatientDiagnosFormPage diagnosEditorForm = new PatientDiagnosFormPage(driver);
+	private PatientDiagnosisFormPage diagnosEditorForm = new PatientDiagnosisFormPage(driver);
 	private SearchPatientsOfForthStagePage searchPage = new SearchPatientsOfForthStagePage(driver);
 
 	public SearchPatientForthStageSteps positiveSearchPatient() {

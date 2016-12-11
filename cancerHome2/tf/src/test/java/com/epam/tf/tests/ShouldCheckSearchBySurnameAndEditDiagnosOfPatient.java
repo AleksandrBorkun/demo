@@ -18,7 +18,7 @@ public class ShouldCheckSearchBySurnameAndEditDiagnosOfPatient extends BaseTest{
 			
 				mainPageSteps
 				.getSerchBySurnameForm(surname)
-				.goToPatientDiagnosFormPage()
+				.goToPatientDiagnosisFormPage()
 				.clickSaveButton()
 				.isAddButtonIsVisible());
 		

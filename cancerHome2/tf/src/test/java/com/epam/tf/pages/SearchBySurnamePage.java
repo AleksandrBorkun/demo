@@ -15,21 +15,19 @@ public class SearchBySurnamePage extends AbstractPage{
 	
 	@FindBy(xpath = "//a[@class = 'glyphicon glyphicon-edit']")
 	private WebElement editButton;
-	
-	@FindBy(xpath = "//tr[@class='patientItem']")
-	private WebElement patientCard;
-	
+
+
 	public void clickMainPageEditButton(){
 		wait.waitForElementIsClickable(mainPageEditButton);
 		mainPageEditButton.click();
 	}
 	
-	public void clickEditButton(){
+	public void clickEditPatientButton(){
 		wait.waitForElementIsClickable(editButton);
 		editButton.click();
 	}
+
+
 	
-	public boolean isPatientCardPresent(){
-		return patientCard.isDisplayed();
-	}
+	
 }

@@ -1,11 +1,24 @@
 package com.epam.tf.steps;
 
+import com.epam.tf.entity.Patient;
 import com.epam.tf.pages.MainPage;
 import org.openqa.selenium.WebDriver;
 
 public class MainPageSteps extends AbstractSteps {
 
 	private MainPage mainPage;
+
+	/**
+	 * New method which transfer to patient's edit page
+	 * 
+	 * @return new instance of {@code DiagnosisFormPageSteps}
+	 */
+
+	public DiagnosisFormPageSteps editFirstPatient() {
+		log.info("press refactor button for 1'st element");
+		mainPage.clickFirstRefactorButton();
+		return new DiagnosisFormPageSteps(driver);
+	}
 
 	public MainPageSteps(WebDriver driver) {
 		super(driver);
@@ -33,6 +46,18 @@ public class MainPageSteps extends AbstractSteps {
 	public MainPageSteps applySearchRequest() {
 		log.info("click Search button");
 		mainPage.clickSubmitSearchButton();
+		return this;
+	}
+
+	public MainPageSteps applySearchRequestGlobal() {
+		log.info("click global Search button");
+		mainPage.clickSubmitSearchButtonGlobal();
+		return this;
+	}
+
+	public MainPageSteps applySearchRequestList() {
+		log.info("click Search Sub list  button");
+		mainPage.clickListSearchButton();
 		return this;
 	}
 
@@ -64,15 +89,40 @@ public class MainPageSteps extends AbstractSteps {
 		return new PatientCardPageSteps(driver);
 	}
 
+	/**
+	 * New method which choose correct patient and transfer to Patient Card Page
+	 * 
+	 * @return new instance of {@code PatientCardPageSteps}
+	 */
+
+	public PatientCardPageSteps pressPatientRefactorButton(Patient patient) {
+		log.info("press refactor button for " + patient.getIdn() + " element");
+		switch (patient.getIdn().intValue()) {
+		case 41:
+			mainPage.clickFirstPatientRefactorButton();
+			break;
+		case 42:
+			mainPage.clickSecondPatientRefactorButton();
+			break;
+		case 43:
+			mainPage.clickThirdPatientRefactorButton();
+			break;
+		case 44:
+			mainPage.clickFourthPatientRefactorButton();
+			break;
+		}
+		return new PatientCardPageSteps(driver);
+	}
+
 	public MainPageSteps editPatient() {
 		log.info("Go to edit patient form");
 		mainPage.goToEditPatientForm();
 		return this;
 	}
 
-	public MainPageSteps deleteDiagnose() {
+	public MainPageSteps deletePrimaryDiagnose() {
 		log.info("Click delete diagnose button");
-		mainPage.deleteDiagnose();
+		mainPage.deletePrimaryDiagnose();
 		return this;
 	}
 
@@ -87,32 +137,132 @@ public class MainPageSteps extends AbstractSteps {
 		return mainPage.getErrorMessage();
 	}
 
+	public CallToHospitalPageSteps goToRegulatedSearchPageCallToHostital() {
+		log.info("go to Hospital Page");
+		return mainPage.goToRegulatedSearchPageCallToHostital();
+	}
+
+	public HaveNoInformationAboutHealingSteps goToHaveNoInformationAboutHealing() {
+		log.info("go to Have No Information About Healing");
+		return mainPage.goToHaveNoInformationAboutHealing();
+	}
+
+	public ConsistingAtTheEndOfThePeriodSteps goToConsistingAtTheEndOfThePeriodpage() {
+		
+		log.info("go to Consisting At The End Of The Period Page");
+		return mainPage.goToConsistingAtTheEndOfThePeriodpage();
+		
+	}
+	
+	public SecondNameMistakeSteps goToSecondNameMistakePage() {
+		
+		log.info("go To Second Name Mistake Page");
+		return mainPage.goToSecondNameMistakePage();
+		
+	}
+	
+	public PremilitarySearchSteps goToPremilitarySearchPage() {
+		log.info("go to Premilitary Search Page");
+		return mainPage.goToPremilitarySearchPage();
+	}
+	
 	public SearchPatientForthStageSteps goToSearchPatientForthStage() {
 		log.info("try to open search form by patient of IV stage");
 		mainPage.getRegulatedSearchPatientsOfForthStage();
 		return new SearchPatientForthStageSteps(driver);
 	}
-	
-	public SearchBySurnameSteps getSerchBySurnameForm(String surname){
+
+	public SearchBySurnameSteps getSerchBySurnameForm(String surname) {
 		log.info("try to get search by surname form");
 		mainPage.getSerchBySurnameForm(surname);
 		return new SearchBySurnameSteps(driver);
 	}
 
-	public PatientCardPageSteps editPatientData(){
+	public PatientCardPageSteps editPatientData() {
 		log.info("go to PatientCardDataPage");
 		mainPage.clickEditPatientDataButton();
 		return new PatientCardPageSteps(driver);
 	}
-	
-	public boolean isMainElementsPresent(){
-		
-		return mainPage.isExitButtonPresent()
-				&&mainPage.isInformationSearchPresent()
-				&&mainPage.isNewPatientButtonPresent()
-				&&mainPage.isRegulatedSearchButtonPresent()
-				&&mainPage.isSearchByNameButtonPresent()
-				&&mainPage.isUserIconPresent();
+
+	public MainPageSteps chooseIGHDiagnose() {
+		log.info("Go to IGH not specific diagnose");
+		mainPage.clickDiagnoseMenuButton();
+		mainPage.clickDiagnoseListButton();
+		mainPage.clickIGHNotSpecificDiagnoseButton();
+		return this;
 	}
 
+	public MainPageSteps fillIGHDiagnose(String date) {
+		log.info("Fill IGH not specific diagnose date");
+		mainPage.fillDateOfDiagnoseField(date);
+		log.info("Fill IGH not specific diagnose antibody name");
+		mainPage.fillAntibodyNameField();
+		log.info("Fill IGH not specific diagnose result");
+		mainPage.fillResultField();
+		return this;
+	}
+
+	public MainPageSteps saveDiagnose() {
+		log.info("save IGH not specific diagnose");
+		mainPage.clickSaveDiagnoseButton();
+		return this;
+	}
+
+	public MainPageSteps deleteSpecificDiagnose() {
+		log.info("delete IGH not specific diagnose");
+		mainPage.deleteSpecificDiagnose();
+		return this;
+	}
+
+	public MainPageSteps editSpecificDiagnose(String date) {
+		log.info("edit IGH not specific diagnose ");
+		mainPage.editSpecificDiagnose(date);
+		return this;
+	}
+
+	public String getDateOfSpecificDiagnose() {
+		log.info("get date of IGH not specific diagnose ");
+		String result = mainPage.getDateOfSpecificDiagnose();
+		return result;
+	}
+
+	public String getDateOfNewResearch() {
+		log.info("get date of IGH new research");
+		String result = mainPage.getDateOfNewResearch();
+		return result;
+	}
+
+	public MainPageSteps chooseMolecularGeneticDiagnose() {
+		log.info("Go to molecular genetic  diagnose");
+		mainPage.clickDiagnoseMenuButton();
+		mainPage.clickDiagnoseListButton();
+		mainPage.clickMolecularGeneticDiagnoseButton();
+		return this;
+	}
+
+	public MainPageSteps fillMolecularGeneticDiagnose(String date) {
+		log.info("Fill molecular genetic diagnose date");
+		mainPage.fillDateOfMolecularGeneticDiagnoseField(date);
+		log.info("Fill analysis method field");
+		mainPage.fillAnalysisMethodField();
+		log.info("Fill  gen sample field");
+		mainPage.fillGenSampleField();
+		log.info("Fill  gen changes field");
+		mainPage.fillGenChangesField();
+		log.info("Fill  result of molecular research field");
+		mainPage.fillResultOfMolecularGeneticField();
+		return this;
+	}
+
+	public DiagnosisMetastasesMainPageSteps goToMetastasesInfoPage(Patient patient) {
+		return insertSurNameIntoSearchField(patient.getLastName()).applySearchRequest().editPatientData()
+				.goToDateListOfDiagnoses().goToDiagnosisOfFirstDateMenu().goToMetastasesOfDiagnosis();
+	}
+
+	// public NewDispensaryPageSteps goToNewDispensaryPage (Patient patient){
+	// return insertSurNameIntoSearchField(patient.getLastName())
+	// .applySearchRequest()
+	// .editPatientData()
+	// .goToNewDispensaryPage();
+	// }
 }

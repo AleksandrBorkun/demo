@@ -1,6 +1,5 @@
 package com.epam.tf.pages;
 
-import com.epam.tf.utils.ThreadSleep;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;

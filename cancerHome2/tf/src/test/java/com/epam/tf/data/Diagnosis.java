@@ -2,7 +2,6 @@ package com.epam.tf.data;
 
 
 public class Diagnosis extends BaseData{
-    private String diagnosisAccordingToICD10;
     private String codeICD10;
     private String codeICD19;
     private String diagnosisDate;
@@ -20,6 +19,7 @@ public class Diagnosis extends BaseData{
     private String multiplicity;
     private String revealingTerms;
     private String confirmationMethod;
+    private String diagnosisAccordingToICD10;
     private String ICD10morphology;
     private String differentiationDegree;
     private String morphologyText;
@@ -28,6 +28,9 @@ public class Diagnosis extends BaseData{
     private String t;
     private String n;
     private String m;
+    private String sex;
+    private String result;
+
 
     /*
     Fields in russian:
@@ -65,6 +68,14 @@ public class Diagnosis extends BaseData{
 
     public String getDiagnosisAccordingToICD10() {
         return diagnosisAccordingToICD10;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
     }
 
     public void setDiagnosisAccordingToICD10(String diagnosisAccordingToICD10) {
@@ -271,11 +282,18 @@ public class Diagnosis extends BaseData{
         this.m = m;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     @Override
     public String toString() {
         return "Diagnosis{" +
-                "diagnosisAccordingToICD10='" + diagnosisAccordingToICD10 + '\'' +
-                ", codeICD10='" + codeICD10 + '\'' +
+                "codeICD10='" + codeICD10 + '\'' +
                 ", codeICD19='" + codeICD19 + '\'' +
                 ", diagnosisDate='" + diagnosisDate + '\'' +
                 ", diagnosisCancelDate='" + diagnosisCancelDate + '\'' +
@@ -292,14 +310,17 @@ public class Diagnosis extends BaseData{
                 ", multiplicity='" + multiplicity + '\'' +
                 ", revealingTerms='" + revealingTerms + '\'' +
                 ", confirmationMethod='" + confirmationMethod + '\'' +
+                ", diagnosisAccordingToICD10='" + diagnosisAccordingToICD10 + '\'' +
                 ", ICD10morphology='" + ICD10morphology + '\'' +
                 ", differentiationDegree='" + differentiationDegree + '\'' +
                 ", morphologyText='" + morphologyText + '\'' +
                 ", morphologicalStudyRate='" + morphologicalStudyRate + '\'' +
                 ", dateOfExamination='" + dateOfExamination + '\'' +
-                ", t=" + t +
-                ", n=" + n +
-                ", m=" + m +
-                '}';
+                ", t='" + t + '\'' +
+                ", n='" + n + '\'' +
+                ", m='" + m + '\'' +
+                ", sex='" + sex + '\'' +
+                ", result='" + result + '\'' +
+                '}' + "\n";
     }
 }

@@ -32,31 +32,31 @@ public abstract class AbstractPage {
         this.actions = new Actions(driver);
     }
 
-    public void saveList(String random){
+    public void saveList(String random) {
         listNameField.sendKeys(random);
         buttonSave.click();
     }
 
-    protected void waitForLoaderIndicatorDisapearing(){
-        ExplicitWait waits = new ExplicitWait(driver,25);
+    protected void waitForLoaderIndicatorDisapearing() {
+        ExplicitWait waits = new ExplicitWait(driver, 25);
         waits.waitForElementDisapearing(By.id("progress"));
     }
 
-    protected void selectByText(String textToSelect){
-        WebElement element = driver.findElement(By.xpath("//li[contains(text(),'"+textToSelect+"')]"));
+    protected void selectByText(String textToSelect) {
+        WebElement element = driver.findElement(By.xpath("//li[contains(text(),'" + textToSelect + "')]"));
         wait.waitForElementIsClickable(element);
         ThreadSleep.waitElement(500);
         element.click();
     }
 
-    protected void selectByExactlyText(String textToSelect, WebElement buttonToSelect){
-        WebElement element = driver.findElement(By.xpath("//button[@id='"+buttonToSelect.getAttribute("id")+"']/../..//li[text()='"+textToSelect+"']"));
+    protected void selectByExactlyText(String textToSelect, WebElement buttonToSelect) {
+        WebElement element = driver.findElement(By.xpath("//button[@id='" + buttonToSelect.getAttribute("id") + "']/../..//li[text()='" + textToSelect + "']"));
         wait.waitForElementIsClickable(element);
         ThreadSleep.waitElement(500);
         element.click();
     }
 
-    public void highlightElement(WebElement element){
+    public void highlightElement(WebElement element) {
         String bg = element.getCssValue("backgroundColor");
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         js.executeScript("arguments[0].style.backgroundColor = '" + "yellow" + "'", element);
@@ -64,11 +64,8 @@ public abstract class AbstractPage {
         js.executeScript("arguments[0].style.backgroundColor = '" + bg + "'", element);
     }
 
-    public void clickButtonById(String buttonId){
+    public void clickButtonById(String buttonId) {
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         js.executeScript("document.getElementById('" + buttonId + "').click()");
     }
-
-
-
 }

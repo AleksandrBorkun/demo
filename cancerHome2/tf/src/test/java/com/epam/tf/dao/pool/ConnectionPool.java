@@ -1,7 +1,7 @@
 package com.epam.tf.dao.pool;
 
-import com.epam.tf.dao.exception.DAOException;
-//import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import com.epam.tf.exception.DAOException;
+//
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,7 +37,7 @@ public class ConnectionPool {
     /**
      * Simple constructor that performs the only initializing method.
      */
-    private ConnectionPool() {
+    public ConnectionPool() {
         init();
     }
 
@@ -50,6 +50,8 @@ public class ConnectionPool {
         pool = new ArrayBlockingQueue<>(DEFAULT_POOL_SIZE);
         try {
       //      DriverManager.registerDriver(new SQLServerDriver());
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
             Properties properties = new Properties();
             properties.setProperty("user", configBundle.getString("login"));
             properties.setProperty("password", configBundle.getString("password"));
@@ -59,7 +61,7 @@ public class ConnectionPool {
                 Connection connection = DriverManager.getConnection(configBundle.getString("url"), properties);
                 pool.offer(connection);
             }
-        } catch (SQLException e) {
+        } catch (SQLException  | ClassNotFoundException e) {
             LOG.fatal("Exception occurred during connecting to database" + e.getMessage());
             throw new RuntimeException("Exception in init method of connection pool", e);
         }

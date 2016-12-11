@@ -248,3 +248,136 @@
 2016-11-24 00:06:49,642 INFO  [main] opening login page
 2016-11-24 00:06:53,274 INFO  [main] try to login in
 2016-11-24 00:06:58,125 INFO  [main] driver has been closed
+2016-12-11 16:44:13,430 FATAL pool.ConnectionPool [main] Exception occurred during connecting to databasecom.microsoft.sqlserver.jdbc.SQLServerDriver
+2016-12-11 16:44:49,785 FATAL pool.ConnectionPool [main] Exception occurred during connecting to databasecom.microsoft.sqlserver.jdbc.SQLServerDriver
+2016-12-11 16:56:48,876 FATAL pool.ConnectionPool [main] Exception occurred during connecting to databaseThe TCP/IP connection to the host evbyminsd73ce.minsk.epam.com, port 1433 has failed. Error: "evbyminsd73ce.minsk.epam.com. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+2016-12-11 16:59:25,490 FATAL pool.ConnectionPool [main] Exception occurred during connecting to databaseThe TCP/IP connection to the host evbyminsd73ce.minsk.epam.com, port 1433 has failed. Error: "evbyminsd73ce.minsk.epam.com. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+2016-12-11 17:00:39,651 INFO  [main] chrome driver created
+2016-12-11 17:00:41,410 INFO  [main] opening login page
+2016-12-11 17:00:45,368 INFO  [main] try to login in
+2016-12-11 17:00:48,237 INFO  [main] go to Search By Catalog Page
+2016-12-11 17:00:48,562 INFO  [main] try to fill request and press save button
+2016-12-11 17:01:03,130 ERROR  [main] sergeryFieldCheck screenshot saved: ./target/screenshots/0.png
+2016-12-11 17:01:05,622 INFO  [main] driver has been closed
+2016-12-11 17:01:28,522 INFO  [main] chrome driver created
+2016-12-11 17:01:30,206 INFO  [main] opening login page
+2016-12-11 17:01:33,543 INFO  [main] try to login in
+2016-12-11 17:01:35,744 INFO  [main] go to Search By Catalog Page
+2016-12-11 17:01:36,087 INFO  [main] try to fill request and press save button
+2016-12-11 17:01:50,731 ERROR  [main] sergeryFieldCheck screenshot saved: ./target/screenshots/0.png
+2016-12-11 17:01:51,215 INFO  [main] driver has been closed
+2016-12-11 17:03:01,761 INFO  [main] chrome driver created
+2016-12-11 17:03:03,201 INFO  [main] opening login page
+2016-12-11 17:03:07,971 INFO  [main] try to login in
+2016-12-11 17:03:10,837 INFO  [main] go to Search By Catalog Page
+2016-12-11 17:03:11,143 INFO  [main] try to fill request and press save button
+2016-12-11 17:03:13,873 ERROR  [main] sergeryFieldCheck screenshot saved: ./target/screenshots/0.png
+2016-12-11 17:03:14,604 INFO  [main] driver has been closed
+2016-12-11 17:05:31,626 INFO  [main] chrome driver created
+2016-12-11 17:05:32,992 INFO  [main] opening login page
+2016-12-11 17:05:36,026 INFO  [main] try to login in
+2016-12-11 17:05:38,345 INFO  [main] go to Search By Catalog Page
+2016-12-11 17:05:38,663 INFO  [main] try to fill request and press save button
+2016-12-11 17:05:53,244 ERROR  [main] sergeryFieldCheck screenshot saved: ./target/screenshots/0.png
+2016-12-11 17:05:54,520 INFO  [main] driver has been closed
+2016-12-11 17:06:28,134 INFO  [main] chrome driver created
+2016-12-11 17:06:29,481 INFO  [main] opening login page
+2016-12-11 17:06:32,647 INFO  [main] try to login in
+2016-12-11 17:06:35,095 INFO  [main] go to Search By Catalog Page
+2016-12-11 17:06:35,378 INFO  [main] try to fill request and press save button
+2016-12-11 17:06:56,350 INFO  [main] driver has been closed
+2016-12-11 17:32:05,836 INFO  [main] chrome driver created
+2016-12-11 17:32:07,223 INFO  [main] opening login page
+2016-12-11 17:32:10,716 INFO  [main] try to login in
+2016-12-11 17:32:13,082 INFO  [main] go to Search By Catalog Page
+2016-12-11 17:32:13,318 INFO  [main] try to fill request and press save button
+2016-12-11 17:32:31,786 ERROR  [main] sergeryFieldCheck screenshot saved: ./target/screenshots/0.png
+2016-12-11 17:32:32,298 INFO  [main] driver has been closed
+2016-12-11 17:50:42,125 INFO  [main] chrome driver created
+2016-12-11 17:50:43,520 INFO  [main] opening login page
+2016-12-11 17:50:48,030 INFO  [main] try to login in
+2016-12-11 17:50:50,323 INFO  [main] go to Search By Catalog Page
+2016-12-11 17:50:50,651 INFO  [main] try to fill recedive request and press save button
+2016-12-11 17:51:02,843 ERROR  [main] recediveFieldCheck screenshot saved: ./target/screenshots/0.png
+2016-12-11 17:51:03,286 INFO  [main] driver has been closed
+2016-12-11 17:51:23,041 INFO  [main] chrome driver created
+2016-12-11 17:51:24,418 INFO  [main] opening login page
+2016-12-11 17:51:28,668 INFO  [main] try to login in
+2016-12-11 17:51:29,336 INFO  [main] go to Search By Catalog Page
+2016-12-11 17:51:31,136 INFO  [main] try to fill recedive request and press save button
+2016-12-11 17:51:39,937 INFO  [main] driver has been closed
+2016-12-11 18:06:42,946 INFO  [main] chrome driver created
+2016-12-11 18:06:44,359 INFO  [main] opening login page
+2016-12-11 18:06:49,554 INFO  [main] try to login in
+2016-12-11 18:06:51,674 INFO  [main] go to Search By Catalog Page
+2016-12-11 18:06:52,104 INFO  [main] try to fill passport part request and press save button
+2016-12-11 18:07:01,489 INFO  [main] driver has been closed
+2016-12-11 19:02:39,626 INFO  [main] chrome driver created
+2016-12-11 19:02:41,161 INFO  [main] opening login page
+2016-12-11 19:02:49,177 INFO  [main] try to login in
+2016-12-11 19:02:51,750 INFO  [main] go to Search By Catalog Page
+2016-12-11 19:02:51,983 INFO  [main] try to fill 'OR' request and press save button
+2016-12-11 19:03:09,400 ERROR  [main] addOrToRequsiteAttributeCheck screenshot saved: ./target/screenshots/0.png
+2016-12-11 19:03:10,186 INFO  [main] driver has been closed
+2016-12-11 21:33:29,951 INFO  [main] chrome driver created
+2016-12-11 21:33:31,476 INFO  [main] opening login page
+2016-12-11 21:33:46,551 INFO  [main] try to login in
+2016-12-11 21:34:01,660 ERROR  [main] test screenshot saved: ./target/screenshots/0.png
+2016-12-11 21:34:02,021 INFO  [main] driver has been closed
+2016-12-11 22:06:01,619 INFO  [main] chrome driver created
+2016-12-11 22:06:02,968 INFO  [main] opening login page
+2016-12-11 22:06:07,362 INFO  [main] try to login in
+2016-12-11 22:06:21,117 ERROR  [main] test screenshot saved: ./target/screenshots/0.png
+2016-12-11 22:06:21,455 INFO  [main] driver has been closed
+2016-12-11 22:09:16,062 INFO  [main] chrome driver created
+2016-12-11 22:09:17,799 INFO  [main] opening login page
+2016-12-11 22:09:20,719 INFO  [main] try to login in
+2016-12-11 22:09:33,613 ERROR  [main] test screenshot saved: ./target/screenshots/0.png
+2016-12-11 22:09:34,079 INFO  [main] driver has been closed
+2016-12-11 22:10:45,289 INFO  [main] chrome driver created
+2016-12-11 22:10:46,662 INFO  [main] opening login page
+2016-12-11 22:10:50,846 INFO  [main] try to login in
+2016-12-11 22:11:03,883 ERROR  [main] test screenshot saved: ./target/screenshots/0.png
+2016-12-11 22:11:06,163 INFO  [main] driver has been closed
+2016-12-11 22:12:32,078 INFO  [main] chrome driver created
+2016-12-11 22:12:33,449 INFO  [main] opening login page
+2016-12-11 22:12:36,974 INFO  [main] try to login in
+2016-12-11 22:12:40,037 ERROR  [main] test screenshot saved: ./target/screenshots/0.png
+2016-12-11 22:12:40,637 INFO  [main] driver has been closed
+2016-12-12 01:00:48,049 INFO  [main] chrome driver created
+2016-12-12 01:00:49,597 INFO  [main] opening login page
+2016-12-12 01:00:53,625 INFO  [main] try to login in
+2016-12-12 01:00:55,900 INFO  [main] go to Have No Information About Healing
+2016-12-12 01:00:56,817 INFO  [main] try to fill date and make search
+2016-12-12 01:01:00,256 INFO  [main] driver has been closed
+2016-12-12 01:26:12,079 INFO  [main] chrome driver created
+2016-12-12 01:26:13,524 INFO  [main] opening login page
+2016-12-12 01:26:16,746 INFO  [main] try to login in
+2016-12-12 01:26:19,288 INFO  [main] go to Consisting At The End Of The Period Page
+2016-12-12 01:26:30,228 ERROR  [main] test3 screenshot saved: ./target/screenshots/0.png
+2016-12-12 01:26:32,444 INFO  [main] driver has been closed
+2016-12-12 01:28:01,393 INFO  [main] chrome driver created
+2016-12-12 01:28:02,942 INFO  [main] opening login page
+2016-12-12 01:28:06,634 INFO  [main] try to login in
+2016-12-12 01:28:09,251 INFO  [main] go to Consisting At The End Of The Period Page
+2016-12-12 01:28:10,110 INFO  [main] try to fill Reporting Field And Click Search
+2016-12-12 01:28:21,697 ERROR  [main] test3 screenshot saved: ./target/screenshots/0.png
+2016-12-12 01:28:22,110 INFO  [main] driver has been closed
+2016-12-12 01:45:05,041 INFO  [main] chrome driver created
+2016-12-12 01:45:06,385 INFO  [main] opening login page
+2016-12-12 01:45:10,525 INFO  [main] try to login in
+2016-12-12 01:45:13,166 INFO  [main] go to Premilitary Search Page
+2016-12-12 01:45:23,920 ERROR  [main] test4 screenshot saved: ./target/screenshots/0.png
+2016-12-12 01:45:24,332 INFO  [main] driver has been closed
+2016-12-12 01:46:50,923 INFO  [main] chrome driver created
+2016-12-12 01:46:52,225 INFO  [main] opening login page
+2016-12-12 01:46:54,603 INFO  [main] try to login in
+2016-12-12 01:46:57,152 INFO  [main] go to Premilitary Search Page
+2016-12-12 01:46:58,498 INFO  [main] try to fill Birth Date And Click Search
+2016-12-12 01:47:00,192 INFO  [main] driver has been closed
+2016-12-12 02:01:01,264 INFO  [main] chrome driver created
+2016-12-12 02:01:02,828 INFO  [main] opening login page
+2016-12-12 02:01:05,949 INFO  [main] try to login in
+2016-12-12 02:01:06,779 INFO  [main] go To Second Name Mistake Page
+2016-12-12 02:01:09,744 INFO  [main] try to fill Registration Date From And Click Search
+2016-12-12 02:01:11,527 INFO  [main] driver has been closed

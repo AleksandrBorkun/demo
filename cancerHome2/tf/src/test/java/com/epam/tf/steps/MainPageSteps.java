@@ -96,7 +96,7 @@ public class MainPageSteps extends AbstractSteps {
 	 */
 
 	public PatientCardPageSteps pressPatientRefactorButton(Patient patient) {
-		log.info("press refactor button for " + patient.getIdn() + " element");
+		log.info("press refactor button for " + patient.getIdn() + " patient idn");
 		switch (patient.getIdn().intValue()) {
 		case 41:
 			mainPage.clickFirstPatientRefactorButton();
@@ -137,7 +137,7 @@ public class MainPageSteps extends AbstractSteps {
 		return mainPage.getErrorMessage();
 	}
 
-	public CallToHospitalPageSteps goToRegulatedSearchPageCallToHostital() {
+/*	public CallToHospitalPageSteps goToRegulatedSearchPageCallToHostital() {
 		log.info("go to Hospital Page");
 		return mainPage.goToRegulatedSearchPageCallToHostital();
 	}
@@ -164,7 +164,7 @@ public class MainPageSteps extends AbstractSteps {
 	public PremilitarySearchSteps goToPremilitarySearchPage() {
 		log.info("go to Premilitary Search Page");
 		return mainPage.goToPremilitarySearchPage();
-	}
+	}*/
 	
 	public SearchPatientForthStageSteps goToSearchPatientForthStage() {
 		log.info("try to open search form by patient of IV stage");
@@ -184,75 +184,6 @@ public class MainPageSteps extends AbstractSteps {
 		return new PatientCardPageSteps(driver);
 	}
 
-	public MainPageSteps chooseIGHDiagnose() {
-		log.info("Go to IGH not specific diagnose");
-		mainPage.clickDiagnoseMenuButton();
-		mainPage.clickDiagnoseListButton();
-		mainPage.clickIGHNotSpecificDiagnoseButton();
-		return this;
-	}
-
-	public MainPageSteps fillIGHDiagnose(String date) {
-		log.info("Fill IGH not specific diagnose date");
-		mainPage.fillDateOfDiagnoseField(date);
-		log.info("Fill IGH not specific diagnose antibody name");
-		mainPage.fillAntibodyNameField();
-		log.info("Fill IGH not specific diagnose result");
-		mainPage.fillResultField();
-		return this;
-	}
-
-	public MainPageSteps saveDiagnose() {
-		log.info("save IGH not specific diagnose");
-		mainPage.clickSaveDiagnoseButton();
-		return this;
-	}
-
-	public MainPageSteps deleteSpecificDiagnose() {
-		log.info("delete IGH not specific diagnose");
-		mainPage.deleteSpecificDiagnose();
-		return this;
-	}
-
-	public MainPageSteps editSpecificDiagnose(String date) {
-		log.info("edit IGH not specific diagnose ");
-		mainPage.editSpecificDiagnose(date);
-		return this;
-	}
-
-	public String getDateOfSpecificDiagnose() {
-		log.info("get date of IGH not specific diagnose ");
-		String result = mainPage.getDateOfSpecificDiagnose();
-		return result;
-	}
-
-	public String getDateOfNewResearch() {
-		log.info("get date of IGH new research");
-		String result = mainPage.getDateOfNewResearch();
-		return result;
-	}
-
-	public MainPageSteps chooseMolecularGeneticDiagnose() {
-		log.info("Go to molecular genetic  diagnose");
-		mainPage.clickDiagnoseMenuButton();
-		mainPage.clickDiagnoseListButton();
-		mainPage.clickMolecularGeneticDiagnoseButton();
-		return this;
-	}
-
-	public MainPageSteps fillMolecularGeneticDiagnose(String date) {
-		log.info("Fill molecular genetic diagnose date");
-		mainPage.fillDateOfMolecularGeneticDiagnoseField(date);
-		log.info("Fill analysis method field");
-		mainPage.fillAnalysisMethodField();
-		log.info("Fill  gen sample field");
-		mainPage.fillGenSampleField();
-		log.info("Fill  gen changes field");
-		mainPage.fillGenChangesField();
-		log.info("Fill  result of molecular research field");
-		mainPage.fillResultOfMolecularGeneticField();
-		return this;
-	}
 
 	public DiagnosisMetastasesMainPageSteps goToMetastasesInfoPage(Patient patient) {
 		return insertSurNameIntoSearchField(patient.getLastName()).applySearchRequest().editPatientData()

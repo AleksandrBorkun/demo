@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class MarksOnClinicalExaminationPage extends AbstractPage {
@@ -23,14 +24,23 @@ public class MarksOnClinicalExaminationPage extends AbstractPage {
     @FindBy(xpath = "//tr[1]//a[@data-content='Удалить']")
     private WebElement deleteFirstMarkButton;
 
+    @FindBy(css = ".modal-footer .btn-success")
+    private WebElement confirmDeleteButton;
+
     @FindBy(xpath = "//span[@class='glyphicon glyphicon-calendar']")
     private WebElement lastContactDateSelectButton;
+
+    @FindBy(id = "ClinicalGroupCode_Autocomplete")
+    private WebElement clinicGroupInputField;
 
     @FindBy(xpath = "//a[@class='ui-state-default ui-state-highlight']")
     private WebElement ContactDateOfCurrentDate;
 
     @FindBy(id = "ControlPeriod")
     private WebElement periodOfControlInput;
+
+    @FindBy(id = "ModificationDate")
+    private WebElement modificationDateInputField;
 
     @FindBy(id = "ContactMark-Autocomplete-Button")
     private WebElement contactMarkSelectButton;
@@ -83,6 +93,18 @@ public class MarksOnClinicalExaminationPage extends AbstractPage {
         waitForLoaderIndicatorDisapearing();
     }
 
+    public void editClinicGroup(){
+        editFirstMarkButton.click();
+        clinicGroupInputField.clear();
+        clinicGroupInputField.sendKeys(String.valueOf(new Random().nextInt(3)+2));
+        waitForLoaderIndicatorDisapearing();
+        modificationDateInputField.clear();
+        modificationDateInputField.sendKeys("11112015");
+        waitForLoaderIndicatorDisapearing();
+        saveButton.click();
+
+    }
+
     public void addNewClinicalExaminationMarkWithCurrentDate() {
         addNewMarkButton.click();
         lastContactDateSelectButton.click();
@@ -101,7 +123,7 @@ public class MarksOnClinicalExaminationPage extends AbstractPage {
 
     public void deleteClinicalExaminationMarkWithCurrentDate() {
         deleteFirstMarkButton.click();
+        confirmDeleteButton.click();
         waitForLoaderIndicatorDisapearing();
     }
-
 }

@@ -17,9 +17,13 @@ public class IdGeneratorRunner {
         System.out.println(parser.getPatientList());
 
         TestCasesParserDataGenderCombinationXlsx data = new TestCasesParserDataGenderCombinationXlsx();
-        System.out.println(data.getDiagnosisList());
-        /*PatientDAO patientDAO = new PatientDAO();
-        patientDAO.deleteByIdn(new Long("42"));*/
+        PatientDAO patientDAO = new PatientDAO();
+        patientDAO.deleteByIdn(new Long("42"));
+        patientDAO.deleteByIdn(new Long("44"));
+
+        patientDAO.add(parser.getPatientList().get(1));
+        patientDAO.add(parser.getPatientList().get(3));
+
    /* 	TestCasesParserDiagnosisTo15 parseDiagnosisTo15 = new TestCasesParserDiagnosisTo15();
     	System.out.println(parseDiagnosisTo15.getValDiagnosisTo15());*/
 

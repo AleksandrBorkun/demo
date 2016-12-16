@@ -26,5 +26,12 @@ public class DiagnosisFormPageSteps extends AbstractSteps {
         return new DiagnosisEditPageSteps(driver);
     }
 
+    public PatientCardPageSteps deleteNotAMainPatientDiagnosis(){
+        log.info("delete not a main patient diagnosis");
+        diagnosisFormPage.deleteDiagnosis();
+        diagnosisFormPage.clickConfirmDeleteButton();
+        return new PatientCardPageSteps(driver);
+    }
+
 
 }

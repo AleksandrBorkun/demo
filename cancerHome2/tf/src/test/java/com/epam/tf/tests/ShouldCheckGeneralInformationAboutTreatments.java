@@ -22,7 +22,7 @@ public class ShouldCheckGeneralInformationAboutTreatments extends BaseTest {
         diagnosisTreatmentMainPageSteps = mainPageSteps.editPatientData()
                 .goToDateListOfDiagnoses()
                 .goToDiagnosisOfFirstDateMenu()
-                .goToTreatmentOfDiagnosis();
+                .goToTreatmentOfDiagnosisSurgery();
     }
 
     @Test(priority = 1, description = "Test № 21 from test_library.xls")

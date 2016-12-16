@@ -44,10 +44,35 @@ public class PatientCardPageSteps extends AbstractSteps {
         return new PatientCardPageSteps(driver);
     }
 
-    public SurgeryTreatmentOfDiagnosisPageSteps goToTreatmentOfDiagnosis() {
+    public SurgeryTreatmentOfDiagnosisPageSteps goToTreatmentOfDiagnosisSurgery() {
         log.info("go to the treatment of diagnosis");
         patientCardPage.goToDiagnosisTreatmentMainPage();
         return new SurgeryTreatmentOfDiagnosisPageSteps(driver);
+    }
+    //temporary ned to refactor these methods
+    public ChemotherapyTreatmentPageSteps goToTreatmentOfDiagnosisChemotherapy() {
+        log.info("go to the treatment of diagnosis");
+        patientCardPage.goToDiagnosisTreatmentMainPage();
+        return new ChemotherapyTreatmentPageSteps(driver);
+    }
+
+
+    public DevicesRadiotherapyTreatmentPageSteps goToTreatmentOfDiagnosisDevicesRadioTherapy() {
+        log.info("go to the treatment of diagnosis");
+        patientCardPage.goToDiagnosisTreatmentMainPage();
+        return new DevicesRadiotherapyTreatmentPageSteps(driver);
+    }
+
+    public PharmacologyRadiotherapyTreatmentPageSteps goToTreatmentOfDiagnosisPharmacologyRadioTherapy() {
+        log.info("go to the treatment of diagnosis");
+        patientCardPage.goToDiagnosisTreatmentMainPage();
+        return new PharmacologyRadiotherapyTreatmentPageSteps(driver);
+    }
+
+    public OtherImpactTreatmentPageSteps goToTreatmentOfDiagnosisOtherImpact(){
+        log.info("go to the treatment of diagnosis");
+        patientCardPage.goToDiagnosisTreatmentMainPage();
+        return new OtherImpactTreatmentPageSteps(driver);
     }
 
     public DiagnosisFormPageSteps goToDiagnosisFormPage(){
@@ -61,10 +86,43 @@ public class PatientCardPageSteps extends AbstractSteps {
         return new PatientEditPassportDataSteps(driver);
     }
 
+    public DiagnosisFormPageSteps editDiagnosisData(){
+        log.info("go to diagnosis data list");
+        patientCardPage.clickEditDiagnosisData();
+        return new DiagnosisFormPageSteps(driver);
+    }
+
+    public MarksOnClinicalExaminationPageSteps editClinicGroupData(){
+        log.info("go to clinic group list");
+        patientCardPage.clickEditClinicData();
+        return new MarksOnClinicalExaminationPageSteps(driver);
+    }
+
     public DiagnosisMetastasesMainPageSteps goToMetastasesOfDiagnosis(){
         log.info("go to relapses and metastases data");
         patientCardPage.goToMetastasesMainPage();
         return new DiagnosisMetastasesMainPageSteps(driver);
     }
 
+    public MolecularGeneticPageSteps goToMolecularGeneticDiagnose() {
+        log.info("Go to molecular genetic  diagnose");
+        patientCardPage.clickDiagnoseMenuButton();
+        patientCardPage.clickDiagnoseListButton();
+        patientCardPage.clickMolecularGeneticDiagnoseButton();
+        return new MolecularGeneticPageSteps(driver);
+    }
+
+    public NotASpecificIGHPageSteps goToIGHNotASpecificDiagnosis(){
+        patientCardPage.clickDiagnoseMenuButton();
+        patientCardPage.clickDiagnoseListButton();
+        patientCardPage.goToNotSpecificIGHDiagnosis();
+        return new NotASpecificIGHPageSteps(driver);
+    }
+
+    public SpecificIGHPageSteps goToSpecificIGHDiagnosis(){
+        patientCardPage.clickDiagnoseMenuButton();
+        patientCardPage.clickDiagnoseListButton();
+        patientCardPage.goToSpecificIGHDiagnosis();
+        return new SpecificIGHPageSteps(driver);
+    }
 }

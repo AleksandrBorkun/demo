@@ -25,6 +25,15 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//button[@type='submit' and @class='btn-success']")
     protected WebElement buttonSave;
 
+    @FindBy(xpath = "//a[@class = 'glyphicon glyphicon-edit']")
+    private WebElement editDataCommonButton;
+
+    @FindBy(css = ".glyphicon-remove")
+    private WebElement deleteDataCommonButton;
+
+    @FindBy(xpath = ".//*[@id='partial']/a")
+    private WebElement addDataCommonButton;
+
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
@@ -33,7 +42,8 @@ public abstract class AbstractPage {
     }
 
     public void saveList(String random) {
-        listNameField.sendKeys(random);
+    	listNameField.clear();
+    	listNameField.sendKeys(random);
         buttonSave.click();
     }
 
@@ -68,4 +78,19 @@ public abstract class AbstractPage {
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         js.executeScript("document.getElementById('" + buttonId + "').click()");
     }
+
+    public void editDataCommonButtonClick() {
+        editDataCommonButton.click();
+    }
+
+    public void deleteDataCommonButtonClick() {
+        wait.waitForElementIsClickable(deleteDataCommonButton);
+        deleteDataCommonButton.click();
+    }
+
+    public void addDataCommonButton(){
+        wait.waitForElementIsClickable(addDataCommonButton);
+        addDataCommonButton.click();
+    }
+
 }

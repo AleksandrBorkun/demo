@@ -7,7 +7,7 @@ import org.testng.annotations.*;
  * Created by Dzmitry_Bets on 12/6/2016.
  */
 
-//test # 2
+
 
 @Listeners(ScreenshotExecutor.class)
 public class PatientEditPassportDataTest extends BaseTest {

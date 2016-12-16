@@ -14,7 +14,7 @@ public class ShouldCheckCommonRegulatedSearch extends BaseTest {
 	@Test
 	public void test() {
 
-		mainPageSteps.goToRegulatedSearchPageCallToHostital().fillCallFromFormAndClickSearch(date);
+	//	mainPageSteps.goToRegulatedSearchPageCallToHostital().fillCallFromFormAndClickSearch(date);
 
 	}
 
@@ -23,7 +23,7 @@ public class ShouldCheckCommonRegulatedSearch extends BaseTest {
 	@Test
 	public void test2() {
 
-		mainPageSteps.goToHaveNoInformationAboutHealing().fillDateAndClickSearch(dateTwo);
+	//	mainPageSteps.goToHaveNoInformationAboutHealing().fillDateAndClickSearch(dateTwo);
 	}
 
 	/// -------------------- ### 93 ### ------------------------- ///
@@ -31,7 +31,7 @@ public class ShouldCheckCommonRegulatedSearch extends BaseTest {
 	@Test
 	public void test3() {
 
-		mainPageSteps.goToConsistingAtTheEndOfThePeriodpage().fillReportingFieldAndClickSearch(date3);
+	//	mainPageSteps.goToConsistingAtTheEndOfThePeriodpage().fillReportingFieldAndClickSearch(date3);
 
 	}
 
@@ -40,7 +40,7 @@ public class ShouldCheckCommonRegulatedSearch extends BaseTest {
 	@Test
 	public void test4() {
 
-		mainPageSteps.goToPremilitarySearchPage().fillBirthDateAndClickSearch(date4);
+	//	mainPageSteps.goToPremilitarySearchPage().fillBirthDateAndClickSearch(date4);
 
 	}
 
@@ -49,7 +49,7 @@ public class ShouldCheckCommonRegulatedSearch extends BaseTest {
 	@Test
 	public void test5() {
 
-		mainPageSteps.goToSecondNameMistakePage().fillRegistrationDateFromAndClickSearch(date5);
+	//	mainPageSteps.goToSecondNameMistakePage().fillRegistrationDateFromAndClickSearch(date5);
 
 	}
 

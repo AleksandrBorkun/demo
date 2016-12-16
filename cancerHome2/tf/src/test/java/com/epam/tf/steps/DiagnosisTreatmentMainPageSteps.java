@@ -43,5 +43,24 @@ public class DiagnosisTreatmentMainPageSteps extends AbstractSteps {
         log.info("go To Surgery Treatment Of First Common Treatment Mark");
         diagnosisTreatmentMainPage.goToSurgeryTreatmentOfFirstCommonTreatmentMark();
     }
+    public  void goToChemotherapyTreatmentPage() {
+        log.info("go To Chemotherapy Treatment Of First Common Treatment Mark");
+        diagnosisTreatmentMainPage.goToChemotherapyTreatmentPage();
+    }
+
+    public  void goToDevicesRadiotherapyTreatmentPage() {
+        log.info("go To Devices Treatment Of First Common Treatment Mark");
+        diagnosisTreatmentMainPage.goToDevicesRadioTherapyTreatmentPage();
+    }
+
+    public  void goToPharmacologyRadiotherapyTreatmentPage() {
+        log.info("go To Pharmacology Treatment Of First Common Treatment Mark");
+        diagnosisTreatmentMainPage.goToPharmacologyRadioTherapyTreatmentPage();
+    }
+
+    public void goToOtherImpactTreatmentPage(){
+        log.info("go To Pharmacology Treatment Of First Common Treatment Mark");
+        diagnosisTreatmentMainPage.goToOtherImpactTreatmentPage();
+    }
 
 }

@@ -1,10 +1,13 @@
 package com.epam.tf.tests.validation;
 
+import com.epam.tf.data.parser.Parser;
+import com.epam.tf.data.parser.ParserFactory;
+import com.epam.tf.data.parser.TestCasesParserTreatmentInfoNew;
 import com.epam.tf.entity.Patient;
 
 
 import com.epam.tf.entity.TestCase;
-import com.epam.tf.data.parser.TestCasesParserFirstSheet;
+import com.epam.tf.data.parser.TestCasesParserTreatmentInfo;
 import com.epam.tf.steps.DiagnosisEditPageSteps;
 import com.epam.tf.tests.BaseTest;
 import com.epam.tf.tests.testUtils.DataProviders;
@@ -27,7 +30,7 @@ public class CommonTreatmentInformationTest extends BaseTest {
 
     @BeforeClass
     public void setUpCases(){
-        TestCasesParserFirstSheet parser = new TestCasesParserFirstSheet();
+        Parser parser = ParserFactory.getParser(ParserFactory.ParserType.COMMON_INFO);
         testCases = parser.getTestCases();
 
     }
@@ -36,21 +39,35 @@ public class CommonTreatmentInformationTest extends BaseTest {
     public void setUp(){
         super.setUp();
         patient = patients.get(0);
+        patientDAO.deleteByIdn(patient.getIdn());
         patientDAO.add(patient);
+
     }
 
-    @Test(dataProvider = "common info", dataProviderClass = DataProviders.class)
-    public void checkCases(TestCase testCase) throws InterruptedException {
+    //@Test(dataProvider = "common info", dataProviderClass = DataProviders.class)
+    @Test
+    public void checkCases() throws InterruptedException {
+        TestCase testCase = testCases.get(17);
         LOG.info("----------------------- Test № " + testCase.getTestCaseNumber()
                 + " -----------------------" );
-        mainPageSteps.insertSurNameIntoSearchField(patient.getLastName())
-                .applySearchRequest().pressFirstRefactorButton().editPassportData().editGenderAndState(testCase).save();
         DiagnosisEditPageSteps editPageSteps =
                 mainPageSteps.insertSurNameIntoSearchField(patient.getLastName())
                 .applySearchRequest()
                 .pressFirstRefactorButton()
-                .goToDiagnosisFormPage().goToEditor()
-                        .fillDiagnosisDataWithoutStringsCheck(testCase);
+                        .editPassportData()
+                        .editGenderAndState(testCase)
+                        .clickSaveButton()
+                        .pressPatientCardButton()
+                .goToDiagnosisFormPage()
+                .goToEditor()
+                .fillDiagnosisDataWithoutStringsCheck(testCase);
+/*        DiagnosisEditPageSteps editPageSteps =
+                mainPageSteps.insertSurNameIntoSearchField(patient.getLastName())
+                .applySearchRequest()
+                .pressFirstRefactorButton()
+                .goToDiagnosisFormPage()
+                        .goToEditor()
+                        .fillDiagnosisDataWithoutStringsCheck(testCase);*/
         String result = editPageSteps.saveResult();
         String testCaseResult = testCase.getResult().split(" ")[1];
         LOG.info(testCaseResult + " ----- ожидание");

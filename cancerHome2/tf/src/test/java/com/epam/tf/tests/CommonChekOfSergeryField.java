@@ -14,16 +14,14 @@ public class CommonChekOfSergeryField extends BaseTest{
 	private static final String date = "11.12.2016";
 	
 	
-	/*	/// ###------------ 83 -----------------#### /// dirtyVersion
+		/// ###------------ 83 -----------------#### /// dirtyVersion
 	@Test
 	public void sergeryFieldCheck(){
 				
 		Assert.assertTrue(
 				mainPageSteps.
 				goToSearchByCatalog().
-				fillAllFieldsAs(fragmentSergery, 
-								requisite, 
-								requisiteAttribute, 
+				fillAllFieldsAs(fragmentSergery,
 								date));
 		
 	}
@@ -32,7 +30,9 @@ public class CommonChekOfSergeryField extends BaseTest{
 	@Test
 	public void recediveFieldCheck(){
 		
-		Assert.assertTrue(mainPageSteps.goToSearchByCatalog().fillAllFieldsForRecedive(recediveFragment, date));
+		Assert.assertTrue(mainPageSteps.
+						goToSearchByCatalog().
+						fillAllFieldsForRecedive(recediveFragment, date));
 	}
 
 
@@ -40,7 +40,9 @@ public class CommonChekOfSergeryField extends BaseTest{
 	@Test
 	public void passportPartValueCheck(){
 		
-		Assert.assertTrue(mainPageSteps.goToSearchByCatalog().fillAllFieldsForPassportPart(date));
+		Assert.assertTrue(mainPageSteps.
+						goToSearchByCatalog().
+						fillAllFieldsForPassportPart(date));
 	}
 	
 
@@ -54,8 +56,7 @@ public class CommonChekOfSergeryField extends BaseTest{
 							fillAllFieldForHasInformation());
 		
 	}
-	
-		*/
+
 
 	/// ###------------- 87 --------------------### ///
 	
@@ -66,7 +67,7 @@ public class CommonChekOfSergeryField extends BaseTest{
 							goToSearchByCatalog().
 							fillAllFieldsForAddOrRequsiteButton(date));
 	}
-	
+
 	/// ###------------- 88 --------------------### ///
 	
 	@Test
@@ -76,7 +77,7 @@ public class CommonChekOfSergeryField extends BaseTest{
 							goToSearchByCatalog().
 							fillAllFieldsForAddANDRequsiteButton(date));
 	}
-	
+
 	/// ###------------- 89 --------------------### ///
 	
 	@Test
@@ -84,8 +85,8 @@ public class CommonChekOfSergeryField extends BaseTest{
 
 		Assert.assertTrue(mainPageSteps.
 							goToSearchByCatalog().
-							fillAllFieldsForAddConditionRequsiteButton(fragment, fragmentAttribute, requisite, requisiteAttribute, date));
+							fillAllFieldsForAddConditionRequsiteButton(date));
 	}
 	
-	
+
 }

@@ -2,6 +2,7 @@ package com.epam.tf.pages;
 
 import com.epam.tf.entity.Patient;
 import com.epam.tf.data.Diagnosis;
+import com.epam.tf.entity.TestCase;
 import com.epam.tf.utils.Random;
 import com.epam.tf.utils.ThreadSleep;
 import org.openqa.selenium.WebDriver;
@@ -87,17 +88,32 @@ public class NewPatientPage extends AbstractPage {
     @FindBy(id = "Clinic_CatalogueField")
     private WebElement camePlaceForm;
 
+    @FindBy(id = "Stage_Autocomplete")
+    private WebElement stageInputField;
+
     @FindBy(id = "Stage-Autocomplete-Button")
     private WebElement phaseToSelectButton;
+
+    @FindBy(id = "T_Autocomplete")
+    private WebElement tInputField;
 
     @FindBy(id = "T-Autocomplete-Button")
     private WebElement tToSelectButton;
 
+    @FindBy(id = "N_Autocomplete")
+    private WebElement nInputField;
+
     @FindBy(id = "N-Autocomplete-Button")
     private WebElement nToSelectButton;
 
+    @FindBy(id = "M_Autocomplete")
+    private WebElement mInputField;
+
     @FindBy(id = "M-Autocomplete-Button")
     private WebElement mToSelectButton;
+
+    @FindBy(id = "Multiply_Autocomplete")
+    private WebElement multiplyInputField;
 
     @FindBy(id = "Multiply-Autocomplete-Button")
     private WebElement multiplyToSelectButton;
@@ -105,8 +121,14 @@ public class NewPatientPage extends AbstractPage {
     @FindBy(id = "Condition-Autocomplete-Button")
     private WebElement examinationConditionToSelectButton;
 
+    @FindBy(id = "Condition_Autocomplete")
+    private WebElement examinationConditionInputField;
+
     @FindBy(id = "ConfirmMethod-Autocomplete-Button")
     private WebElement confirmationMethodToSelectButton;
+
+    @FindBy(id = "ConfirmMethod_Autocomplete")
+    private WebElement confirmationInputField;
 
     @FindBy(id = "MorphologyCode10_CatalogueField")
     private WebElement morphologyForm;
@@ -192,72 +214,39 @@ public class NewPatientPage extends AbstractPage {
 
     }
 
-    public void populateGeneralDiagnosForm(Diagnosis diagnosis) {
-        char[] mkb10Code = diagnosis.getCodeICD10().toCharArray();
-        for (char symbol : mkb10Code) {
-            mkb10CodeForm.sendKeys(symbol + "");
-            ThreadSleep.waitElement(1000);
-        }
-        diagnosStartDateForm.sendKeys(diagnosis.getDiagnosisDate());
-        ThreadSleep.waitElement(1000);
-        pairToSelectButton.click();
-        ThreadSleep.waitElement(1000);
-        selectByText(diagnosis.getPairingSymptom());
-        ThreadSleep.waitElement(1000);
-        diagnoseTextField.sendKeys(diagnosis.getDiagnosisText());
-        ThreadSleep.waitElement(1000);
-        sourceOfInfoToSelectButton.click();
-        ThreadSleep.waitElement(1000);
-        selectByText(diagnosis.getSourceOfdiagnosisInfo());
-        ThreadSleep.waitElement(1000);
-        char[] camePlace = diagnosis.getCamePlace().toCharArray();
-        for (char symbol : camePlace) {
-            camePlaceForm.sendKeys(symbol + "");
-            ThreadSleep.waitElement(1000);
-
-        }
+    public void populateGeneralDiagnosForm(TestCase testCase) throws InterruptedException {
+        mkb10CodeForm.clear();
+        mkb10CodeForm.sendKeys(testCase.getMkb10());
+        Thread.sleep(5000);
+        waitForLoaderIndicatorDisapearing();
+        diagnosStartDateForm.sendKeys(testCase.getDateDiag());
+        waitForLoaderIndicatorDisapearing();
+        pairToSelectButton.sendKeys(testCase.getSignP());
+        waitForLoaderIndicatorDisapearing();
     }
 
-    public void populateStages(Diagnosis diagnosis) {
-        phaseToSelectButton.click();
+    public void populateStages(TestCase testCase) {
+        stageInputField.sendKeys(testCase.getStage());
         ThreadSleep.waitElement(1000);
-        selectByText(diagnosis.getPhase());
+        tInputField.sendKeys(testCase.getT());
         ThreadSleep.waitElement(1000);
-        tToSelectButton.click();
+        nInputField.sendKeys(testCase.getN());
         ThreadSleep.waitElement(1000);
-        selectByExactlyText(diagnosis.getT(), tToSelectButton);
+        mInputField.sendKeys(testCase.getM());
         ThreadSleep.waitElement(1000);
-        nToSelectButton.click();
+        multiplyInputField.sendKeys(testCase.getPlurality());
         ThreadSleep.waitElement(1000);
-        selectByExactlyText(diagnosis.getN(), nToSelectButton);
-        ThreadSleep.waitElement(1000);
-        mToSelectButton.click();
-        ThreadSleep.waitElement(1000);
-        selectByExactlyText(diagnosis.getM(), mToSelectButton);
-        ThreadSleep.waitElement(1000);
-        multiplyToSelectButton.click();
-        ThreadSleep.waitElement(1000);
-        selectByText(diagnosis.getMultiplicity());
     }
 
-    public void populateExamination(Diagnosis diagnosis) {
-        examinationConditionToSelectButton.click();
+    public void populateExamination(TestCase testCase) {
+        examinationConditionInputField.sendKeys(testCase.getDetectionRules());
         ThreadSleep.waitElement(1000);
-        selectByText(diagnosis.getRevealingTerms());
+        confirmationInputField.sendKeys(testCase.getAcceptMethod());
         ThreadSleep.waitElement(1000);
-        confirmationMethodToSelectButton.click();
+
+        morphologyForm.sendKeys(testCase.getMorphology());
         ThreadSleep.waitElement(1000);
-        selectByText(diagnosis.getConfirmationMethod());
-        ThreadSleep.waitElement(1000);
-        char[] morphology = diagnosis.getICD10morphology().toCharArray();
-        for (char symbol : morphology) {
-            morphologyForm.sendKeys(symbol + "");
-            ThreadSleep.waitElement(1000);
-        }
-        ThreadSleep.waitElement(1000);
-        researchNumberForm.sendKeys(diagnosis.getMorphologicalStudyRate());
-        ThreadSleep.waitElement(1000);
-        researhDateForm.sendKeys(diagnosis.getDateOfExamination());
+
     }
 
     public void saveData() {

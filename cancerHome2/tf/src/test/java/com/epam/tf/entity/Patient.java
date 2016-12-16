@@ -10,6 +10,7 @@ public class Patient {
     private String patrName;
     private String birthDay;
     private Byte sex;
+    private String state;
     private Long idDiag;
 
 
@@ -113,15 +114,23 @@ public class Patient {
         this.idDiag = idDiag;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public String dateSwap(){
         String date = this.getBirthDay();
-        String year = date.substring(0, 4);
-        String month = date.substring(4, 6);
-        String day = date.substring(6, 8);
-        System.out.println((day + month + year));
-        return (day + month + year);
+        String year = date.substring(4, 8);
+        String month = date.substring(2, 4);
+        String day = date.substring(0, 2);
+        return (year + day + month);
 
     }
+
 
     @Override
     public String toString() {
@@ -134,6 +143,7 @@ public class Patient {
                 ", patrName='" + patrName + '\'' +
                 ", birthDay=" + birthDay +
                 ", sex=" + sex +
+                ", state=" + state +
                 ", idDiag=" + idDiag +
                 '}';
     }

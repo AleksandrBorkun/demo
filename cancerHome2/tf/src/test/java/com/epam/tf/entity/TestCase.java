@@ -38,6 +38,13 @@ public class TestCase {
     private String nowStage;
     private String result;
     private String scenarioDescription;
+    private Patient patient;
+
+
+
+    private Treatment treatment;
+
+
 
     public TestCase() {
     }
@@ -296,6 +303,22 @@ public class TestCase {
 
     public void setScenarioDescription(String scenarioDescription) {
         this.scenarioDescription = scenarioDescription;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Treatment getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(Treatment treatment) {
+        this.treatment = treatment;
     }
 
     @Override

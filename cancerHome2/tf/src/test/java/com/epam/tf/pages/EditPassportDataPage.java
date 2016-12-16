@@ -1,9 +1,13 @@
 package com.epam.tf.pages;
 
 import com.epam.tf.entity.TestCase;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.epam.tf.steps.PatientCardPageSteps;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.testng.annotations.Test;
+
+import java.util.List;
 
 /**
  * Created by Nikolay_Golubitsky on 12/9/2016.
@@ -16,8 +20,6 @@ public class EditPassportDataPage extends AbstractPage {
     public EditPassportDataPage(WebDriver driver) {
         super(driver);
     }
-
-    //PASSPORT PART
 
     @FindBy(id = "PatientCardNumber")
     private WebElement cardNumberForm;
@@ -70,22 +72,129 @@ public class EditPassportDataPage extends AbstractPage {
     @FindBy(xpath = "//button[@type = 'submit']")
     private WebElement saveButton;
 
+    @FindBy(xpath = "//a[text()='Диагнозы']")
+    private WebElement goToPatientCardPageButton;
+
+    @FindBy(xpath = ".//*[@id='Sex-Autocomplete-Button']")
+    private WebElement buttonGenderSelect;
+
+    @FindBy(xpath = ".//li[text() = ' - женский']")
+    private WebElement womanSelect;
+
+    @FindBy(xpath = ".//li[text() = ' - мужской']")
+    private WebElement manSelect;
+
+
+    @FindBys(@FindBy(xpath = ".//*[@id='validationErorCollapse']//li"))
+    private List<WebElement> validationWarningList;
+
+    @FindBy(xpath = "//div[@class='modal-content']")
+    private WebElement alertWindow;
+
+    @FindBy(xpath = "//button[@class='btn btn-success']")
+    private WebElement confirmAlert;
+
+    @FindBy(xpath = "//div[@class='panel-title']/a")
+    private WebElement validationWarnings;
+
+    private Boolean genderDifference = false;
+
+    public Boolean getGenderDifference() {
+        return genderDifference;
+    }
+
     public void editGender(TestCase testCase){
-        sexInputField.clear();
-        sexInputField.sendKeys(testCase.getSex());
+        String sex = testCase.getSex();
+        String sexInputString = sexInputField.getAttribute("value");
+        if(sexInputString.equals(sex)) {
+            genderDifference = true;
+            return;
+        }
+
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(buttonGenderSelect);
+        clickButtonGenderSelect();
+
+        if(sex.contains("1 - мужской")){
+            wait.waitForElementIsClickable(manSelect);
+            manSelect.click();
+        } else if(sex.contains("2 - женский")){
+            wait.waitForElementIsClickable(womanSelect);
+            womanSelect.click();
+        }
+        waitForLoaderIndicatorDisapearing();
+    }
+
+    public void editGenderWithByteSexField(TestCase testCase){
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(buttonGenderSelect);
+        clickButtonGenderSelect();
+        Byte sexByte = testCase.getPatient().getSex();
+
+        if(sexByte == 1){
+            wait.waitForElementIsClickable(manSelect);
+            manSelect.click();
+        } else{
+            wait.waitForElementIsClickable(womanSelect);
+            womanSelect.click();
+        }
+    }
+
+    private void clickButtonGenderSelect(){
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(buttonGenderSelect);
+        waitForLoaderIndicatorDisapearing();
+        buttonGenderSelect.click();
+        waitForLoaderIndicatorDisapearing();
     }
 
     public void editState(TestCase testCase){
         currentStateAutocomplete.clear();
-        currentStateAutocomplete.sendKeys(testCase.getNowStage());
+        currentStateAutocomplete.sendKeys(testCase.getPatient().getState());
     }
 
     public void clickSaveButton(){
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(saveButton);
+        waitForLoaderIndicatorDisapearing();
         saveButton.click();
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementAppearing(saveButton);
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(saveButton);
+    }
+
+    public void clickGoToPatientCardPageButton(){
+        waitForLoaderIndicatorDisapearing();
+        waitForLoaderIndicatorDisapearing();
+        goToPatientCardPageButton.click();
         waitForLoaderIndicatorDisapearing();
     }
 
-    public String getErrormessage(){
-        return new String();
+    private void getAlertWindowForGender(){
+           wait.waitForElementAppearing(alertWindow);
+    }
+
+    public void confirmAlertWindow(){
+        getAlertWindowForGender();
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(confirmAlert);
+        confirmAlert.click();
+        waitForLoaderIndicatorDisapearing();
+    }
+
+
+    public StringBuilder getWarningMessage(){
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementAppearing(validationWarnings);
+        wait.waitForElementIsClickable(validationWarnings);
+        validationWarnings.click();
+        StringBuilder errors = new StringBuilder();
+        wait.waitForElementsAppearing(validationWarningList);
+        for (WebElement liElement: validationWarningList) {
+            wait.waitForElementAppearing(liElement);
+            errors.append(liElement.getText());
+        }
+        return errors;
     }
 }

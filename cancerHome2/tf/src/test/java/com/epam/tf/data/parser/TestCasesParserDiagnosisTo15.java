@@ -1,52 +1,32 @@
 package com.epam.tf.data.parser;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
-import com.epam.tf.property.PropertyProvider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.util.Iterator;
+
+import com.epam.tf.entity.Patient;
+import com.epam.tf.entity.TestCase;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.epam.tf.entity.DataDiagnosisTo15;
 
-public class TestCasesParserDiagnosisTo15 {
+
+public class TestCasesParserDiagnosisTo15 extends Parser {
 
 	private final static String SHEET = "Вал уст. диагноза до 15 лет";
-	private final static String FILE_PATH = "xlsxDocument";
-	private static final Logger LOG = LogManager.getRootLogger();
-	private List<DataDiagnosisTo15> valDiagnosisTo15List = new ArrayList<>();
-
-	public List<DataDiagnosisTo15> getValDiagnosisTo15() {
-		return valDiagnosisTo15List;
-	}
 
 	public TestCasesParserDiagnosisTo15() {
-		InputStream inputStream;
-		XSSFWorkbook workbook;
-
-		try {
-			inputStream = new FileInputStream(PropertyProvider.getProperty(FILE_PATH));
-			workbook = new XSSFWorkbook(inputStream);
-			parse(workbook.getSheet(SHEET));
-		} catch (IOException e) {
-			LOG.error(e.getMessage());
-		}
+		super(SHEET);
 	}
 
-	private void parse(Sheet sheet) {
+	protected void parse(Sheet sheet) {
 		for (Row row : sheet) {
 			if (row.getRowNum() < 2) {
 				continue;
 			}
-			DataDiagnosisTo15 testCase = new DataDiagnosisTo15();
+			TestCase testCase = new TestCase();
+			testCase.setPatient(new Patient());
 			int cellCounter = 1;
 			Iterator<Cell> cellIterator = row.cellIterator();
 			while (cellIterator.hasNext()) {
@@ -54,97 +34,96 @@ public class TestCasesParserDiagnosisTo15 {
 				cell.setCellType(Cell.CELL_TYPE_STRING);
 				switch (cellCounter) {
 				case 1:
-					testCase.setBirthDay(cell.getStringCellValue().trim());
+					testCase.getPatient().setBirthDay(getValue(cell));
 					break;
 				case 2:
-					testCase.setCodeICD10(cell.getStringCellValue().trim());
+					testCase.setMkb10(getValue(cell));
 					break;
 				case 3:
-					testCase.setCodeICD9(cell.getStringCellValue().trim());
+					testCase.setMkb9(getValue(cell));
 					break;
 				case 4:
-					testCase.setDiagnosisDate(cell.getStringCellValue().trim());
+					testCase.setDateDiag(getValue(cell));
 					break;
 				case 5:
-					testCase.setDiagnosisCancelDate(cell.getStringCellValue().trim());
+					testCase.setDateDiagCan(getValue(cell));
 					break;
 				case 6:
-					testCase.setPairingSymptom(cell.getStringCellValue().trim());
+					testCase.setSignP(getValue(cell));
 					break;
 				case 7:
-					testCase.setPregnancy(cell.getStringCellValue().trim());
+					testCase.setPregnancy(getValue(cell));
 					break;
 				case 8:
-					testCase.setDiagnosisText(cell.getStringCellValue().trim());
+					testCase.setDiagnosisText(getValue(cell));
 					break;
 				case 9:
-					testCase.setSourceOfdiagnosisInfo(cell.getStringCellValue().trim());
+					testCase.setSourceInf(getValue(cell));
 					break;
 				case 10:
-					testCase.setCamePlace(cell.getStringCellValue().trim());
+					testCase.setFrom(getValue(cell));
 					break;
 				case 11:
-					testCase.setPlaceOfresidency(cell.getStringCellValue().trim());
+					testCase.setHomeAddress(getValue(cell));
 					break;
 				case 12:
-					testCase.setAdditionalInfo(cell.getStringCellValue().trim());
+					testCase.setExtraText(getValue(cell));
 					break;
 				case 13:
-					testCase.setPhase(cell.getStringCellValue().trim());
+					testCase.setStage(getValue(cell));
 					break;
 				case 14:
-					testCase.setPhaseEnding(cell.getStringCellValue().trim());
+					testCase.setFinalStage(getValue(cell));
 					break;
 				case 15:
-					testCase.setRefinementPhase(cell.getStringCellValue().trim());
+					testCase.setSpecificationStage(getValue(cell));
 					break;
 				case 16:
-					testCase.setRefinementPhaseEnding(cell.getStringCellValue().trim());
+					testCase.setFinalSpecificationStage(getValue(cell));
 					break;
 				case 17:
-					testCase.setT(cell.getStringCellValue().trim());
+					testCase.setT(getValue(cell));
 					break;
 				case 18:
-					testCase.setN(cell.getStringCellValue().trim());
+					testCase.setN(getValue(cell));
 					break;
 				case 19:
-					testCase.setM(cell.getStringCellValue().trim());
+					testCase.setM(getValue(cell));
 					break;
 				case 20:
-					testCase.setMultiplicity(cell.getStringCellValue().trim());
+					testCase.setPlurality(getValue(cell));
 					break;
 				case 21:
-					testCase.setRevealingTerms(cell.getStringCellValue().trim());
+					testCase.setDetectionRules(getValue(cell));
 					break;
 				case 22:
-					testCase.setConfirmationMethod(cell.getStringCellValue().trim());
+					testCase.setAcceptMethod(getValue(cell));
 					break;
 				case 23:
-					testCase.setICD10morphology(cell.getStringCellValue().trim());
+					testCase.setMorphology(getValue(cell));
 					break;
 				case 24:
-					testCase.setDifferentiationDegree(cell.getStringCellValue().trim());
+					testCase.setStageDif(getValue(cell));
 					break;
 				case 25:
-					testCase.setMorphologyText(cell.getStringCellValue().trim());
+					testCase.setMorphologyText(getValue(cell));
 					break;
 				case 26:
-					testCase.setMorphologicalStudyRate(cell.getStringCellValue().trim());
+					testCase.setMorphologyNumber(getValue(cell));
 					break;
 				case 27:
-					testCase.setDateOfExamination(cell.getStringCellValue().trim());
+					testCase.setCarriageDate(getValue(cell));
 					break;
 				case 28:
-					testCase.setResult(cell.getStringCellValue().trim());
+					testCase.setResult(getValue(cell));
 					break;
 
 				}
 				cellCounter++;
 			}
-			// System.out.println(testCase);
 			if (!testCase.getResult().equals("")) {
 
-				valDiagnosisTo15List.add(testCase);
+				testCases.add(testCase);
 			}
 		}
 	}

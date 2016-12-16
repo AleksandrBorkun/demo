@@ -22,6 +22,12 @@ public class PatientDiagnosisFormPage extends AbstractPage {
 	@FindBy(xpath = "//*[@id='partial']/a")
 	private WebElement addButton;
 
+	@FindBy(css = ".glyphicon-remove")
+	private WebElement deleteButton;
+
+	@FindBy(css = ".modal-footer .btn-success")
+	private WebElement confirmDeleteButton;
+
 	public void goToEditor() {
 		wait.waitForElementIsClickable(editFormButton);
 		Actions actions = new Actions(driver);
@@ -40,6 +46,14 @@ public class PatientDiagnosisFormPage extends AbstractPage {
 
 	public void createNewDiagnosis() {
 		addButton.click();
+	}
+
+	public void deleteDiagnosis(){
+		deleteButton.click();
+	}
+
+	public void clickConfirmDeleteButton(){
+		confirmDeleteButton.click();
 	}
 
 }

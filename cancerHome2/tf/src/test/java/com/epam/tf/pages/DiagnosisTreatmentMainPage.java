@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,8 +70,8 @@ public class DiagnosisTreatmentMainPage extends AbstractPage {
     @FindAll(@FindBy(xpath = "//*[@id='partial']//*/tr[1]/td"))
     private List<WebElement> firstMarkDataList;
 
-    @FindBy(xpath = "//a[text()='Хирургическое']")
-    private WebElement SurgeryTreatmenButton;
+    @FindBys(@FindBy(css = ".app-users[model-type=\"treatment\"] div.collapse li"))
+    private List<WebElement> treatmentTypesButtons;
 
     public void addCommonDiagnosisTreatmentData() {
         waitForLoaderIndicatorDisapearing();
@@ -149,14 +150,39 @@ public class DiagnosisTreatmentMainPage extends AbstractPage {
         System.out.println(marks.size());
         return marks.size();
     }
-
     public void goToSurgeryTreatmentOfFirstCommonTreatmentMark() {
-        tabOfDiagnosisTreatment.click();
         waitForLoaderIndicatorDisapearing();
-        editFirstTreatmentButton.click();
+        wait.waitForElementIsClickable(treatmentTypesButtons.get(0));
+        treatmentTypesButtons.get(0).click();
         waitForLoaderIndicatorDisapearing();
-        wait.waitForElementIsClickable(SurgeryTreatmenButton);
-        SurgeryTreatmenButton.click();
+    }
+
+    public void goToChemotherapyTreatmentPage() {
+
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(treatmentTypesButtons.get(1));
+        treatmentTypesButtons.get(1).click();
+        waitForLoaderIndicatorDisapearing();
+    }
+
+    public void goToDevicesRadioTherapyTreatmentPage() {
+
+        wait.waitForElementIsClickable(treatmentTypesButtons.get(2));
+        treatmentTypesButtons.get(2).click();
+        waitForLoaderIndicatorDisapearing();
+    }
+
+    public void goToPharmacologyRadioTherapyTreatmentPage() {
+
+        wait.waitForElementIsClickable(treatmentTypesButtons.get(3));
+        treatmentTypesButtons.get(3).click();
+        waitForLoaderIndicatorDisapearing();
+    }
+
+    public void goToOtherImpactTreatmentPage() {
+
+        wait.waitForElementIsClickable(treatmentTypesButtons.get(4));
+        treatmentTypesButtons.get(4).click();
         waitForLoaderIndicatorDisapearing();
     }
 

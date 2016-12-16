@@ -22,7 +22,6 @@ public class TestGenderCombinationsForPatient extends BaseTest {
 
     public void setUp(){
         super.setUp();
-
         getPatientDAO().deleteByIdn(patient2.getIdn());
         getPatientDAO().deleteByIdn(patient4.getIdn());
         getPatientDAO().add(patient2);
@@ -32,16 +31,21 @@ public class TestGenderCombinationsForPatient extends BaseTest {
     @Test(singleThreaded = true, dataProvider = "gender combination valid cases",
             dataProviderClass = DataProviders.class)
     public void testPositiveGenderCombinationPatient2(TestCase diagnosis){
+        diagnosis.setPatient(patient2);
         mainPageSteps
                 .insertSurNameIntoSearchField(patient2.getLastName())
                 .applySearchRequest()
                 .pressPatientRefactorButton(patient2)
-                .editPassportData();
+                .editPassportData()
+                .editGender(diagnosis)
+                .clickSaveButton()
+                .pressPatientCardButton()
+                .goToDiagnosisFormPage();
         
         Assert.assertEquals(diagnosis.getSex(), diagnosis.getSex());
     }
 
-    @Test(singleThreaded = true, dataProvider = "gender combination valid cases",
+    @Test(enabled = false,singleThreaded = true, dataProvider = "gender combination valid cases",
             dataProviderClass = DataProviders.class, dependsOnMethods = "testPositiveGenderCombinationPatient2")
     public void testPositiveGenderCombinationPatient4(TestCase diagnosis){
         diagnosis.getSex();

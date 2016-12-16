@@ -3,15 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.epam.tf.tests.ShouldCheckCommonRegulatedSearch">
+      <class name="com.epam.tf.tests.CommonChekOfSergeryField">
         <methods>
           <include name="tearDown"/>
-          <include name="test4"/>
-          <include name="closeConnections"/>
+          <include name="passportPartValueCheck"/>
+          <include name="recediveFieldCheck"/>
+          <include name="sergeryFieldCheck"/>
+          <include name="addConditionCheck"/>
           <include name="setUp"/>
           <include name="initData"/>
+          <include name="addOrToRequsiteAttributeCheck"/>
+          <include name="addANDToRequsiteAttributeCheck"/>
         </methods>
-      </class> <!-- com.epam.tf.tests.ShouldCheckCommonRegulatedSearch -->
+      </class> <!-- com.epam.tf.tests.CommonChekOfSergeryField -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

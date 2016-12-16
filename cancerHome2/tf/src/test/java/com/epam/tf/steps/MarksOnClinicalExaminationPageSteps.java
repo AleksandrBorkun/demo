@@ -35,9 +35,16 @@ public class MarksOnClinicalExaminationPageSteps extends AbstractSteps {
         marksOnClinicalExaminationPage.editClinicalExaminationMark(period);
     }
 
+    public void editClinicalGroup(){
+        log.info("edit clinic group");
+        marksOnClinicalExaminationPage.editClinicGroup();
+    }
+
     public void deleteClinicalExaminationFirsMark() {
         log.info("delete clinical examination firs mark");
         marksOnClinicalExaminationPage.deleteClinicalExaminationMarkWithCurrentDate();
     }
+
+
 
 }

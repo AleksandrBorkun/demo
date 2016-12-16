@@ -2,6 +2,7 @@ package com.epam.tf.steps;
 
 
 import com.epam.tf.pages.ListPage;
+import com.epam.tf.pages.MainPage;
 import com.epam.tf.utils.Random;
 import org.openqa.selenium.WebDriver;
 
@@ -48,8 +49,15 @@ public class ListsPageSteps extends AbstractSteps{
         return new ListDescriptionPageSteps(driver);
     }
 
+    public ListDescriptionPageSteps  editOneNoteList(){
+        listPage.editOneNoteList();
+		return new ListDescriptionPageSteps(driver);
+        
+    }
 
-
-
+    public MainPage goToMainPage() {
+		listPage.goToMainPage();
+		return new MainPage(driver);
+	}
 
 }

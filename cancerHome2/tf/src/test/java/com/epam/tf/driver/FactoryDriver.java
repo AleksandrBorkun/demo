@@ -54,7 +54,7 @@ public class FactoryDriver {
 
     public static void closeDriver() {
 
-        driver.close();
+        driver.quit();
         driver = null;
         log.info("driver has been closed");
     }

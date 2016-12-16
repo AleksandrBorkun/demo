@@ -1,7 +1,9 @@
 package com.epam.tf.steps;
 
+import com.epam.tf.data.parser.TestCasesParserTreatmentInfo;
 import com.epam.tf.entity.Patient;
 import com.epam.tf.data.Diagnosis;
+import com.epam.tf.entity.TestCase;
 import com.epam.tf.pages.NewPatientPage;
 import org.openqa.selenium.WebDriver;
 
@@ -27,13 +29,13 @@ public class NewPatientPageSteps extends AbstractSteps {
         newPatientPage.saveData();
     }
 
-    public void populateDiagnosData(Diagnosis diagnosis){
+    public void populateDiagnosData(TestCase testCase) throws InterruptedException {
         log.info("filling general diagnosis form");
-        newPatientPage.populateGeneralDiagnosForm(diagnosis);
+        newPatientPage.populateGeneralDiagnosForm(testCase);
         log.info("filling stages");
-        newPatientPage.populateStages(diagnosis);
+        newPatientPage.populateStages(testCase);
         log.info("filling examination");
-        newPatientPage.populateExamination(diagnosis);
+        newPatientPage.populateExamination(testCase);
         log.info("click save changes");
         newPatientPage.saveData();
     }
@@ -45,7 +47,7 @@ public class NewPatientPageSteps extends AbstractSteps {
         newPatientPage.saveData();
     }
 
-    public boolean isTableContain(String personalNumber){
+    public boolean isUpperTableContain(String personalNumber){
         return newPatientPage.isTableContein(personalNumber);
     }
 

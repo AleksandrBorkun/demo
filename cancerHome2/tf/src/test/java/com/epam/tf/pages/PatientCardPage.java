@@ -39,11 +39,58 @@ public class PatientCardPage extends AbstractPage {
     @FindBy(xpath = ".//a[text()='Паспортная часть']")
     private WebElement editPassportData;
 
+    @FindBy(xpath = ".//a[text()='Диагнозы']")
+    private WebElement editDiagnosisData;
+
+    @FindBy(xpath = ".//a[text()='Клинические группы']")
+    private WebElement editClinicGroup;
+
     @FindBy(xpath = ".//a[text()='Действия']")
     private WebElement actionButton;
 
     @FindBy(xpath = ".//a[text() ='Сменить диспансер']")
     private WebElement changeDispensaryButton;
+
+    @FindBy(xpath = "/descendant::span[@class='caret'][4]")
+    private WebElement diagnoseMenuButton;
+
+    @FindBy(xpath = "/descendant::span[@class='caret'][5]")
+    private WebElement diagnoseListButton;
+
+    @FindBy(xpath = "//a[contains(text(), 'генетические')]")
+    private WebElement molecularGeneticDiagnoseButton;
+
+    @FindBy(xpath = "//a[contains(text(), 'ИГХ неспецифические')]")
+    private WebElement notSpecificIGHDiagnoseButton;
+
+    @FindBy(xpath = "//a[contains(text(), 'ИГХ специфические')]")
+    private WebElement specificIGHDiagnosisButton;
+
+
+    public void clickMolecularGeneticDiagnoseButton (){
+        wait.waitForElementIsClickable(molecularGeneticDiagnoseButton);
+        molecularGeneticDiagnoseButton.click();
+    }
+
+    public void clickDiagnoseListButton(){
+        wait.waitForElementIsClickable(diagnoseListButton);
+        diagnoseListButton.click();
+    }
+
+    public void clickDiagnoseMenuButton(){
+        wait.waitForElementIsClickable(diagnoseMenuButton);
+        diagnoseMenuButton.click();
+    }
+
+    public void goToNotSpecificIGHDiagnosis(){
+        waitForLoaderIndicatorDisapearing();
+        notSpecificIGHDiagnoseButton.click();
+    }
+
+    public void goToSpecificIGHDiagnosis(){
+        waitForLoaderIndicatorDisapearing();
+        specificIGHDiagnosisButton.click();
+    }
 
     public void clickChangeDispensaryButton(){
         wait.waitForJQuery(driver);
@@ -58,11 +105,28 @@ public class PatientCardPage extends AbstractPage {
     }
 
     public void clickEditButton() {
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(editButton);
         editButton.click();
+        waitForLoaderIndicatorDisapearing();
     }
 
     public void clickEditPassportData(){
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForElementIsClickable(editPassportData);
         editPassportData.click();
+        waitForLoaderIndicatorDisapearing();
+    }
+
+    public void clickEditDiagnosisData(){
+        editDiagnosisData.click();
+        waitForLoaderIndicatorDisapearing();
+
+    }
+
+    public void clickEditClinicData(){
+        editClinicGroup.click();
+        waitForLoaderIndicatorDisapearing();
     }
 
     public void clickFirstDateOfDiagnosisUnit() {
@@ -74,6 +138,9 @@ public class PatientCardPage extends AbstractPage {
     public DiagnosisTreatmentMainPage goToDiagnosisTreatmentMainPage() {
         wait.waitForElementIsClickable(tabOfDiagnosisTreatment);
         tabOfDiagnosisTreatment.click();
+        waitForLoaderIndicatorDisapearing();
+        wait.waitForJQuery(driver);
+        editButton.click();
         return new DiagnosisTreatmentMainPage(driver);
     }
 

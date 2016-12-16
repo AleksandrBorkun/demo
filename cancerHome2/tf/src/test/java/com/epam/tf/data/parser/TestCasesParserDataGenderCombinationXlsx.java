@@ -1,48 +1,25 @@
 package com.epam.tf.data.parser;
 
 import com.epam.tf.entity.TestCase;
-import com.epam.tf.property.PropertyProvider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by Ihar_Hukau on 12/1/2016.
  */
-public class TestCasesParserDataGenderCombinationXlsx {
-    private final static String SHEET = "Вал комбинации Пола";
-    private final static String FILE_PATH = "xlsxDocument";
-    private static final Logger LOG = LogManager.getRootLogger();
-    private List<TestCase> testCaseList = new ArrayList<>();
 
-    public List<TestCase> getDiagnosisList () {
-        return testCaseList;
-    }
+public class TestCasesParserDataGenderCombinationXlsx extends Parser {
+    private final static String SHEET = "Вал комбинации Пола";
+
 
     public TestCasesParserDataGenderCombinationXlsx(){
-        InputStream inputStream;
-        XSSFWorkbook workbook;
-
-        try {
-            inputStream = new FileInputStream(PropertyProvider.getProperty(FILE_PATH));
-            workbook = new XSSFWorkbook(inputStream);
-            parsePatientDataGender(workbook.getSheet(SHEET));
-        } catch (IOException e) {
-            LOG.error(e.getMessage());
-        }
-
+        super(SHEET);
     }
-    private void parsePatientDataGender(Sheet sheet){
+
+    protected void parse(Sheet sheet){
         for (Row row : sheet) {
             if (row.getRowNum() < 2) {
                 continue;
@@ -55,7 +32,7 @@ public class TestCasesParserDataGenderCombinationXlsx {
                 cell.setCellType(Cell.CELL_TYPE_STRING);
                     switch (cellCounter) {
                         case 1:
-                            String sex = cell.getStringCellValue().trim();
+                            String sex = getValue(cell).trim();
                             if(sex.equals("М")) {
                                 testCase.setSex("1 - мужской");
                             } else if(sex.equals("Ж")) {
@@ -63,90 +40,90 @@ public class TestCasesParserDataGenderCombinationXlsx {
                             }
                             break;
                         case 2:
-                            testCase.setMkb10(cell.getStringCellValue().replace(".", "").trim());
+                            testCase.setMkb10(getValue(cell).replace(".", "").trim());
                             break;
                         case 3:
-                            testCase.setMkb9(cell.getStringCellValue().trim());
+                            testCase.setMkb9(getValue(cell));
                         case 4:
-                            testCase.setDateDiag(cell.getStringCellValue().replace(".", "").trim());
+                            testCase.setDateDiag(getValue(cell).replace(".", "").trim());
                             break;
                         case 5:
-                            testCase.setDateDiagCan(cell.getStringCellValue().replace(".", "").trim());
+                            testCase.setDateDiagCan(getValue(cell).replace(".", "").trim());
                             break;
                         case 6:
-                            testCase.setSignP(cell.getStringCellValue().trim());
+                            testCase.setSignP(getValue(cell));
                             break;
                         case 7:
-                            testCase.setPregnancyBegin(cell.getStringCellValue().trim());
+                            testCase.setPregnancyBegin(getValue(cell));
                             break;
                         case 8:
-                            testCase.setDiagnosisText(cell.getStringCellValue().trim());
+                            testCase.setDiagnosisText(getValue(cell));
                             break;
                         case 9:
-                            testCase.setSourceInf(cell.getStringCellValue().trim());
+                            testCase.setSourceInf(getValue(cell));
                             break;
                         case 10:
-                            testCase.setFrom(cell.getStringCellValue().trim());
+                            testCase.setFrom(getValue(cell));
                             break;
                         case 11:
-                            testCase.setHomeAddress(cell.getStringCellValue().trim());
+                            testCase.setHomeAddress(getValue(cell));
                             break;
                         case 12:
-                            testCase.setExtraText(cell.getStringCellValue().trim());
+                            testCase.setExtraText(getValue(cell));
                             break;
                         case 13:
-                            testCase.setStage(cell.getStringCellValue().trim());
+                            testCase.setStage(getValue(cell));
                             break;
                         case 14:
-                            testCase.setFinalStage(cell.getStringCellValue().trim());
+                            testCase.setFinalStage(getValue(cell));
                             break;
                         case 15:
-                            testCase.setSpecificationStage(cell.getStringCellValue().trim());
+                            testCase.setSpecificationStage(getValue(cell));
                             break;
                         case 16:
-                            testCase.setFinalSpecificationStage(cell.getStringCellValue().trim());
+                            testCase.setFinalSpecificationStage(getValue(cell));
                             break;
                         case 17:
-                            testCase.setT(cell.getStringCellValue().trim());
+                            testCase.setT(getValue(cell));
                             break;
                         case 18:
-                            testCase.setN(cell.getStringCellValue().trim());
+                            testCase.setN(getValue(cell));
                             break;
                         case 19:
-                            testCase.setM(cell.getStringCellValue().trim());
+                            testCase.setM(getValue(cell));
                             break;
                         case 20:
-                            testCase.setPlurality(cell.getStringCellValue().trim());
+                            testCase.setPlurality(getValue(cell));
                             break;
                         case 21:
-                            testCase.setDetectionRules(cell.getStringCellValue().trim());
+                            testCase.setDetectionRules(getValue(cell));
                             break;
                         case 22:
-                            testCase.setAcceptMethod(cell.getStringCellValue().trim());
+                            testCase.setAcceptMethod(getValue(cell));
                             break;
                         case 23:
-                            testCase.setMorphology(cell.getStringCellValue().trim());
+                            testCase.setMorphology(getValue(cell));
                             break;
                         case 24:
-                            testCase.setStageDif(cell.getStringCellValue().trim());
+                            testCase.setStageDif(getValue(cell));
                             break;
                         case 25:
-                            testCase.setMorphologyText(cell.getStringCellValue().trim());
+                            testCase.setMorphologyText(getValue(cell));
                             break;
                         case 26:
-                            testCase.setMorphologyNumber(cell.getStringCellValue().trim());
+                            testCase.setMorphologyNumber(getValue(cell));
                             break;
                         case 27:
-                            testCase.setCarriageDate(cell.getStringCellValue().replace(".", "").trim());
+                            testCase.setCarriageDate(getValue(cell).replace(".", ""));
                             break;
                         case 28:
-                            testCase.setResult(cell.getStringCellValue().trim());
+                            testCase.setResult(getValue(cell));
                             break;
                     }
                     cellCounter++;
             }
             if(testCase.getSex() != null) {
-                testCaseList.add(testCase);
+                testCases.add(testCase);
             }
         }
     }

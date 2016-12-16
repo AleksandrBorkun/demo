@@ -10,516 +10,577 @@ import org.openqa.selenium.support.FindBys;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
 public class SearchByCatalogPage extends AbstractPage {
 
-    public SearchByCatalogPage(WebDriver driver) {
-        super(driver);
-    }
+	public SearchByCatalogPage(WebDriver driver) {
+		super(driver);
+	}
 
-    @FindBy(xpath = "//div[@role='fragment']//span")
-    private WebElement fragmentPopUp;
+	@FindBy(xpath = "//div[@role='fragment']//span")
+	private WebElement fragmentPopUp;
 
-    @FindBy(xpath = "//div[@role='attr-fragment']//span")
-    private WebElement fragmentAttributePopUp;
+	@FindBy(xpath = "//div[@role='attr-fragment']//span")
+	private WebElement fragmentAttributePopUp;
 
-    @FindBy(xpath = "//div[@role='requisite']//button")
-    private WebElement requisitePopUp;
+	@FindBy(xpath = "//div[@role='requisite']//button")
+	private WebElement requisitePopUp;
 
-    @FindBy(xpath = "//div[@role='attr-requisite']//span/button")
-    private WebElement requisiteAttributePopUp;
+	@FindBy(xpath = "//div[@role='attr-requisite']//span/button")
+	private WebElement requisiteAttributePopUp;
 
-    @FindBy(xpath = "//div[@role='val-requisite']//button")
-    private WebElement requisiteValueButton;
-    
-    @FindBy(xpath = "//li[text() = 'Дата рождения']")
-    private WebElement requisiteBirthDateValue;
+	@FindBy(xpath = "//div[@role='val-requisite']//button")
+	private WebElement requisiteValueButton;
 
-    @FindBy(xpath = "//a[text() = 'Поиск по каталогу']")
-    private WebElement searchByCatalogPart;
+	@FindBy(id = "SearchItems[0]_Values[0]_Value-Autocomplete-Button")
+	private WebElement requisiteRawDataPopUp;
 
-    @FindBy(xpath = "//label[text() = 'Подкласс']//..//span")
-    private WebElement subClass;
+	@FindBy(xpath = "//li[text() = 'Дата рождения']")
+	private WebElement requisiteBirthDateValue;
 
-    @FindBy(xpath = "//label[text() = 'Рубрика']//..//span")
-    private WebElement headingButton;
+	@FindBy(xpath = "//a[text() = 'Поиск по каталогу']")
+	private WebElement searchByCatalogPart;
 
-    @FindBy(xpath = "//label[text() = 'Подрубрика']//..//span")
-    private WebElement subHeadingButton;
+	@FindBys(@FindBy(xpath = "//*[@id='patients']//tbody/tr"))
+	private List<WebElement> patientItem;
 
-    @FindBy(xpath = "//button[text() = 'Подтвердить']")
-    private WebElement submitRequestButton;
+	@FindBy(xpath = "//label[text() = 'Подкласс']//..//span")
+	private WebElement subClass;
 
-    @FindBy(xpath = "//button[contains(text(), 'Поиск')]")
-    private WebElement clickSearchFilledRequest;
+	@FindBy(xpath = "//label[text() = 'Рубрика']//..//span")
+	private WebElement headingButton;
 
-    @FindBy(xpath = ".//*[@id='District-Autocomplete-Button']")//For Test 63
-    private WebElement choseDistrictButton;
+	@FindBy(xpath = "//label[text() = 'Подрубрика']//..//span")
+	private WebElement subHeadingButton;
 
-    @FindBy(xpath = ".//*[@id='Okpo-Autocomplete-Button']")//For Test 63
-    private WebElement choseOKPOButton;
+	@FindBy(xpath = "//button[text() = 'Подтвердить']")
+	private WebElement submitRequestButton;
 
-    @FindBy(css = "button.btn.btn-primary[dialogtitle='Новый список']")
-    private WebElement buttonSaveInList;
+	@FindBy(xpath = "//button[contains(text(), 'Поиск')]")
+	private WebElement clickSearchFilledRequest;
 
-    @FindBy(id = "SearchItems[0]_Fragment-Autocomplete-Button")
-    private WebElement fragmentButton;
-    
-    @FindBy(xpath = "//li[text() = 'Паспортная часть']")
-    private WebElement fragmentPassportPartValue;
+	@FindBy(xpath = ".//*[@id='District-Autocomplete-Button']") // For Test 63
+	private WebElement choseDistrictButton;
 
-    @FindBy(xpath = ".//li[text()= 'Диагноз' ]")
-    private WebElement selectDiagnosFragmnent;
+	@FindBy(xpath = ".//*[@id='Okpo-Autocomplete-Button']") // For Test 63
+	private WebElement choseOKPOButton;
 
-    @FindBy(id = "SearchItems[0]_FragmentAttribute-Autocomplete-Button")
-    private WebElement fragmentAttributeButton;
-    
-    @FindBy(id = "SearchItems[0]_Fragment.Autocomplete")
-    private WebElement fragmentField;
-    
-    @FindBy(id = "SearchItems[0]_FragmentAttribute.Autocomplete")
-    private WebElement fragmentAttributeField;
-   
-    @FindBy(id = "SearchItems[0]_Requisite.Autocomplete")
-    private WebElement requisiteField;
-    
-    @FindBy(id = "SearchItems[0]_Values[0]_RequisiteAttribute.Autocomplete")
-    private WebElement requisiteAttributeField;
+	@FindBy(css = "button.btn.btn-primary[dialogtitle='Новый список']")
+	private WebElement buttonSaveInList;
 
-    @FindBy(xpath = "//li[text()= 'Все записи' ]")
-    private WebElement fragmentAttributeAllRecordingValue;
-    
-    @FindBy(xpath = "//li[text()= 'Есть информация' ]")
-    private WebElement fragmentAttributeHasInformationValue;
+	@FindBy(id = "SearchItems[0]_Fragment-Autocomplete-Button")
+	private WebElement fragmentButton;
 
-    @FindBy(id = "SearchItems[0]_Requisite-Autocomplete-Button")
-    private WebElement requisiteButton;
+	@FindBy(xpath = "//li[contains(text() , 'Паспортная часть')]")
+	private WebElement fragmentPassportPartValue;
 
-    @FindBy(xpath = ".//li[text()= 'Дата установления диагноза' ]")
-    private WebElement requisiteDateOfInstalValue;
-    
-    @FindBy(xpath = "//li[text() = 'Дата операции']")
-    private WebElement requisiteOperationDateValue;
-    
-    @FindBy(xpath = "//li[text() = 'Дата выявления рецидива']")
-    private WebElement requisiteFindRecidiveDateValue;
-    
-    @FindBy(id = "SearchItems[0]_Values[0]_RequisiteAttribute-Autocomplete-Button")
-    private WebElement requisiteAttributeButton;
+	@FindBy(xpath = ".//li[text()= 'Диагноз' ]")
+	private WebElement selectDiagnosFragmnent;
 
-    @FindBy(xpath = ".//li[text()= 'меньше' ]")
-    private WebElement requsiteAttributeLowerThanValue;
+	@FindBy(xpath = "//div[@class = 'col-md-12 search-item-container' and @index = '1']/.//li[text()= 'Диагноз' ]")
+	private WebElement selectAddDiagnosFragmnent;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement submitButton;
+	@FindBy(xpath = ".//li[text()= 'Рецидивы (метастазы)' ]")
+	private WebElement selectRecediveFragmnent;
 
-    @FindBy(id = "SearchItems[0]_Values[0]_Value")
-    private WebElement dateField;
-    
-    @FindBy(xpath  = "//a[@class = 'glyphicon glyphicon-plus-sign']")
-    private WebElement addButton;
-    
-    @FindBy(id = "SearchItems[0]_Values[1]_Operand-Autocomplete-Button")
-    private WebElement newTaskButton;
-    
-    @FindBy(xpath = "//li[text() = 'ИЛИ']")
-    private WebElement newTaskButtonOrValue;
-    
-    @FindBy(xpath = "//li[text() = 'И']")
-    private WebElement newTaskButtonANDValue;
-   
-    @FindBy(id = "SearchItems[0]_Values[1]_RequisiteAttribute-Autocomplete-Button")
-    private WebElement addRequisiteAttributeButton;
-    
-    @FindBy(id = "SearchItems[0]_Values[1]_Value")
-    private WebElement addDateField;
-    
-    @FindBy(id ="addCondition")
-    private WebElement addConditionButton;
-    
-    @FindBy(id = "SearchItems[1]_Fragment.Autocomplete")
-    private WebElement addFragmentField;
-    
-    @FindBy(id = "SearchItems[1]_FragmentAttribute.Autocomplete")
-    private WebElement addFragmentAttributeField;
-    
-    @FindBy(id = "SearchItems[1]_Requisite.Autocomplete")
-    private WebElement addRequisiteField;
-    
-    @FindBy(id = "SearchItems[1]_Values[0]_RequisiteAttribute.Autocomplete")
-    private WebElement addRequisiteAttributeField;
-    
-    @FindBys(@FindBy(xpath = "//tr[@class='patientItem']"))
-    private List<WebElement> resultList;
+	@FindBy(xpath = ".//li[text()= 'Хирургическое' ]")
+	private WebElement selectSergeryFragmnent;
 
-    
+	@FindBy(xpath = "//button[@id = 'SearchItems[0]_FragmentAttribute-Autocomplete-Button']")
+	private WebElement fragmentAttributeButton;
 
-    public void clickElementByName(String element){
-        driver.findElement(By.xpath("//li[text() = '" + element + "']")).click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(id = "SearchItems[1]_FragmentAttribute-Autocomplete-Button")
+	private WebElement addFragmentAttributeButton;
 
-    public void openFragmentField() {
-        fragmentPopUp.click();
-    }
+	@FindBy(id = "SearchItems[0]_Fragment.Autocomplete")
+	private WebElement fragmentField;
 
-    public void openFragmentAttributeField() {
-        fragmentAttributePopUp.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(id = "SearchItems[0]_FragmentAttribute.Autocomplete")
+	private WebElement fragmentAttributeField;
 
-    public void openRequisiteField() {
-        requisitePopUp.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(id = "SearchItems[0]_Requisite.Autocomplete")
+	private WebElement requisiteField;
 
-    public void openRequisiteAttributeField() {
-        requisiteAttributePopUp.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(id = "SearchItems[0]_Values[0]_RequisiteAttribute.Autocomplete")
+	private WebElement requisiteAttributeField;
 
-    public void openRequisiteValue() {
-        requisiteValueButton.click();
-        ThreadSleep.waitElement(1500);
-    }
+	@FindBy(xpath = "//li[text()= 'Все записи' ]")
+	private WebElement fragmentAttributeAllRecordingValue;
+	
+	@FindBy(xpath = "//div[@class = 'col-md-12 search-item-container' and @index = '1']/.//li[text()= 'Все записи' ]")
+	private WebElement addFragmentAttributeAllRecordingValue;
 
-    public void searchByCatalogPart() {
-        searchByCatalogPart.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(xpath = "//li[text()= 'Есть информация' ]")
+	private WebElement fragmentAttributeHasInformationValue;
 
-    public void openSubClass() {
-        subClass.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(id = "SearchItems[0]_Requisite-Autocomplete-Button")
+	private WebElement requisiteButton;
+	
+	@FindBy(id = "SearchItems[1]_Requisite-Autocomplete-Button")
+	private WebElement addRequisiteButton;
+	
+	@FindBy(id = "SearchItems[1]_Requisite-Autocomplete-Button")
+	private WebElement addFormRequisiteButton;
+	
+	
 
-    public void openHeading() {
-        headingButton.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(xpath = ".//li[text()= 'Дата установления диагноза' ]")
+	private WebElement requisiteDateOfInstalValue;
+	
+	@FindBy(xpath = "//div[@class = 'col-md-12 search-item-container' and @index = '1']/.//li[text()= 'Дата установления диагноза' ]")
+	private WebElement addRequisiteDateOfInstalValue;
 
-    public void openSubHeading() {
-        subHeadingButton.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(xpath = "//li[text() = 'Дата операции']")
+	private WebElement requisiteOperationDateValue;
 
-    public void submitRequest() {
-        submitRequestButton.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(xpath = "//li[text() = 'Дата выявления рецидива']")
+	private WebElement requisiteFindRecidiveDateValue;
 
-    public void clickSearchFilledRequest() {
-        clickSearchFilledRequest.click();
-    }
+	@FindBy(id = "SearchItems[0]_Values[0]_RequisiteAttribute-Autocomplete-Button")
+	private WebElement requisiteAttributeButton;
+	
 
-    public boolean checkResultOfInsertion() {
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        return driver.findElements(By.xpath("//li[contains(text(), 'Условия поиска не заданы')]")).size() != 0;
-    }
+	@FindBy(xpath = "//div[@class = 'col-md-12 search-item-container' and @index = '1']/.//li[contains(text() , 'меньше' )]")
+	private WebElement addFormRequsiteAttributeLowerThanValue;
+	
+	@FindBy(xpath = ".//li[text()= 'меньше' ]")
+	private WebElement requsiteAttributeLowerThanValue;
 
-    public void choseDistrict(){
-        choseDistrictButton.click();
-        ThreadSleep.waitElement(350);
-    }
 
-    public void choseOKPO() {
-        choseOKPOButton.click();
-        ThreadSleep.waitElement(350);
-    }
+	@FindBy(xpath = "//div[@class = 'col-md-12 search-item-container-additional']/.//li[contains(text() , 'меньше')]")
+	private WebElement addRequsiteAttributeLowerThanValue;
 
-    public void fillFragmentField() {
-        wait.waitForElementIsClickable(fragmentButton);
-        fragmentButton.click();
-        wait.waitForElementIsClickable(selectDiagnosFragmnent);
-        selectDiagnosFragmnent.click();
+	@FindBy(xpath = "//button[@type='submit']")
+	private WebElement submitButton;
 
-    }
+	@FindBy(id = "SearchItems[0]_Values[0]_Value")
+	private WebElement dateField;
 
-    public void fillFragmentAttributeField() {
-        wait.waitForElementIsClickable(fragmentAttributeButton);
-        fragmentAttributeButton.click();
-        wait.waitForElementIsClickable(fragmentAttributeAllRecordingValue);
-        fragmentAttributeAllRecordingValue.click();
-    }
+	@FindBy(xpath = "//button[@id = 'SearchItems[1]_Values[0]_Value' or @id = 'SearchItems[0]_Values[1]_Value']")
+	private WebElement addDateField;
 
-    public void fillRequisiteField() {
-        wait.waitForElementIsClickable(requisiteButton);
-        requisiteButton.click();
-        requisiteButton.click();
-        requisiteButton.click();
-        wait.waitForElementIsClickable(requisiteDateOfInstalValue);
-        requisiteDateOfInstalValue.click();
-    }
+	@FindBy(xpath = "//a[@class = 'glyphicon glyphicon-plus-sign']")
+	private WebElement addButton;
 
-    public void fillAddRequisiteAttributeField() {
-        wait.waitForElementIsClickable(addRequisiteAttributeButton);
-        addRequisiteAttributeButton.click();
-      //  requisiteButton.click();
-      //  requisiteButton.click();
-        wait.waitForElementIsClickable(requsiteAttributeLowerThanValue);
-        requsiteAttributeLowerThanValue.click();
-    }
-    
-    public void fillRequisiteAttributeField() {
-        wait.waitForElementIsClickable(requisiteAttributeButton);
-        requisiteAttributeButton.click();
-        requisiteAttributeButton.click();
-        requisiteAttributeButton.click();
-        wait.waitForElementIsClickable(requsiteAttributeLowerThanValue);
-        requsiteAttributeLowerThanValue.click();
-    }
+	@FindBy(xpath = "//button[@id = 'SearchItems[0]_Values[1]_Operand-Autocomplete-Button']")
+	private WebElement newTaskButton;
 
-    public void setDateField(String date) {
-        dateField.click();
-        dateField.clear();
-        dateField.sendKeys(date);
-    }
-    
-    public void fillAddConditionFormAs(String fragment, String fragmentAttribute, String requisite, String requisiteAttribute, String date){
-    	
-    	wait.waitForElementIsClickable(addFragmentField);
-    	addFragmentField.click();
-    	addFragmentField.sendKeys(fragment);
+	@FindBy(xpath = "//li[contains(text() , 'ИЛИ')]")
+	private WebElement newTaskButtonOrValue;
 
-    	wait.waitForElementIsClickable(addFragmentAttributeField);
-    	addFragmentAttributeField.click();
-    	addFragmentAttributeField.sendKeys(fragmentAttribute);
-    	
-    	wait.waitForElementIsClickable(addRequisiteField);
-    	addRequisiteField.click();
-    	addRequisiteField.sendKeys(requisite);
-    	
-    	wait.waitForElementIsClickable(addRequisiteAttributeField);
-    	addRequisiteAttributeField.click();
-    	addRequisiteAttributeField.sendKeys(requisiteAttribute);
-    	
-    	wait.waitForElementIsClickable(addDateField);
-    	addDateField.click();
-    	addDateField.sendKeys(date);
-    	
-    	
-    }
+	@FindBy(xpath = "//li[text()  = ' - И']")
+	private WebElement newTaskButtonANDValue;
 
-    public void clickSumbit() {
-        submitButton.click();
-    }
+	@FindBy(id = "SearchItems[0]_Values[1]_RequisiteAttribute-Autocomplete-Button")
+	private WebElement addRequisiteAttributeButton;
 
-    public List<WebElement> getResultList() {
-        return resultList;
-    }
+	
+	@FindBy(id = "SearchItems[1]_Values[0]_RequisiteAttribute-Autocomplete-Button")
+	private WebElement addFormRequisiteAttributeButton;
+	
+	
+	
+	@FindBy(id = "addCondition")
+	private WebElement addConditionButton;
 
-    public void saveResultInList(){
-        buttonSaveInList.click();
-    }
-    
-    public void fillDateFieldAs(String date){
-    	
-    	wait.waitForElementIsClickable(dateField);
-    	dateField.click();
-    	dateField.clear();
-    	dateField.sendKeys(date);
-    	
-    }
-    
-    public void fillAddDateFieldAs(String date){
-    	
-    	wait.waitForElementIsClickable(addDateField);
-    	dateField.click();
-    	dateField.clear();
-    	dateField.sendKeys(date);
-    	
-    }
-    
-    public void clickAddButton(){
-    	
-    	wait.waitForElementIsClickable(addButton);
-    	addButton.click();
-    	
-    }
-    
-    public void clickNewTaskButton(){
-    	
-    	wait.waitForElementIsClickable(newTaskButton);
-    	newTaskButton.click();
-    	
-    }
-    
-    public void clickAddConditionButton(){
-    	wait.waitForElementIsClickable(addConditionButton);
-    	addConditionButton.click();
-    	
-    }
-    
-    
-    
-    public boolean fillAllFieldAs(String fragment, String requisite, String requisiteAttribute, String date){
-    	
-    	wait.waitForElementIsClickable(fragmentField);
-    	fragmentField.click();
-    	fragmentField.clear();
-    	fragmentField.sendKeys(fragment);
-    	
-    	wait.waitForElementIsClickable(fragmentAttributeButton);
-    	fragmentAttributeButton.click();
-    	wait.waitForElementIsClickable(fragmentAttributeAllRecordingValue);
-    	fragmentAttributeAllRecordingValue.click();
-    
-    	
-    	wait.waitForElementIsClickable(requisiteButton);
-    	requisiteButton.click();
-    	wait.waitForElementIsClickable(requisiteOperationDateValue);
-    	requisiteOperationDateValue.click();
-    	
-    	wait.waitForElementIsClickable(requisiteAttributeField);
-    	requisiteAttributeField.click();
-    	requisiteAttributeField.clear();
-    	requisiteAttributeField.sendKeys(requisiteAttribute);
+	@FindBy(id = "SearchItems[1]_Fragment.Autocomplete")
+	private WebElement addFragmentField;
 
-    	fillDateFieldAs(date);
-    	
-    	wait.waitForElementIsClickable(submitButton);
-    	submitButton.click();
-    	
-    	wait.waitForElementIsClickable(buttonSaveInList);
-    	
-    	return !resultList.isEmpty();
-    }
+	@FindBy(id = "SearchItems[1]_Fragment-Autocomplete-Button")
+	private WebElement addFragmentButton;
 
-    public boolean fillAllFieldAForRecidive(String fragment, String date){
-    	
-    	wait.waitForElementIsClickable(fragmentField);
-    	fragmentField.click();
-    	fragmentField.clear();
-    	fragmentField.sendKeys(fragment);
-    	
-    	wait.waitForElementIsClickable(fragmentAttributeButton);
-    	fragmentAttributeButton.click();
-    	wait.waitForElementIsClickable(fragmentAttributeAllRecordingValue);
-    	fragmentAttributeAllRecordingValue.click();
-    
-    	
-    	wait.waitForElementIsClickable(requisiteButton);
-    	requisiteButton.click();
-    	wait.waitForElementIsClickable(requisiteFindRecidiveDateValue);
-    	requisiteFindRecidiveDateValue.click();
-    	
+	@FindBy(id = "SearchItems[1]_FragmentAttribute.Autocomplete")
+	private WebElement addFragmentAttributeField;
 
-    	fillRequisiteAttributeField();
+	@FindBy(id = "SearchItems[1]_Requisite.Autocomplete")
+	private WebElement addRequisiteField;
 
-    	fillDateFieldAs(date);
-    	
-    	wait.waitForElementIsClickable(submitButton);
-    	submitButton.click();
-    	
-    	wait.waitForElementIsClickable(buttonSaveInList);
-    	
-    	return !resultList.isEmpty();
-    }
+	@FindBy(id = "SearchItems[1]_Values[0]_RequisiteAttribute.Autocomplete")
+	private WebElement addRequisiteAttributeField;
 
-    public boolean fillAllFieldForPassportPart(String date){
-    	
-    	wait.waitForElementIsClickable(fragmentButton);
-    	fragmentField.click();
-    	wait.waitForElementIsClickable(fragmentPassportPartValue);
-    	fragmentPassportPartValue.click();
-    	
-    	wait.waitForElementIsClickable(requisiteButton);
-    	requisiteButton.click();
-    	wait.waitForElementIsClickable(requisiteBirthDateValue);
-    	requisiteBirthDateValue.click();
-    
-    	fillRequisiteAttributeField();
-        
-    	fillDateFieldAs(date);
-    	
-    	wait.waitForElementIsClickable(submitButton);
-    	submitButton.click();
-    	
-    	wait.waitForElementIsClickable(buttonSaveInList);
-    	
-    	return !resultList.isEmpty();
-    }
-    
+	@FindBys(@FindBy(xpath = "//tr[@class='patientItem']"))
+	private List<WebElement> resultList;
 
-    public boolean fillAllFieldForHasInformation(){
-    	
-    	wait.waitForElementIsClickable(fragmentButton);
-    	fragmentField.click();
-    	wait.waitForElementIsClickable(selectDiagnosFragmnent);
-    	selectDiagnosFragmnent.click();
-    	
-    	wait.waitForElementIsClickable(fragmentAttributeButton);
-    	fragmentAttributeButton.click();
-    	wait.waitForElementIsClickable(fragmentAttributeHasInformationValue);
-    	fragmentAttributeHasInformationValue.click();
-    	
-    	wait.waitForElementIsClickable(submitButton);
-    	submitButton.click();
-    	
-    	wait.waitForElementIsClickable(buttonSaveInList);
-    	
-    	return !resultList.isEmpty();
-    }
-    
-    public boolean fillAllFieldsForAddOrRequsiteButton(String date){
-    	
-    	fillFragmentField();
-    	fillFragmentAttributeField();
-    	fillRequisiteField();
-    	fillRequisiteAttributeField();
-    	fillDateFieldAs(date);
-    	clickAddButton();
-    	clickNewTaskButton();
-    	wait.waitForElementIsClickable(newTaskButtonOrValue);
-    	newTaskButtonOrValue.click();
-    	fillAddRequisiteAttributeField();
-    	fillAddDateFieldAs(date);
-    	clickSumbit();
-    	
-    	wait.waitForElementIsClickable(buttonSaveInList);
-    	
-    	
-    	return !resultList.isEmpty();
-    }
-    
-    
-    public boolean fillAllFieldsForAddANDRequsiteButton(String date){
-    	
-    	fillFragmentField();
-    	fillFragmentAttributeField();
-    	fillRequisiteField();
-    	fillRequisiteAttributeField();
-    	fillDateFieldAs(date);
-    	clickAddButton();
-    	clickNewTaskButton();
-    	wait.waitForElementIsClickable(newTaskButtonANDValue);
-    	newTaskButtonANDValue.click();
-    	fillAddRequisiteAttributeField();
-    	fillAddDateFieldAs(date);
-    	clickSumbit();
-    	
-    	wait.waitForElementIsClickable(buttonSaveInList);
-    	
-    	
-    	return !resultList.isEmpty();
-    }
-    
-    public boolean fillAllFieldsForAddConditionRequsiteButton(String fragment, String fragmentAttribute, String requisite, String requisiteAttribute, String date){
-    	
-    	fillFragmentField();
-    	fillFragmentAttributeField();
-    	fillRequisiteField();
-    	fillRequisiteAttributeField();
-    	fillDateFieldAs(date);
-    	clickAddConditionButton();
-    	fillAddConditionFormAs(fragment, fragmentAttribute, requisite, requisiteAttribute, date);
-    	clickSumbit();
-    	
-    	wait.waitForElementIsClickable(buttonSaveInList);
-    	
-    	
-    	return !resultList.isEmpty();
-    }
-    
-    
+	public void clickElementByName(String element) {
+		driver.findElement(By.xpath("//li[text() = '" + element + "']")).click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void openFragmentField() {
+		fragmentPopUp.click();
+	}
+
+	public void openFragmentAttributeField() {
+		fragmentAttributePopUp.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void openRequisiteField() {
+		requisitePopUp.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void openRequisiteAttributeField() {
+		requisiteAttributePopUp.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void openRequisiteValue() {
+		requisiteValueButton.click();
+		ThreadSleep.waitElement(1500);
+	}
+
+	public void searchByCatalogPart() {
+		searchByCatalogPart.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void openSubClass() {
+		subClass.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void openHeading() {
+		headingButton.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void openSubHeading() {
+		subHeadingButton.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void submitRequest() {
+		submitRequestButton.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void clickSearchFilledRequest() {
+		clickSearchFilledRequest.click();
+	}
+
+	public boolean checkResultOfInsertion() {
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		return driver.findElements(By.xpath("//li[contains(text(), 'Условия поиска не заданы')]")).size() != 0;
+	}
+
+	public void choseDistrict() {
+		choseDistrictButton.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void choseOKPO() {
+		choseOKPOButton.click();
+		ThreadSleep.waitElement(350);
+	}
+
+	public void fillFragmentField() {
+		wait.waitForElementIsClickable(fragmentButton);
+		fragmentButton.click();
+		wait.waitForElementIsClickable(selectDiagnosFragmnent);
+		selectDiagnosFragmnent.click();
+
+	}
+
+	public void fillFragmentAttributeField() {
+		wait.waitForElementIsClickable(fragmentAttributeButton);
+		fragmentAttributeButton.click();
+		fragmentAttributeButton.click();
+		wait.waitForElementIsClickable(fragmentAttributeAllRecordingValue);
+		fragmentAttributeAllRecordingValue.click();
+	}
+
+	public void fillRequisiteField() {
+		wait.waitForElementIsClickable(requisiteButton);
+		requisiteButton.click();
+		requisiteButton.click();
+		requisiteButton.click();
+		wait.waitForElementIsClickable(requisiteDateOfInstalValue);
+		requisiteDateOfInstalValue.click();
+	}
+
+	public void fillAddRequisiteAttributeField() {
+		wait.waitForElementIsClickable(addRequisiteAttributeButton);
+		addRequisiteAttributeButton.click();
+		addRequisiteAttributeButton.click();
+		addRequisiteAttributeButton.click();
+		wait.waitForElementIsClickable(addRequsiteAttributeLowerThanValue);
+		addRequsiteAttributeLowerThanValue.click();
+	}
+
+	public void fillRequisiteAttributeField() {
+		wait.waitForElementIsClickable(requisiteAttributeButton);
+		requisiteAttributeButton.click();
+		requisiteAttributeButton.click();
+		requisiteAttributeButton.click();
+		wait.waitForElementIsClickable(requsiteAttributeLowerThanValue);
+		requsiteAttributeLowerThanValue.click();
+	}
+
+	public void setDateField(String date) {
+		dateField.click();
+		dateField.clear();
+		dateField.sendKeys(date);
+	}
+
+	public void fillAddConditionFormAsDefault(String date) {
+
+		wait.waitForElementIsClickable(addFragmentButton);
+		addFragmentButton.click();
+		wait.waitForElementIsClickable(selectAddDiagnosFragmnent);
+		selectAddDiagnosFragmnent.click();
+
+		wait.waitForElementIsClickable(addFragmentAttributeButton);
+		addFragmentAttributeButton.click();
+		addFragmentAttributeButton.click();
+		addFragmentAttributeButton.click();
+		wait.waitForElementIsClickable(addFragmentAttributeAllRecordingValue);
+		addFragmentAttributeAllRecordingValue.click();
+		
+		wait.waitForElementIsClickable(addFormRequisiteButton);
+		addFormRequisiteButton.click();
+		addFormRequisiteButton.click();
+		addFormRequisiteButton.click();
+		wait.waitForElementIsClickable(addRequisiteDateOfInstalValue);
+		addRequisiteDateOfInstalValue.click();
+		
+		wait.waitForElementIsClickable(addFormRequisiteAttributeButton);
+		addFormRequisiteAttributeButton.click();
+		addFormRequisiteAttributeButton.click();
+		addFormRequisiteAttributeButton.click();
+		addFormRequisiteAttributeButton.click();
+		wait.waitForElementIsClickable(addFormRequsiteAttributeLowerThanValue);
+		addFormRequsiteAttributeLowerThanValue.click();
+
+		fillAddDateFieldAs(date);
+
+	}
+
+	public void clickSumbit() {
+		submitButton.click();
+	}
+
+	public List<WebElement> getResultList() {
+		return resultList;
+	}
+
+	public void saveResultInList() {
+		buttonSaveInList.click();
+	}
+
+	public void fillDateFieldAs(String date) {
+
+		wait.waitForElementIsClickable(dateField);
+		dateField.click();
+		dateField.clear();
+		dateField.sendKeys(date);
+
+	}
+
+	public void fillAddDateFieldAs(String date) {
+
+		wait.waitForElementIsClickable(addDateField);
+		addDateField.click();
+		addDateField.clear();
+		addDateField.sendKeys(date);
+
+	}
+
+	public void clickAddButton() {
+
+		wait.waitForElementIsClickable(addButton);
+		addButton.click();
+
+	}
+
+	public void clickNewTaskButton() {
+
+		wait.waitForElementIsClickable(newTaskButton);
+		newTaskButton.click();
+
+	}
+
+	public void clickAddConditionButton() {
+		wait.waitForElementIsClickable(addConditionButton);
+		addConditionButton.click();
+
+	}
+
+	public boolean fillAllFieldAs(String fragment, String date) {
+
+		wait.waitForElementIsClickable(fragmentField);
+		fragmentField.click();
+		fragmentField.clear();
+		fragmentField.sendKeys(fragment);
+		wait.waitForElementIsClickable(selectSergeryFragmnent);
+		selectSergeryFragmnent.click();
+
+		fillFragmentAttributeField();
+
+		wait.waitForElementIsClickable(requisiteButton);
+		requisiteButton.click();
+		requisiteButton.click();
+		requisiteButton.click();
+		wait.waitForElementIsClickable(requisiteOperationDateValue);
+		requisiteOperationDateValue.click();
+
+		fillRequisiteAttributeField();
+
+		fillDateFieldAs(date);
+
+		wait.waitForElementIsClickable(submitButton);
+		submitButton.click();
+
+		wait.waitForElementIsClickable(buttonSaveInList);
+
+		return !resultList.isEmpty();
+	}
+
+	public boolean fillAllFieldAForRecidive(String fragment, String date) {
+
+		wait.waitForElementIsClickable(fragmentField);
+		fragmentField.click();
+		fragmentField.clear();
+		fragmentField.sendKeys(fragment);
+		wait.waitForElementIsClickable(selectRecediveFragmnent);
+		selectRecediveFragmnent.click();
+
+		fillFragmentAttributeField();
+
+		wait.waitForElementIsClickable(requisiteButton);
+		requisiteButton.click();
+		requisiteButton.click();
+		requisiteButton.click();
+		wait.waitForElementIsClickable(requisiteFindRecidiveDateValue);
+		requisiteFindRecidiveDateValue.click();
+
+		fillRequisiteAttributeField();
+
+		fillDateFieldAs(date);
+
+		wait.waitForElementIsClickable(submitButton);
+		submitButton.click();
+
+		wait.waitForElementIsClickable(buttonSaveInList);
+
+		return !resultList.isEmpty();
+	}
+
+	public boolean fillAllFieldForPassportPart(String date) {
+
+		wait.waitForElementIsClickable(fragmentButton);
+		fragmentField.click();
+		// fragmentField.click();
+		wait.waitForElementIsClickable(fragmentPassportPartValue);
+		fragmentPassportPartValue.click();
+
+		wait.waitForElementIsClickable(requisiteButton);
+		requisiteButton.click();
+		requisiteButton.click();
+		requisiteButton.click();
+		wait.waitForElementIsClickable(requisiteBirthDateValue);
+		requisiteBirthDateValue.click();
+
+		fillRequisiteAttributeField();
+
+		fillDateFieldAs(date);
+
+		wait.waitForElementIsClickable(submitButton);
+		submitButton.click();
+
+		wait.waitForElementIsClickable(buttonSaveInList);
+
+		return !resultList.isEmpty();
+	}
+
+	public boolean fillAllFieldForHasInformation() {
+
+		wait.waitForElementIsClickable(fragmentButton);
+		fragmentButton.click();
+		wait.waitForElementIsClickable(selectDiagnosFragmnent);
+		selectDiagnosFragmnent.click();
+
+		wait.waitForElementIsClickable(fragmentAttributeButton);
+		fragmentAttributeButton.click();
+		wait.waitForElementIsClickable(fragmentAttributeHasInformationValue);
+		fragmentAttributeHasInformationValue.click();
+
+		wait.waitForElementIsClickable(submitButton);
+		submitButton.click();
+
+		wait.waitForElementIsClickable(buttonSaveInList);
+
+		return !resultList.isEmpty();
+	}
+
+	public boolean fillAllFieldsForAddOrRequsiteButton(String date) {
+
+		fillFragmentField();
+		fillFragmentAttributeField();
+		fillRequisiteField();
+		fillRequisiteAttributeField();
+		fillDateFieldAs(date);
+		clickAddButton();
+		clickNewTaskButton();
+		wait.waitForElementIsClickable(newTaskButtonOrValue);
+		newTaskButtonOrValue.click();
+		fillAddRequisiteAttributeField();
+		fillAddDateFieldAs(date);
+		clickSumbit();
+
+		wait.waitForElementIsClickable(buttonSaveInList);
+
+		return !resultList.isEmpty();
+	}
+
+	public boolean fillAllFieldsForAddANDRequsiteButton(String date) {
+
+		fillFragmentField();
+		fillFragmentAttributeField();
+		fillRequisiteField();
+		fillRequisiteAttributeField();
+		fillDateFieldAs(date);
+		clickAddButton();
+		clickNewTaskButton();
+		wait.waitForElementIsClickable(newTaskButtonANDValue);
+		newTaskButtonANDValue.click();
+		fillAddRequisiteAttributeField();
+		fillAddDateFieldAs(date);
+		clickSumbit();
+
+		wait.waitForElementIsClickable(buttonSaveInList);
+
+		return !resultList.isEmpty();
+	}
+
+	public boolean fillAllFieldsForAddConditionRequsiteButton(String date) {
+
+		fillFragmentField();
+		fillFragmentAttributeField();
+		fillRequisiteField();
+		fillRequisiteAttributeField();
+		fillDateFieldAs(date);
+		clickAddConditionButton();
+		fillAddConditionFormAsDefault(date);
+		clickSumbit();
+
+		wait.waitForElementIsClickable(buttonSaveInList);
+
+		return !resultList.isEmpty();
+	}
+
+	public void openFifthRawData() {
+		requisiteRawDataPopUp.click();
+		ThreadSleep.waitElement(650);
+
+	}
+
+	public boolean checkResultsPresent() {
+		return patientItem.size() > 0;
+	}
+
+	public void clickElementByName1() {
+		driver.findElement(By.xpath("//div/div[6]/div/ul/li[2]")).click();
+		ThreadSleep.waitElement(550);
+	}
+
 }

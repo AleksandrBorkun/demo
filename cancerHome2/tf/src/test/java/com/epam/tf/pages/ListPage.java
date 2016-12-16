@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
+import com.epam.tf.utils.ThreadSleep;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -13,6 +15,9 @@ public class ListPage extends AbstractPage{
 
     private WebDriver driver;
 
+    @FindBy(xpath = "//a[@class='navbar-brand']")
+	private WebElement logo;
+    
     @FindBy(xpath = "//a[@class='dropdown-toggle btn btn-primary']")
     private WebElement buttonCreateList;
 
@@ -45,6 +50,11 @@ public class ListPage extends AbstractPage{
         saveList(random);
     }
 
+    public void editOneNoteList() {
+		buttonEdit.click();
+		ThreadSleep.waitElement(450);
+	}
+    
     public String getFirstListName() {
         wait.waitForElementIsClickable(spanListName);
         String name = spanListName.getText();
@@ -65,5 +75,8 @@ public class ListPage extends AbstractPage{
         buttonEdit.click();
     }
 
+    public void goToMainPage() {
+		logo.click();
+	}
 
   }

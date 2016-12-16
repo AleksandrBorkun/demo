@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 
 public class ExplicitWait {
     private WebDriver driverWait;
@@ -29,6 +31,18 @@ public class ExplicitWait {
 
     public void waitForElementIsClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public Alert waitAlertWindow() throws TimeoutException{
+         return wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    public void waitForElementAppearing(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitForElementsAppearing(List<WebElement> elementList){
+        wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
     }
 
 

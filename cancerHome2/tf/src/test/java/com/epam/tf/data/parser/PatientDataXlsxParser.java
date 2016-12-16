@@ -1,50 +1,26 @@
 package com.epam.tf.data.parser;
 
 import com.epam.tf.entity.Patient;
-import com.epam.tf.property.PropertyProvider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
+
 
 /**
  * Created by Ihar_Hukau on 11/30/2016.
  */
-public class PatientDataXlsxParser {
+public class PatientDataXlsxParser extends Parser {
 
-    private final static String FILE_PATH = "xlsxDocument";
     private final static String SHEET = "Новый пациент";
-    private static final Logger LOG = LogManager.getRootLogger();
-    public List<Patient> patientList = new ArrayList<Patient>();
-
-    public List<Patient> getPatientList() {
-        return patientList;
-    }
 
     public PatientDataXlsxParser() {
-        InputStream inputStream;
-        XSSFWorkbook workbook;
-
-        try {
-            inputStream = new FileInputStream(PropertyProvider.getProperty(FILE_PATH));
-            workbook = new XSSFWorkbook(inputStream);
-            parsePatientData(workbook.getSheet(SHEET));
-        } catch (IOException e) {
-            LOG.error(e.getMessage());
-        }
-
+        super(SHEET);
     }
 
-    private void parsePatientData(Sheet sheet) {
+    protected void parse(Sheet sheet) {
         for (Row row : sheet) {
             if (row.getRowNum() < 2) {
                 continue;
@@ -66,22 +42,22 @@ public class PatientDataXlsxParser {
                         break;
 
                     case 2:
-                        patient.setPersonalNumber(cell.getStringCellValue());
+                        patient.setPersonalNumber(getValue(cell));
                         break;
                     case 3:
-                        patient.setLastName(cell.getStringCellValue().trim());
+                        patient.setLastName(getValue(cell));
                         break;
                     case 4:
-                        patient.setFirstName(cell.getStringCellValue().trim());
+                        patient.setFirstName(getValue(cell));
                         break;
                     case 5:
-                        patient.setPatrName(cell.getStringCellValue().trim());
+                        patient.setPatrName(getValue(cell));
                         break;
                     case 6:
-                        patient.setBirthDay(cell.getStringCellValue().replace(".", ""));
+                        patient.setBirthDay(getValue(cell).replace(".", ""));
                         break;
                     case 7:
-                        String sex = cell.getStringCellValue();
+                        String sex = getValue(cell);
                         if (sex.equals("мужской")) {
                             patient.setSex((byte) 1);
                         } else if (sex.equals("женский")) {
@@ -89,13 +65,13 @@ public class PatientDataXlsxParser {
                         }
                         break;
                     case 8:
-                        patient.setIdn(new Long(cell.getStringCellValue().trim()));
+                        patient.setIdn(new Long(getValue(cell)));
                         break;
                     case 9:
-                        patient.setId(new Long(cell.getStringCellValue().trim()));
+                        patient.setId(new Long(getValue(cell)));
                         break;
                     case 10:
-                        patient.setIdDiag(new Long(cell.getStringCellValue().trim()));
+                        patient.setIdDiag(new Long(getValue(cell)));
                         break;
                 }
                 cellCounter++;

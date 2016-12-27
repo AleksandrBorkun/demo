@@ -6,11 +6,16 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class AbstractSteps {
 
-    protected static final Logger log = LogManager.getRootLogger();
+    static final Logger log = LogManager.getRootLogger();
 
-    protected WebDriver driver;
+    final WebDriver driver;
 
-    public AbstractSteps(WebDriver driver) {
+    AbstractSteps(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public HeaderSteps goToHeader() {
+        log.info("Go to Header");
+        return new HeaderSteps(driver);
     }
 }

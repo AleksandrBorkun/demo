@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.epam.tf.tests.InformationSearchByDiagnos">
+      <class name="com.epam.tf.tests.ShouldCheckPatientSearch">
         <methods>
           <include name="tearDown"/>
-          <include name="startTest"/>
-          <include name="setUp"/>
+          <include name="oneCanFindPatientBySurName"/>
           <include name="initData"/>
         </methods>
-      </class> <!-- com.epam.tf.tests.InformationSearchByDiagnos -->
+      </class> <!-- com.epam.tf.tests.ShouldCheckPatientSearch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

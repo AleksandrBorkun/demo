@@ -5,8 +5,11 @@ import com.epam.tf.property.PropertyProvider;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPageSteps extends AbstractSteps {
+    private final LoginPage loginPage;
+
     public LoginPageSteps(WebDriver driver) {
         super(driver);
+        loginPage = new LoginPage(driver);
     }
 
 
@@ -18,7 +21,6 @@ public class LoginPageSteps extends AbstractSteps {
 
     public MainPageSteps authorization(String login, String password) {
         log.info("try to login in");
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.authorization(login, password);
         return new MainPageSteps(driver);
     }

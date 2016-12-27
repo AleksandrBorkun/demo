@@ -15,15 +15,15 @@ import java.io.IOException;
 public class ScreenshotExecutor extends TestListenerAdapter {
 
         private static final String PNG = ".png";
-        private Logger log = LogManager.getRootLogger();
-        private static int pngCount = 0;
+        private final Logger log = LogManager.getRootLogger();
+        private int pngCount = 0;
 
         @Override
         public void onTestFailure(ITestResult testResult) {
             log.error(testResult.getName() + " screenshot saved: " + takeScreenshot());
         }
 
-        public String takeScreenshot()  {
+        private String takeScreenshot()  {
             String path;
             try {
                 File source = ((TakesScreenshot) FactoryDriver.getInstance()).getScreenshotAs(OutputType.FILE);
